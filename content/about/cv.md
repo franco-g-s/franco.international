@@ -37,19 +37,18 @@ A high school graduate with a broad international background, currently in a gap
 
 ---
 
-## Gap Year Activities
+## Experience
 
-### Robotics Research Internship – ETH Zürich (January – February 2026)
+### Robotics Research Internship – ETH Zürich (Current)
+**January – February 2026**
 - Assisting in robotics and mechatronics research as part of my Swiss social service
 - Gaining firsthand exposure to academic research environments and advanced engineering systems
 
-### Life Sciences Internship & Language Immersion – Kaohsiung, Taiwan (September – November 2026)
+### Life Sciences Internship & Language Immersion – Kaohsiung, Taiwan (Planned)
+**September – November 2026**
 - 3-month internship at Accelerated Bio, a stem cell regenerative medicine company
 - Recovering Mandarin through studying and social immersion
-
----
-
-## Experience
+- Achieved HSK 3 certification (official Mandarin proficiency test)
 
 ### Goschumi AG
 **Invoicing & Book-keeping** | Since January 2024
