@@ -232,9 +232,9 @@ async function setupExplorer(currentSlug: FullSlug) {
       }
     }
 
-    // Set up event handlers
+    // Set up event handlers (only for mobile explorer toggle)
     const explorerButtons = explorer.getElementsByClassName(
-      "explorer-toggle",
+      "mobile-explorer",
     ) as HTMLCollectionOf<HTMLElement>
     for (const button of explorerButtons) {
       button.addEventListener("click", toggleExplorer)

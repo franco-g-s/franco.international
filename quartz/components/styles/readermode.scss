@@ -17,7 +17,13 @@
     top: calc(50% - 10px);
     fill: var(--darkgray);
     stroke: var(--darkgray);
-    transition: opacity 0.1s ease;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+  }
+
+  // Active state indicator
+  &.active svg {
+    fill: var(--secondary);
+    stroke: var(--secondary);
   }
 }
 
@@ -26,9 +32,5 @@
   & .sidebar.right {
     opacity: 0;
     transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 1;
-    }
   }
 }

@@ -19,10 +19,17 @@ export default ((opts?: Partial<FloatingControlsOptions>) => {
     )
   }
 
-  FloatingControlsComponent.css = style
+  // Collect and forward CSS from child components
+  const childComponents = opts?.components ?? []
+  const allStyles = childComponents
+    .map((Component) => Component.css)
+    .filter((css) => css !== undefined)
+
+  FloatingControlsComponent.css = allStyles.length > 0
+    ? concatenateResources([style, ...allStyles])
+    : style
 
   // Collect and forward scripts from child components
-  const childComponents = opts?.components ?? []
   const allScripts = childComponents
     .map((Component) => Component.beforeDOMLoaded)
     .filter((script) => script !== undefined)

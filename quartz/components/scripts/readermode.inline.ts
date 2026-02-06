@@ -13,6 +13,15 @@ document.addEventListener("nav", () => {
     const newMode = isReaderMode ? "on" : "off"
     document.documentElement.setAttribute("reader-mode", newMode)
     emitReaderModeChangeEvent(newMode)
+
+    // Update button active state
+    for (const button of document.getElementsByClassName("readermode")) {
+      if (isReaderMode) {
+        button.classList.add("active")
+      } else {
+        button.classList.remove("active")
+      }
+    }
   }
 
   for (const readerModeButton of document.getElementsByClassName("readermode")) {
