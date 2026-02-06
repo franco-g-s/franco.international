@@ -15,6 +15,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/franco-g-s",
       Email: "mailto:franco@goxcoworld.com",
+      Instagram: "https://instagram.com/gsfranco2006/",
     },
   }),
 }
