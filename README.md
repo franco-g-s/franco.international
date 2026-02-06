@@ -1,17 +1,82 @@
-# Quartz v4
+# franco.international
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+My personal website and digital garden, built with [Quartz](https://quartz.jzhao.xyz) and published from my Obsidian vault.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+🌐 **Live site:** [franco.international](https://franco.international)
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## About
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+This is my personal knowledge base where I share:
+- **Academic notes** from ETH Zürich (Mechanical Engineering)
+- **Projects** - coding, hardware design, research
+- **Book notes** and reviews
+- **Media** notes and reflections
+- **About me** - CV and personal background
 
-## Sponsors
+## Tech Stack
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+- **Static Site Generator:** [Quartz v4](https://quartz.jzhao.xyz)
+- **Content Source:** Obsidian vault (private repository)
+- **Hosting:** GitHub Pages
+- **Domain:** franco.international
+- **Publishing:** Property-based selective publishing (`publish: true`)
+
+## Architecture
+
+This repository contains the public-facing website. Content is selectively published from my private Obsidian vault using a custom publishing workflow:
+
+1. Notes in private vault are marked with `publish: true` property
+2. Publishing script filters and copies notes to this repo
+3. Quartz builds the static site
+4. GitHub Pages auto-deploys
+
+**Two-vault system:**
+- **Private vault** (separate repo): Full personal knowledge base with private notes
+- **Public website** (this repo): Curated selection for public consumption
+
+## Features
+
+- 📚 Digital garden with wikilinks and backlinks
+- 🔍 Full-text search
+- 🕸️ Interactive graph view (full network on homepage, local connections on pages)
+- 🌓 Dark/light mode
+- 📱 Responsive design
+- 🗂️ File explorer navigation
+
+## Structure
+
+```
+content/
+├── about/           # About me & CV
+├── notes/           # Academic notes (ETH Zürich)
+├── projects/        # Coding, hardware, research projects
+├── books/           # Book notes and reviews
+└── media/           # Movies, shows, media notes
+```
+
+## Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npx quartz build --serve
+
+# Build for production
+npx quartz build
+
+# Sync to GitHub
+npx quartz sync
+```
+
+## Contact
+
+- **Email:** franco@goxcoworld.com
+- **GitHub:** [@franco-g-s](https://github.com/franco-g-s)
+
+## License
+
+Content © 2026 Franco Gómez Schumacher. All rights reserved.
+
+Website built with [Quartz](https://github.com/jackyzha0/quartz) (MIT License).
