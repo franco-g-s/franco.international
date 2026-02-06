@@ -9,7 +9,8 @@ This is my personal knowledge base and digital garden, where I share my notes, p
 ## What You'll Find Here
 
 - **[[about/index|About Me]]** - Learn more about who I am and what I do
-- **[[notes/index|Notes]]** - Academic notes from my studies at ETH Zurich
+- **[[eth/index|ETH Zürich Notes]]** - Academic notes from my Mechanical Engineering studies
+- **[[notes/index|Notes]]** - General notes and reflections on various topics
 - **[[projects/index|Projects]]** - Personal and professional projects I'm working on
 - **[[books/index|Books]]** - Book notes, reviews, and reading reflections
 - **[[media/index|Media]]** - Movies, shows, and other media I've consumed

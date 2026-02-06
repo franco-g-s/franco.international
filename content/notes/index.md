@@ -2,16 +2,18 @@
 title: Notes
 ---
 
-# Academic Notes
+# Notes
 
-This section contains my notes from courses at ETH Zurich and other academic pursuits. These are post-processed, atomic notes organized by topic rather than raw class notes.
+This section contains general notes, thoughts, and reflections on various topics beyond academic coursework.
 
-## Topics
+## What You'll Find
 
-Notes are organized by subject area. Browse using the file explorer or search for specific topics.
+Personal notes on topics including philosophy, productivity, mindfulness, network theory, habit formation, and other areas of interest.
 
-[As you publish notes, they'll appear here organized by course/topic folders]
+These notes are more exploratory and reflective compared to the structured academic notes in the [[eth/index|ETH section]].
+
+[Individual notes will be published selectively]
 
 ---
 
-*These notes represent my understanding and interpretation of the material. They may contain errors or personal perspectives.*
+*For academic notes from ETH Zürich, see [[eth/index|ETH Zürich Notes]].*
