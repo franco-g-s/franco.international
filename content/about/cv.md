@@ -44,8 +44,8 @@ A high school graduate with a broad international background, currently in a gap
 - Assisting in robotics and mechatronics research as part of my Swiss social service
 - Gaining firsthand exposure to academic research environments and advanced engineering systems
 
-### Life Sciences Internship & Language Immersion – Kaohsiung, Taiwan (Planned)
-**September – November 2026**
+### Life Sciences Internship & Language Immersion – Kaohsiung, Taiwan
+**September – November 2025**
 - 3-month internship at Accelerated Bio, a stem cell regenerative medicine company
 - Recovering Mandarin through studying and social immersion
 - Achieved HSK 3 certification (official Mandarin proficiency test)
@@ -91,4 +91,4 @@ Born in Mexico, raised in Shanghai, Panama, and currently based in Switzerland, 
 
 ---
 
-*Last updated: September 2025 (outdated - updates pending)*
+*Last updated: February 2026*

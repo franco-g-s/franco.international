@@ -13,8 +13,8 @@ I'm also an enthusiast endurance athlete who loves being outdoors—whether cycl
 ## What I'm Doing
 
 Currently in my gap year (2025-2026), I'm:
-- Completing a **robotics research internship at ETH Zürich** (January–February 2026) as part of my Swiss social service
-- Planning a **life sciences internship at Accelerated Bio in Taiwan** (September–November 2026) while recovering my Mandarin
+- Working in a **robotics research lab at ETH Zürich** (January–February 2026) as part of my Swiss social service
+- Completed a **life sciences internship at Accelerated Bio in Taiwan** (September–November 2025) while recovering my Mandarin
 - Starting my **Mechanical Engineering Bachelor at ETH Zürich** in Fall 2026
 
 I enjoy working on technical projects that blend design, hardware, and software—from custom ergonomic keyboards to biomechanical measurement systems for rowing.
