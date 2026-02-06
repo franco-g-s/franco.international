@@ -67,7 +67,7 @@ See the [[projects/index|Projects]] section for more detailed project informatio
 ## Skills & Competencies
 
 ### Technical Design
-Shapr3D (CAD), prototyping, PCB design (KiCad)
+Shapr3D (CAD), Fusion360 (basic), prototyping, PCB design (KiCad)
 
 ### Manufacturing & Hardware
 3D printing, soldering, PCB Assembly, laser cutting
