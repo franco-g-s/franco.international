@@ -1,15 +1,13 @@
 ---
-title: Welcome
+title: Welcome to Franco's Digital Garden
 ---
-
-# Welcome to Franco's Digital Garden
 
 This is my personal knowledge base and digital garden, where I share my notes, projects, and thoughts on various topics.
 
 ## What You'll Find Here
 
 - **[[about/index|About Me]]** - Learn more about who I am and what I do
-- **[[eth/index|ETH Zürich Notes]]** - Academic notes from my Mechanical Engineering studies
+- **[[eth/index|ETH]]** - Academic notes from my Mechanical Engineering studies
 - **[[notes/index|Notes]]** - General notes and reflections on various topics
 - **[[projects/index|Projects]]** - Personal and professional projects I'm working on
 - **[[books/index|Books]]** - Book notes, reviews, and reading reflections

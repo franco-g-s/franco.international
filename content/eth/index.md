@@ -1,5 +1,5 @@
 ---
-title: ETH Zürich Notes
+title: ETH
 ---
 
 # ETH Zürich Academic Notes

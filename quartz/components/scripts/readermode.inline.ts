@@ -13,6 +13,17 @@ document.addEventListener("nav", () => {
     const newMode = isReaderMode ? "on" : "off"
     document.documentElement.setAttribute("reader-mode", newMode)
     emitReaderModeChangeEvent(newMode)
+
+    // Hide/show both sidebars
+    const leftSidebar = document.querySelector('.left')
+    const rightSidebar = document.querySelector('.right')
+
+    if (leftSidebar) {
+      leftSidebar.style.display = isReaderMode ? 'none' : ''
+    }
+    if (rightSidebar) {
+      rightSidebar.style.display = isReaderMode ? 'none' : ''
+    }
   }
 
   for (const readerModeButton of document.getElementsByClassName("readermode")) {
