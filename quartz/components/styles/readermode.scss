@@ -31,6 +31,13 @@
   & .sidebar.left,
   & .sidebar.right {
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.4s ease;
+  }
+}
+
+:root[reader-mode="off"] {
+  & .sidebar.left,
+  & .sidebar.right {
+    transition: opacity 0.8s ease;
   }
 }
