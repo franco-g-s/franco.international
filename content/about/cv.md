@@ -4,7 +4,7 @@ title: CV
 
 # Franco Gómez Schumacher
 
-**Zürich, Switzerland** | [franco@goxcoworld.com](mailto:franco@goxcoworld.com) | +41 78 405 34 98
+**Zürich, Switzerland** | [franco@goxcoworld.com](mailto:franco@goxcoworld.com)
 
 ---
 
