@@ -1,5 +1,5 @@
 ---
-title: Welcome to Franco's Digital Garden
+title: Welcome!
 ---
 
 This is my personal knowledge base and digital garden, where I share my notes, projects, and thoughts on various topics.

@@ -9,6 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.FloatingControls({
       components: [Component.Darkmode(), Component.ReaderMode()],
     }),
+    Component.ScrollButtons(),
   ],
   footer: Component.Footer({
     links: {

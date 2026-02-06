@@ -639,3 +639,8 @@ iframe.pdf {
   transition: width 0.2s ease;
   z-index: 9999;
 }
+
+// Hide collapse toggles for Explorer and Table of Contents
+.fold {
+  display: none !important;
+}
