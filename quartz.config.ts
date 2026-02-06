@@ -13,7 +13,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "cloudflare",
+      token: "a4f83cd948034998979ee9c2f5d992d4",
     },
     locale: "en-US",
     baseUrl: "franco.international",
