@@ -4,13 +4,20 @@ title: About
 
 # About Me
 
-Hi! I'm Franco Garcia-Soto.
+Hi! I'm Franco Gómez Schumacher, a high school graduate currently in a gap year focused on hands-on learning, cultural exchange, and community service.
 
-[This section will be filled with your bio and background]
+Born in Mexico and raised across China, Panama, and Switzerland, I've grown up navigating multicultural environments across four continents. I'm passionate about design, engineering, and projects that combine emerging technologies with collaborative problem-solving.
 
-## What I Do
+I'm also an enthusiast endurance athlete who loves being outdoors—whether cycling, swimming, running, rowing, hiking, or skiing.
 
-[Your current work, studies, interests]
+## What I'm Doing
+
+Currently in my gap year (2025-2026), I'm:
+- Completing a **robotics research internship at ETH Zürich** (January–February 2026) as part of my Swiss social service
+- Planning a **life sciences internship at Accelerated Bio in Taiwan** (September–November 2026) while recovering my Mandarin
+- Starting my **Mechanical Engineering Bachelor at ETH Zürich** in Fall 2026
+
+I enjoy working on technical projects that blend design, hardware, and software—from custom ergonomic keyboards to biomechanical measurement systems for rowing.
 
 ## This Digital Garden
 
@@ -21,7 +28,7 @@ The content here represents a curated selection of my notes - things I've learne
 ## Connect
 
 - GitHub: [github.com/franco-g-s](https://github.com/franco-g-s)
-- Email: [hello@franco.international](mailto:hello@franco.international)
+- Email: [franco@goxcoworld.com](mailto:franco@goxcoworld.com)
 
 ---
 

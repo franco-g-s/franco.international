@@ -2,26 +2,94 @@
 title: CV
 ---
 
-# Curriculum Vitae
+# Franco Gómez Schumacher
 
-[Your CV content will go here]
-
-## Education
-
-[Education details]
-
-## Experience
-
-[Work experience]
-
-## Skills
-
-[Technical and other skills]
-
-## Projects
-
-See the [[projects/index|Projects]] section for detailed project information.
+**Zürich, Switzerland** | [franco@goxcoworld.com](mailto:franco@goxcoworld.com) | +41 78 405 34 98
 
 ---
 
-*Last updated: 2026-02-06*
+## About Me
+
+A high school graduate with a broad international background, currently in a gap year focused on hands-on learning, cultural exchange, and community service. Born in Mexico and raised across China, Panama, and Switzerland, I've explored design and engineering through various independent and structured projects. Academically, I've concentrated on subjects such as biology, mathematics, and geography. My multilingual background has developed both in and outside of the classroom, and I enjoy projects that combine design, emerging technologies, and collaborative problem-solving. I'm an enthusiast endurance athlete who loves being outdoors, including cycling, swimming, running, rowing, hiking and skiing.
+
+---
+
+## Education
+
+### [Planned] ETH Zürich (2026–2029)
+- **Mechanical Engineering Bachelor**
+
+### Realgymnasium Rämibühl Zürich (2020–2025)
+- Swiss Matura & International Baccalaureate Diploma Program (bilingual)
+- **Higher Level:** Mathematics, English, German
+- **Standard Level:** Biology, Geography, Italian
+- **Maturitätsarbeit & Extended Essay:** Designed and prototyped a biomechanically-informed system to measure rowing force
+- Graduated with full Swiss and IB diplomas
+
+### Summer Institute for the Gifted (2017, 2018, 2019)
+- Attended 3 summer camp sessions in the U.S. focused on accelerated academic enrichment and creative exploration
+
+### International School of Panama (2015–2020)
+- Bilingual education under the U.S. system with a focus on STEAM subjects and intercultural learning
+
+### Wellington College International Shanghai (2014–2015)
+- Early education in an international British school setting
+
+---
+
+## Gap Year Activities
+
+### Robotics Research Internship – ETH Zürich (January – February 2026)
+- Assisting in robotics and mechatronics research as part of my Swiss social service
+- Gaining firsthand exposure to academic research environments and advanced engineering systems
+
+### Life Sciences Internship & Language Immersion – Kaohsiung, Taiwan (September – November 2026)
+- 3-month internship at Accelerated Bio, a stem cell regenerative medicine company
+- Recovering Mandarin through studying and social immersion
+
+---
+
+## Experience
+
+### Goschumi AG
+**Invoicing & Book-keeping** | Since January 2024
+- Assisted in tracking, managing, and sending invoices and expenses
+- Worked with digital accounting platforms
+- Gained practical insight into the financial and administrative processes of a small business
+
+### Personal Technical Projects
+- **Ergonomic Keyboard Design:** Designed and assembled custom mechanical keyboards, including PCB wiring, case design, and switch configuration
+- **Force Measurement System for Rowers:** Developed a system integrating mechanical, electrical, and biomechanical principles to quantify rowing force per stroke using force sensors and microcontroller data logging
+
+See the [[projects/index|Projects]] section for more detailed project information.
+
+---
+
+## Skills & Competencies
+
+### Technical Design
+Shapr3D (CAD), prototyping, PCB design (KiCad)
+
+### Manufacturing & Hardware
+3D printing, soldering, PCB Assembly, laser cutting
+
+### Programming
+Arduino, Python (basic), microcontroller integration
+
+### Communication & Languages
+- **Fluent:** English, Spanish, German, Swiss German
+- **Intermediate:** French, Italian
+- **Working on recovering:** Mandarin
+
+### Soft Skills
+Adaptable, detail-oriented, culturally diverse & aware, enthusiastic collaborator
+
+---
+
+## International Background
+
+Born in Mexico, raised in Shanghai, Panama, and currently based in Switzerland, I've grown up navigating multicultural environments across four continents. My upbringing and education in international schools and multilingual societies have shaped a flexible, global mindset. I'm comfortable collaborating in diverse, cross-cultural teams and adapting quickly to new cultural and professional contexts.
+
+---
+
+*Last updated: September 2025 (outdated - updates pending)*
