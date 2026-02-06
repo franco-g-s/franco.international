@@ -640,7 +640,7 @@ iframe.pdf {
   z-index: 9999;
 }
 
-// Hide collapse toggles for Explorer and Table of Contents
-.fold {
+// Hide collapse toggle only for Explorer (keep it for Table of Contents)
+.explorer .fold {
   display: none !important;
 }

@@ -29,6 +29,7 @@ The content here represents a curated selection of my notes - things I've learne
 
 - GitHub: [github.com/franco-g-s](https://github.com/franco-g-s)
 - Email: [franco@goxcoworld.com](mailto:franco@goxcoworld.com)
+- Instagram: [@gsfranco2006](https://www.instagram.com/gsfranco2006/)
 
 ---
 
