@@ -39,6 +39,10 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
+    Component.RecentNotes({
+      title: "Recent Notes",
+      limit: 5,
+    }),
   ],
   right: [
     Component.ConditionalRender({
