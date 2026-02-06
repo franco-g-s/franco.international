@@ -8,8 +8,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/franco-g-s",
+      Email: "mailto:hello@franco.international",
     },
   }),
 }
@@ -41,7 +41,26 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    Component.ConditionalRender({
+      component: Component.Graph({
+        localGraph: {
+          showTags: false,
+        },
+        globalGraph: {
+          showTags: false,
+        },
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.Graph({
+        localGraph: {
+          showTags: false,
+          depth: 1,
+        },
+      }),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
