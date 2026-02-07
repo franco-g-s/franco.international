@@ -15,10 +15,10 @@ url:
   - 'https://ewan.my'
 ---
 ### Notes
-![[Notes.base#Project Notes]]
+<!-- Obsidian Base removed: ![[Notes.base#Project Notes]] -->
 
 ### Resources
-![[Resources.base#Project Resources]]
+<!-- Obsidian Base removed: ![[Resources.base#Project Resources]] -->
 
 ## Current Status
 
