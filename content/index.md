@@ -2,7 +2,7 @@
 title: Welcome!
 ---
 
-This is my personal knowledge base and digital garden, where I share my notes, projects, and thoughts on various topics.
+This is my personal knowledge base and digital garden, where I share my notes, projects, and thoughts on various topics. It is still very much a work-in-progress, since I'm working on implementing some features. 
 
 ## What You'll Find Here
 

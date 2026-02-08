@@ -154,30 +154,48 @@ During publishing, the script:
 - [x] Date display: created date + last updated
 - [x] Dark mode toggle only in floating island (removed from list page sidebar)
 
-### Phase 5: Content Population (In Progress)
+### Phase 5: Content Population (Paused — waiting for Bases feature)
 - [x] Publish CV and about page
 - [ ] Select and publish class notes
 - [ ] Publish project notes
 - [ ] Publish book reviews
 
-### Phase 6: Future Enhancements
-- [ ] Obsidian Bases rendering on website (see research below)
+> Paused until Quartz officially merges Bases support (PR #2292). Bases would significantly change how the website is navigated and structured, so it makes sense to wait before investing time in content organization.
+
+### Phase 6: Bases Integration (Waiting for Quartz PR #2292)
+- [ ] Quartz merges official Bases support (PR #2292)
+- [ ] Update Quartz to version with Bases
+- [ ] Test `.base` file rendering on website
+- [ ] Adapt publishing script to handle `.base` files (currently stripped)
+
+### Phase 7: Future Enhancements
 - [ ] QuickAdd script for publishing from within Obsidian
 - [ ] Automated publishing via cron job or GitHub Action
 - [ ] Blog/essays section
 - [ ] Newsletter/RSS feed
 - [ ] Interactive elements (executable code blocks)
 - [ ] Dynamic content (trip maps, book rating visualizations)
+- [ ] Include emoji in note title
 
-## Bases Feature Research
-Ewan's website ([ewan.my](https://ewan.my)) renders `.base` files as interactive card/table views. His implementation is in his [public Quartz fork](https://github.com/gassandrid/ewan.my) and consists of ~4,800 lines of custom TypeScript/SCSS:
+### Official Quartz Support (PR #2292)
+Bases rendering is being added to Quartz as an official feature via [PR #2292](https://github.com/jackyzha0/quartz/pull/2292) (`feat/bases` branch). This is the same feature that powers [ewan.my](https://ewan.my) — Ewan contributed his implementation upstream.
+
+- **PR opened**: January 30, 2026
+- **Status**: Open, with unresolved review feedback (anchor normalization bugs, documentation gaps, unanswered maintainer questions)
+- **Estimated timeline**: Likely weeks to months — needs revision cycles before approval and merge
+- **Staging preview**: Available at the PR's deploy preview URL
+
+**Decision**: Wait for the official merge rather than porting Ewan's custom implementation. This avoids maintaining a fork and ensures compatibility with future Quartz updates.
+
+### Ewan's Implementation (Reference)
+Ewan's website ([ewan.my](https://ewan.my)) already renders `.base` files as interactive card/table views. His implementation is in his [public Quartz fork](https://github.com/gassandrid/ewan.my) and consists of ~4,800 lines of custom TypeScript/SCSS:
 - **Transformer plugin** (`quartz/plugins/transformers/bases.ts`): Parses `.base` YAML, handles inline base code blocks
 - **Emitter plugin** (`quartz/plugins/emitters/base.tsx`): Renders tables, cards, lists, and maps with filtering, sorting, grouping, and summaries
 - **Query engine** (`quartz/util/base/query.ts`): Full filter evaluation, property resolution, formula computation
 - **Type system** (`quartz/util/base/types.ts`): YAML schema parsing, view configurations
 - **UI components**: View selector tabs, search bar, map rendering, card grid layout
 
-This is a substantial feature that would require porting or adapting these files into our Quartz installation. Would be a dedicated project.
+This code is now being contributed upstream as PR #2292, so porting it manually is unnecessary.
 
 ### Why Separate Vaults?
 - Private vault structure unchanged (no "Public/" folder)
