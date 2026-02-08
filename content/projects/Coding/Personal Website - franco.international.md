@@ -15,13 +15,13 @@ A self-hosted personal website at **franco.international** that publishes select
 
 ## Inspiration
 Heavily inspired by:
-- **Steph Ango's approach**: Separate vault for website with different structure than private vault
-- **ewan.my**: Digital garden built with Quartz, featuring interconnected notes and graph view
-- **Quartz static site generator**: Purpose-built for publishing Obsidian vaults as static websites
+- **[Steph Ango's approach](https://stephango.com/vault)**: Separate vault for website with different structure than private vault
+- **[ewan.my](https://ewan.my/)**: Digital garden built with Quartz, featuring interconnected notes and graph view
+- **[Quartz static site generator](https://quartz.jzhao.xyz/)**: Purpose-built for publishing Obsidian vaults as static websites
 
 ### Two-Vault System
-- **Private Vault** (this vault): Stays private on iCloud + GitHub private repo, unchanged structure
-- **Public Website Vault**: Separate Quartz project at `/Users/franco/franco.international`, public GitHub repo
+- **Private Vault** : Stays private on iCloud + GitHub private repo, unchanged structure
+- **Public Website Vault**: Separate Quartz project folder , public GitHub repo
 
 ### Publishing Workflow
 1. Add `publish: true` property to notes in private vault that should be published
