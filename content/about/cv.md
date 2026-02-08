@@ -1,5 +1,8 @@
 ---
 title: CV
+created: '2026-02-06'
+tags:
+  - notes
 ---
 
 # Franco Gómez Schumacher
@@ -13,8 +16,6 @@ title: CV
 A high school graduate with a broad international background, currently in a gap year focused on hands-on learning, cultural exchange, and community service. Born in Mexico and raised across China, Panama, and Switzerland, I've explored design and engineering through various independent and structured projects. Academically, I've concentrated on subjects such as biology, mathematics, and geography. My multilingual background has developed both in and outside of the classroom, and I enjoy projects that combine design, emerging technologies, and collaborative problem-solving. I'm an enthusiast endurance athlete who loves being outdoors, including cycling, swimming, running, rowing, hiking and skiing.
 
 ---
-
-## Education
 
 ### [Planned] ETH Zürich (2026–2029)
 - **Mechanical Engineering Bachelor**
@@ -37,8 +38,6 @@ A high school graduate with a broad international background, currently in a gap
 
 ---
 
-## Experience
-
 ### Robotics Research Internship – ETH Zürich (Current)
 **January – February 2026**
 - Assisting in robotics and mechatronics research as part of my Swiss social service
@@ -60,11 +59,7 @@ A high school graduate with a broad international background, currently in a gap
 - **Ergonomic Keyboard Design:** Designed and assembled custom mechanical keyboards, including PCB wiring, case design, and switch configuration
 - **Force Measurement System for Rowers:** Developed a system integrating mechanical, electrical, and biomechanical principles to quantify rowing force per stroke using force sensors and microcontroller data logging
 
-See the [[projects/index|Projects]] section for more detailed project information.
-
 ---
-
-## Skills & Competencies
 
 ### Technical Design
 Shapr3D (CAD), Fusion360 (basic), prototyping, PCB design (KiCad)
@@ -92,3 +87,4 @@ Born in Mexico, raised in Shanghai, Panama, and currently based in Switzerland, 
 ---
 
 *Last updated: February 2026*
+*Web version: https://franco.international/about/cv*
