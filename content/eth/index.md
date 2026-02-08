@@ -1,9 +1,6 @@
 ---
 title: ETH
 ---
-
-# ETH Zürich Academic Notes
-
 This section contains my notes from courses at ETH Zürich's Mechanical Engineering program.
 
 ## About These Notes

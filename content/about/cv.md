@@ -87,4 +87,3 @@ Born in Mexico, raised in Shanghai, Panama, and currently based in Switzerland, 
 ---
 
 *Last updated: February 2026*
-*Web version: https://franco.international/about/cv*

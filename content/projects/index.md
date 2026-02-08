@@ -1,9 +1,6 @@
 ---
 title: Projects
 ---
-
-# Projects
-
 This section showcases various projects I'm working on or have completed, ranging from coding and research to personal experiments.
 
 ## Categories

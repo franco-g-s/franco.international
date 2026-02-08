@@ -1,9 +1,6 @@
 ---
 title: Notes
 ---
-
-# Notes
-
 This section contains general notes, thoughts, and reflections on various topics beyond academic coursework.
 
 ## What You'll Find

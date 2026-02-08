@@ -1,9 +1,6 @@
 ---
 title: About
 ---
-
-# About Me
-
 Hi! I'm Franco Gómez Schumacher, a high school graduate currently in a gap year focused on hands-on learning, cultural exchange, and community service.
 
 Born in Mexico and raised across China, Panama, and Switzerland, I've grown up navigating multicultural environments across four continents. I'm passionate about design, engineering, and projects that combine emerging technologies with collaborative problem-solving.
