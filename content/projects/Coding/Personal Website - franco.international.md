@@ -11,24 +11,25 @@ url:
   - 'https://ewan.my'
 ---
 ## Project Overview
-A self-hosted personal website at **franco.international** that publishes selected content from my private Obsidian vault to the web. The website will showcase my CV, class notes, projects, book reviews, and other public-facing content while keeping my private vault completely separate and secure.
+A personal website at **[franco.international](https://franco.international)** that publishes selected content from this private Obsidian vault to the web. Showcases CV, class notes, projects, book reviews, and other public-facing content while keeping the private vault completely separate and secure.
 
 ## Inspiration
-Heavily inspired by:
 - **[Steph Ango's approach](https://stephango.com/vault)**: Separate vault for website with different structure than private vault
-- **[ewan.my](https://ewan.my/)**: Digital garden built with Quartz, featuring interconnected notes and graph view
+- **[ewan.my](https://ewan.my/)**: Digital garden built with Quartz, featuring interconnected notes, graph view, and Obsidian Bases rendering
 - **[Quartz static site generator](https://quartz.jzhao.xyz/)**: Purpose-built for publishing Obsidian vaults as static websites
 
 ### Two-Vault System
-- **Private Vault** : Stays private on iCloud + GitHub private repo, unchanged structure
-- **Public Website Vault**: Separate Quartz project folder , public GitHub repo
+- **Private Vault**: Stays private on iCloud + GitHub private repo, unchanged structure
+- **Public Website Vault**: Separate Quartz project folder , public GitHub repo at [github.com/franco-g-s/franco.international](https://github.com/franco-g-s/franco.international)
 
-### Publishing Workflow
-1. Add `publish: true` property to notes in private vault that should be published
-2. Publishing script filters notes by property and copies to public website repo
-3. Optional `web-*` properties allow different titles/organization on website
-4. GitHub Pages or Netlify auto-deploys on push
-5. Live at franco.international with custom domain
+This separation ensures: private vault structure stays intact, website has different organization optimized for web, zero risk of exposing private notes, and different structures for different audiences.
+
+### Publishing Flow
+1. Mark notes with `publish: true` in private vault
+2. Run `node scripts/publish.mjs` from website repo (dry-run by default)
+3. Script transforms notes (strips private properties, removes `.base` embeds, strips ``)
+4. Run with `--execute` to publish, preview locally, then push
+5. GitHub Pages auto-deploys on push to main
 
 ### Content to Publish
 - CV and about page
@@ -39,136 +40,58 @@ Heavily inspired by:
 - Public research notes
 
 ## Technology Stack
-- **Static Site Generator**: Quartz v4 (built for Obsidian)
-- **Hosting**: GitHub Pages (free tier with custom domain)
-- **Domain**: franco.international (purchased)
-- **Version Control**: GitHub public repo
-- **Build**: Automatic deployment via GitHub Actions
-- **Features**: Wikilinks, backlinks, graph view, search, responsive design
+- **Static Site Generator**: [Quartz v4.5.2](https://quartz.jzhao.xyz/)
+- **Hosting**: GitHub Pages with custom domain
+- **Domain**: franco.international
+- **Analytics**: Cloudflare Web Analytics
+- **Repository**: [github.com/franco-g-s/franco.international](https://github.com/franco-g-s/franco.international) (public)
+- **Build**: Auto-deployment via GitHub Actions on push
 
-## Website Structure
-The public website will have a different structure than my private vault, optimized for web navigation:
+### Website Features
+- Obsidian wikilinks and backlinks
+- Local + global graph view (conditional: full on homepage, local on other pages)
+- Full-text search
+- Responsive design
+- Cupertino-inspired theme with Inter font and custom blue accent `RGB(50, 130, 247)`
+- Floating controls island (bottom-left): dark mode toggle + reader mode
+- Scroll buttons (bottom-right): top/bottom navigation
+- Reader mode with persistent state and smooth fade transitions
+- Explorer sidebar (desktop collapse disabled, TOC collapse kept)
+- Broken wikilinks rendered as plain text (no dead-link 404s)
+- Date display: created date + last updated date + reading time
+- Tags hidden from published pages
+
+### Website Content Structure
 ```
 content/
-  about/
-    - cv.md
-    - index.md
-  projects/
-    - coding/
-    - research/
-  notes/
-    - machine-learning/
-    - control-systems/
-    - [other topics]
-  books/
-    - reviews/
-    - notes/
-  media/
+  about/         # CV and about page
+  projects/      # Project notes (coding, research, etc.)
+  notes/         # General notes and clippings
+  books/         # Book notes and reviews
+  media/         # Movie notes
+  eth/           # ETH class notes (mirrors vault folder structure)
+  attachments/   # Images and media files
 ```
 
-### Phase 1: Setup ✅
-- [x] Install Quartz locally
-- [x] Initialize empty Quartz project at `/Users/franco/franco.international`
-- [x] Create public GitHub repository
-- [x] Purchase franco.international domain
-- [x] Document project in private vault
-- [x] Update CLAUDE.md with publishing workflow
+Each section has an `index.md` landing page.
 
-### Phase 2: Website Design ✅
-- [x] Design website structure and navigation
-- [x] Configure Quartz (quartz.config.ts - Cupertino theme, fonts, colors)
-- [x] Customize appearance and theme
-  - [x] Cupertino-inspired theme with SF Pro-like fonts (Inter)
-  - [x] Custom blue accent color RGB(50, 130, 247)
-  - [x] Floating controls island (bottom-left) with dark mode + reader mode toggles
-  - [x] Scroll buttons (bottom-right) for top/bottom navigation
-  - [x] Reader mode with persistent state and smooth fade transitions
-  - [x] Disabled Explorer desktop collapse, kept TOC collapse
-  - [x] Conditional graph view (full on homepage, local on other pages)
-- [x] Create initial content (about page, CV, projects overview, ETH section)
-- [x] Test local build and preview
-
-### Phase 3: Publishing Automation (In Progress)
-- [x] Define `publish` property system in private vault
-- [x] Design routing rules (tag/area-based auto-routing + explicit `web-path`)
-- [x] Create `scripts/publish.mjs` in website repo
-- [x] Handle metadata transformation (strip private properties, apply `web-title`)
-- [x] Handle `.base` embed removal and orphaned heading cleanup
-- [x] Handle `` stripping for inline redactions
-- [x] Handle attachment copying
-- [x] Manifest-based change detection and orphan cleanup
-- [x] `web-path` writeback to source notes
-- [x] Dry-run report (default mode)
-- [x] Execute mode with preview + push workflow
-- [ ] Test publishing workflow with diverse notes
-- [ ] Document publishing process
-
-### Phase 4: Deployment (In Progress)
-- [x] Configure GitHub Pages
-- [x] Set up custom domain (franco.international)
-- [x] Configure SSL certificate (automatic via GitHub Pages)
-- [x] Set up analytics (Cloudflare configured in quartz.config.ts)
-- [ ] Test deployment pipeline
-- [ ] Verify all links and navigation work
-
-### Phase 5: Content Population (In Progress)
-- [x] Publish CV and about page
-- [ ] Select and publish class notes
-- [ ] Publish project notes
-- [ ] Publish book reviews
-- [ ] Add navigation and index pages
-
-### Phase 6: Maintenance & Iteration
-- [ ] Set up automated publishing workflow (cron job or GitHub Action)
-- [ ] Create documentation for future updates
-- [ ] Iterate on design based on usage
-- [ ] Expand content over time
-
-### Changes to be made
-- don't show the note's tag on the website
-- update the whole project note with the current state of the whole project and all the project info and structure and functions
-- use the created date property from the personal vault as the date the note was created in the website, but then also include when the note was last updated in the website as well. 
-- the original light/dark mode toggle still appears in it's default place (next to the search bar) when viewing the index note for folders. (it should only appear in the floating island with the reader mode button). 
-
-### Why Not Self-Host on Raspberry Pi?
-- **Free hosting wins**: GitHub Pages is free, zero maintenance, better uptime
-- **No hassle**: No dealing with ISP restrictions, port forwarding, SSL certificates, security patches
-- **Global CDN**: Faster for international visitors
-- **Cost**: $0 vs $100+ upfront + $50-80/year ongoing
-- **Raspberry Pi**: Saved for future projects (home automation, media server, etc.)
-
-### Why Separate Vaults?
-- Keeps private vault structure unchanged (no "Public/" folder cluttering things)
-- Website can have completely different organization optimized for web navigation
-- Zero risk of accidentally exposing private notes
-- Different audiences: personal vault for me, website for public
-- Follows Steph Ango's proven approach
-
-### Why Property-Based Publishing?
-- Fits existing vault's extensive property system
-- Granular control over what gets published
-- Can customize titles/categorization for web (`web-*` properties)
-- No folder structure disruption
-- Easy to automate with script
-
-### How It Works
-The publishing script lives at `franco.international/scripts/publish.mjs`. It scans the private vault for notes with `publish: true`, transforms them (strips private properties, removes `.base` embeds, strips ``), and copies them to the website's `content/` directory.
-
-### Properties
+### Publishing Properties
 - `publish: true` — Required. Marks note for publication
-- `web-path` — Optional. Explicit destination folder (e.g., `about`, `projects/coding`). Auto-populated on first publish if absent
+- `web-path` — Optional. Explicit destination folder (e.g., `about`, `projects/coding`). Auto-populated on first publish
 - `web-title` — Optional. Different title on website (becomes `title` in published frontmatter)
+- `` — Obsidian comments for inline redaction (invisible in Obsidian reading mode, stripped during publishing)
 
 ### Routing Rules (first match wins)
 1. Explicit `web-path` property → use literally
-2. File in `ETH/` → mirror folder structure under `eth/`
+2. File in `ETH/` → mirror folder structure under `eth/` (slugified)
 3. Tag `books` or area `[[Books]]` → `books/`
 4. Tag `movies` or area `[[Movies]]` → `media/`
 5. Tag `project`/`business` or area `[[Projects]]` → `projects/`
 6. Tag `clippings` → `notes/`
 7. Fallback → `notes/`
 
-### Commands
+### Script Commands
+
 ```bash
 node scripts/publish.mjs                  # Dry-run (default)
 node scripts/publish.mjs --execute        # Publish + commit + preview + push
@@ -176,23 +99,104 @@ node scripts/publish.mjs --clean          # Remove all script-created files
 node scripts/publish.mjs --verify         # Check published files match source
 ```
 
-### Safety
-- Dry-run by default — must pass `--execute` to write anything
-- Manifest tracking — only touches files the script created
-- Preview before push — local Quartz server + auto-opens browser for review
-- Private properties always stripped (`people`, `collections`, `expenses`, etc.)
-- `` blocks always stripped
-- Broken wikilinks render as plain text on website (Quartz-side config)
+### Content Transformations
+During publishing, the script:
+- **Strips private frontmatter**: `people`, `collections`, `expenses`, `areas`, `projects`, `related`, `space`, `packing list`, `groups`, `attachments`
+- **Keeps public frontmatter**: `created`, `tags`, `title`, `status`, `url`, `author`, `year`, `genre`, `rating`, `language`, `topics`, `aliases`, `description`, `coordinates`
+- **Removes** `.base` embed lines (`![[*.base*]]`)
+- **Removes** orphaned headings (headings with no content before next heading)
+- **Strips** `` Obsidian comments
+- **Applies** `web-title` → `title` override
+- **Strips** wikilink syntax from remaining properties (`[[Topic]]` → `Topic`)
+- **Formats** dates as YYYY-MM-DD strings
+- **Copies** referenced attachments to `content/attachments/`
 
-## Future Enhancements
-- Add blog/essays section
-- Integrate search analytics to see what people look for
-- Add newsletter/RSS feed for updates
-- Consider adding comments (via GitHub Discussions or similar)
-- Explore interactive elements (executable code blocks like ewan.my)
-- Add more dynamic content (trip maps, book ratings visualizations, etc.)
+### Safety Features
+- **Dry-run by default** — must pass `--execute` to write anything
+- **Manifest tracking** (`.publish-manifest.json`, gitignored) — only touches files the script created
+- **Change detection** — skips unchanged files for clean git diffs
+- **Orphan detection** — removes files whose source no longer has `publish: true`
+- **Preview before push** — starts local Quartz server + auto-opens browser for review
+- **Web-path writeback** — auto-populates routing metadata back to source notes in private vault
+
+### Phase 1: Setup ✅
+- [x] Install Quartz locally
+- [x] Initialize Quartz project
+- [x] Create public GitHub repository
+- [x] Purchase franco.international domain
+- [x] Document project in private vault
+- [x] Update CLAUDE.md with publishing workflow
+
+### Phase 2: Website Design ✅
+- [x] Configure Quartz theme (Cupertino-inspired, Inter fonts, custom colors)
+- [x] Floating controls island with dark mode + reader mode
+- [x] Scroll buttons for navigation
+- [x] Reader mode with persistent state
+- [x] Conditional graph view (full on homepage, local on other pages)
+- [x] Create section index pages (about, projects, notes, books, media, eth)
+
+### Phase 3: Publishing Automation ✅
+- [x] Define `publish` property system
+- [x] Design routing rules
+- [x] Create `scripts/publish.mjs`
+- [x] Metadata transformation and content cleaning
+- [x] Attachment handling
+- [x] Manifest-based change detection and orphan cleanup
+- [x] `web-path` writeback
+- [x] Dry-run report and execute mode with preview
+
+### Phase 4: Deployment ✅
+- [x] Configure GitHub Pages with custom domain
+- [x] SSL certificate (automatic)
+- [x] Cloudflare analytics
+- [x] Broken wikilinks rendered as plain text (Quartz config)
+- [x] Tags hidden from published pages
+- [x] Date display: created date + last updated
+- [x] Dark mode toggle only in floating island (removed from list page sidebar)
+
+### Phase 5: Content Population (In Progress)
+- [x] Publish CV and about page
+- [ ] Select and publish class notes
+- [ ] Publish project notes
+- [ ] Publish book reviews
+
+### Phase 6: Future Enhancements
+- [ ] Obsidian Bases rendering on website (see research below)
+- [ ] QuickAdd script for publishing from within Obsidian
+- [ ] Automated publishing via cron job or GitHub Action
+- [ ] Blog/essays section
+- [ ] Newsletter/RSS feed
+- [ ] Interactive elements (executable code blocks)
+- [ ] Dynamic content (trip maps, book rating visualizations)
+
+## Bases Feature Research
+Ewan's website ([ewan.my](https://ewan.my)) renders `.base` files as interactive card/table views. His implementation is in his [public Quartz fork](https://github.com/gassandrid/ewan.my) and consists of ~4,800 lines of custom TypeScript/SCSS:
+- **Transformer plugin** (`quartz/plugins/transformers/bases.ts`): Parses `.base` YAML, handles inline base code blocks
+- **Emitter plugin** (`quartz/plugins/emitters/base.tsx`): Renders tables, cards, lists, and maps with filtering, sorting, grouping, and summaries
+- **Query engine** (`quartz/util/base/query.ts`): Full filter evaluation, property resolution, formula computation
+- **Type system** (`quartz/util/base/types.ts`): YAML schema parsing, view configurations
+- **UI components**: View selector tabs, search bar, map rendering, card grid layout
+
+This is a substantial feature that would require porting or adapting these files into our Quartz installation. Would be a dedicated project.
+
+### Why Separate Vaults?
+- Private vault structure unchanged (no "Public/" folder)
+- Website has different organization optimized for web
+- Zero risk of exposing private notes
+- Different audiences: personal vault for me, website for public
+
+### Why Property-Based Publishing?
+- Fits existing vault's property system
+- Granular control over what gets published
+- Customize titles/categorization for web (`web-*` properties)
+- No folder structure disruption
+
+### Why GitHub Pages?
+- Free hosting, zero maintenance, better uptime than self-hosting
+- Global CDN for international visitors
+- Automatic SSL with custom domain
+- $0 ongoing cost
 
 ## Related Notes
-- [[Obsidian Rules]] - Core principles for vault organization
-- [[Scripts]] - Automation workflows 
+- [[Obsidian Rules]] - Core vault principles
 - [[Automation]] - Vault automation strategies
