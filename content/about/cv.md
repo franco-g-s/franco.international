@@ -1,9 +1,4 @@
 ---
-created: 2026-02-06T00:00:00.000Z
-tags:
-  - notes
-areas:
-  - '[[About]]'
 title: CV
 ---
 
@@ -65,6 +60,8 @@ A high school graduate with a broad international background, currently in a gap
 - **Ergonomic Keyboard Design:** Designed and assembled custom mechanical keyboards, including PCB wiring, case design, and switch configuration
 - **Force Measurement System for Rowers:** Developed a system integrating mechanical, electrical, and biomechanical principles to quantify rowing force per stroke using force sensors and microcontroller data logging
 
+See the [[projects/index|Projects]] section for more detailed project information.
+
 ---
 
 ## Skills & Competencies
@@ -95,4 +92,3 @@ Born in Mexico, raised in Shanghai, Panama, and currently based in Switzerland, 
 ---
 
 *Last updated: February 2026*
-*Web version: https://franco.international/about/cv*
