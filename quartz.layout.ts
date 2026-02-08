@@ -16,6 +16,8 @@ export const sharedPageComponents: SharedLayout = {
       GitHub: "https://github.com/franco-g-s",
       Email: "mailto:franco@goxcoworld.com",
       Instagram: "https://instagram.com/gsfranco2006/",
+      Strava: "https://www.strava.com/athletes/fgomezschumacher",
+      LinkedIn: "https://www.linkedin.com/in/franco-g%C3%B3mez-schumacher-17a985123/",
     },
   }),
 }

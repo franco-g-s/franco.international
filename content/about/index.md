@@ -26,7 +26,9 @@ The content here represents a curated selection of my notes - things I've learne
 
 - GitHub: [github.com/franco-g-s](https://github.com/franco-g-s)
 - Email: [franco@goxcoworld.com](mailto:franco@goxcoworld.com)
+- Strava: [my profile](https://www.strava.com/athletes/fgomezschumacher)
 - Instagram: [@gsfranco2006](https://www.instagram.com/gsfranco2006/)
+- LinkedIn: [my profile](https://www.linkedin.com/in/franco-g%C3%B3mez-schumacher-17a985123/)
 
 ---
 

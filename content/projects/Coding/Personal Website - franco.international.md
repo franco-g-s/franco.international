@@ -156,6 +156,9 @@ During publishing, the script:
 
 ### Phase 5: Content Population (Paused — waiting for Bases feature)
 - [x] Publish CV and about page
+- [ ] Publish exercise area
+- [ ] Add trips area 
+- [ ] Publish health area
 - [ ] Select and publish class notes
 - [ ] Publish project notes
 - [ ] Publish book reviews

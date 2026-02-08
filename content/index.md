@@ -8,6 +8,7 @@ This is my personal knowledge base and digital garden, where I share my notes, p
 
 - **[[about/index|About Me]]** - Learn more about who I am and what I do
 - **[[eth/index|ETH]]** - Academic notes from my Mechanical Engineering studies
+- [[health/index|Health]] - Sports I do and my health protocol for longevity
 - **[[notes/index|Notes]]** - General notes and reflections on various topics
 - **[[projects/index|Projects]]** - Personal and professional projects I'm working on
 - **[[books/index|Books]]** - Book notes, reviews, and reading reflections
