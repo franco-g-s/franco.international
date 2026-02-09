@@ -1,5 +1,4 @@
 ---
-title: Obsidian Place Note Automation
 created: '2025-11-14'
 tags:
   - project
