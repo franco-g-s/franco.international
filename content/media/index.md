@@ -1,8 +1,17 @@
 ---
 title: Media
 ---
-Notes and reviews of movies, shows, and other media I've consumed.
+Notes and reviews of movies, youtube videos, books, and other media I've consumed.
 
-Uses the same 7-point rating system as books.
+## Rating System
+Media is rated on a 7-point scale:
+- **7** — Perfect (life-changing, must watch/read)
+- **6** — Excellent (highly recommend)
+- **5** — Good (worth watching/reading)
+- **4** — Passable (has merit)
+- **3** — Bad (skip it)
+- **2** — Atrocious (actively avoid)
+- **1** — Evil (harmful)
 
-[Media notes will appear here as they're published]
+
+

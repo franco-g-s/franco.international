@@ -10,6 +10,8 @@ url:
   - 'https://stephango.com/vault'
   - 'https://ewan.my'
 ---
+
+
 ## Project Overview
 A personal website at **[franco.international](https://franco.international)** that publishes selected content from this private Obsidian vault to the web. Showcases CV, class notes, projects, book reviews, and other public-facing content while keeping the private vault completely separate and secure.
 
