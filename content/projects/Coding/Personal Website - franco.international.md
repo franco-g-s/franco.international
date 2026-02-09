@@ -164,6 +164,7 @@ During publishing, the script:
 - [ ] Select and publish class notes
 - [ ] Publish project notes
 - [ ] Publish book reviews
+- [x] Publish select books, movies, and videos
 
 > Paused until Quartz officially merges Bases support (PR #2292). Bases would significantly change how the website is navigated and structured, so it makes sense to wait before investing time in content organization.
 

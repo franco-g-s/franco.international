@@ -26,6 +26,9 @@ topics:
   - Success
 status: in progress
 language: en-US
+image: >-
+  https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781476730776/a-curious-mind-9781476730776_hr.jpg
+isbn: 9781476730776
 ---
 
 > [!info]  [[Post-Read Review - A Curious Mind]]
