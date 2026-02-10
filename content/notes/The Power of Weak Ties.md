@@ -14,6 +14,8 @@ In the case of landing a job, these relationships are also more important than s
 
 The power of weak ties comes from their role as Network Shortcuts that connect otherwise distant clusters. In highly clustered social networks where most people know their neighbors, just a few connections to people outside your immediate circle can reduce the degrees of separation from millions of steps to just six. This structural property explains why weak ties are so effective for spreading movements, finding jobs, and accessing novel information—they provide bridges to entirely different parts of the network that your close friends cannot reach.
 
-<div style="display:none" class="property-backlinks">
-[[media/books/The Power of Habit]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/The Power of Habit]] 
+</p>

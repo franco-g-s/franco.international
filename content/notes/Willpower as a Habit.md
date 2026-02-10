@@ -10,6 +10,8 @@ Willpower by itself isn't a skill, it’s more like a muscle. It can be used up,
 Additionally, the willpower muscle can be strengthened, and when it is, it acts as a keystone habit, spilling good habits into other areas unrelated to where willpower is being exercised. 
 To make willpower a habit, **inflection points** have to be identified and routines have to be planned. Inflections points are times when your willpower runs out. When the inflection points occur, the predetermined routine is followed. Then a reward is received and a [[notes/Habit Loop|habit loop]] is established.
 
-<div style="display:none" class="property-backlinks">
-[[media/books/The Power of Habit]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/The Power of Habit]] 
+</p>

@@ -7,6 +7,8 @@ books:
 ---
 Small wins are little accomplishments that have a disproportionate influence. They leverage tiny advantages into patterns that convince people that bigger achievements are within reach. They have a compounding effect like a snowball and build on each other. They are produced by [[notes/Keystone Habits|Keystone Habits]] and help fuel widespread change.
 
-<div style="display:none" class="property-backlinks">
-[[media/books/The Power of Habit]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/The Power of Habit]] 
+</p>

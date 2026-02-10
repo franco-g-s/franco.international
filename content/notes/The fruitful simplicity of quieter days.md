@@ -15,6 +15,8 @@ A quieter day doesn't mean a less fruitful, rich, or enjoyable day. It's just a 
 
 In a simpler day, we can allow our mind to wander, and a sort of fog is lifted. "As our body relaxes and our mind is soothed, we meditate on what we really want to do with our lives. In place of the conventional aspirations, we might become sensitive to our own authentic ambitions."
 
-<div style="display:none" class="property-backlinks">
-[[media/books/A Simpler Life]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/A Simpler Life]] 
+</p>

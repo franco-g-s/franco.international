@@ -1,3 +1,12 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// Hide property backlinks section (used for link graph only)
+.property-backlinks-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

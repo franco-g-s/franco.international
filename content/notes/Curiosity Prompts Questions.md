@@ -9,6 +9,8 @@ Curiosity can be urgent and trivial. Some questions have kind of impatient compu
 
 “The ability to ask any question embodies two things: the freedom to go chase the answer, and the ability to challenge authority.”
 
-<div style="display:none" class="property-backlinks">
-[[media/books/A Curious Mind]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/A Curious Mind]] 
+</p>

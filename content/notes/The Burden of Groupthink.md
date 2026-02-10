@@ -15,6 +15,8 @@ Having to constantly weigh the legitimacy of our thoughts against the imagined o
 3. **Childishness:**
 	Since children don't know what to think, they often go with their true feelings. Once we stop assuming how we are supposed to feel, we're free to discover what genuinely matters to us.
 
-<div style="display:none" class="property-backlinks">
-[[media/books/A Simpler Life]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/A Simpler Life]] 
+</p>

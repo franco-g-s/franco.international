@@ -367,15 +367,16 @@ function transformContent(content, noteTitleMap = null, frontmatter = null) {
   result = result.trimEnd()
 
   // Add hidden section with property links for backlink crawling
+  // Put wikilinks in paragraph that we'll hide with global CSS
   if (frontmatter && noteTitleMap) {
     const propertyLinks = extractPropertyLinks(frontmatter)
     if (propertyLinks.length > 0) {
-      // Add links in a hidden div that Quartz will crawl but won't display
-      result += '\n\n<div style="display:none" class="property-backlinks">\n'
+      // Add horizontal rule to separate, then links in a paragraph
+      result += '\n\n---\n\n<p class="property-backlinks-hidden">\n'
       for (const link of propertyLinks) {
-        result += `[[${link}]]\n`
+        result += `[[${link}]] `
       }
-      result += "</div>\n"
+      result += '\n</p>\n'
     }
   }
 

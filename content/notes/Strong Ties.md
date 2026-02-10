@@ -11,6 +11,8 @@ Strong ties are firsthand relationships, so friends, coworkers, and people you h
 
 Strong ties create high clustering in social networks—your friends tend to know each other, forming tight-knit groups. While this clustering might seem limiting, it's actually essential for cooperation to emerge. In highly clustered networks, people interact repeatedly with the same small group, which fosters trust, accountability, and cooperative behavior. The paradox of social networks is that you need both: strong ties to create the clusters where cooperation thrives, and [[notes/Weak Ties|weak ties]] to create the shortcuts that make the world small.
 
-<div style="display:none" class="property-backlinks">
-[[media/books/The Power of Habit]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/The Power of Habit]] 
+</p>

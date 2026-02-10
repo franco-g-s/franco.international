@@ -37,6 +37,8 @@ Once you’ve identified the components of the habit loop, you can change to a p
 Because habits form when allow our brain to follow cues, execute routines, and receive rewards on our behalf, we need to begin making choices again to break the formula. The easiest way to do this is to have a plan, write it down, and execute it. 
 Sometimes, changing habits can take a long time, and it might require repeated experiments and failures, but eventually, you will gain power over it.
 
-<div style="display:none" class="property-backlinks">
-[[media/books/The Power of Habit]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/The Power of Habit]] 
+</p>

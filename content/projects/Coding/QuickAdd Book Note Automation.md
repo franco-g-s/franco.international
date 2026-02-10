@@ -212,6 +212,8 @@ Both scripts follow the same design pattern:
 3. Smart create or update logic
 4. Open result
 
-<div style="display:none" class="property-backlinks">
-[[projects/Coding/QuickAdd Place Note Automation]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[projects/Coding/QuickAdd Place Note Automation]] 
+</p>

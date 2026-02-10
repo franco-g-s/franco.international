@@ -35,7 +35,8 @@ In a simpler day, we can allow our mind to wander, and a sort of fog is lifted. 
 
 The paradox resolves when we recognize that less can be more. By doing fewer things with more attention and presence, we experience life more richly than when we frantically try to maximize everything. The small pleasures we overlook in our busyness are often the very things that give life meaning and richness.
 
-<div style="display:none" class="property-backlinks">
-[[media/books/A Simpler Life]]
-[[notes/The fruitful simplicity of quieter days]]
-</div>
+---
+
+<p class="property-backlinks-hidden">
+[[media/books/A Simpler Life]] [[notes/The fruitful simplicity of quieter days]] 
+</p>
