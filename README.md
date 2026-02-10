@@ -42,7 +42,7 @@ This repository contains the public-facing website. Content is selectively publi
 - `FrontmatterProperties`: Displays note metadata in collapsible Obsidian-style panel
 - Enhanced Explorer with single-line overflow
 - Collapsible Table of Contents
-- Always-visible Backlinks
+- Always-visible Backlinks with property link support (backlinks from frontmatter wikilinks)
 
 ## Features
 
@@ -54,6 +54,7 @@ This repository contains the public-facing website. Content is selectively publi
 - 🗂️ File explorer navigation
 - 📋 **Frontmatter properties display** - Obsidian-style metadata panel showing 30+ property types
 - 🔗 **Intelligent wikilink resolution** - Case-insensitive, alias-aware link transformation
+- 🔙 **Property backlinks** - Backlinks generated from wikilinks in frontmatter properties (Obsidian-like behavior)
 - 🎨 Cupertino-inspired design with custom Inter typography
 
 ## Structure
