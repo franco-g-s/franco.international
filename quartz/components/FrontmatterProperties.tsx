@@ -7,10 +7,15 @@ interface FrontmatterPropertiesOptions {
    * Properties to display (in order)
    */
   properties?: string[]
+  /**
+   * Whether properties should be collapsed by default
+   */
+  collapsed?: boolean
 }
 
 const defaultOptions: FrontmatterPropertiesOptions = {
   properties: ["status", "author", "year", "genre", "rating", "language", "topics"],
+  collapsed: false,
 }
 
 export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
@@ -25,12 +30,22 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
 
     const properties: JSX.Element[] = []
 
-    // Helper to format array values
-    const formatValue = (value: any): string => {
+    // Helper to render value(s) - handles arrays
+    const renderValue = (value: any): JSX.Element => {
       if (Array.isArray(value)) {
-        return value.join(", ")
+        if (value.length === 0) return <></>
+        return (
+          <>
+            {value.map((item, idx) => (
+              <>
+                <span class="property-value-item">{String(item)}</span>
+                {idx < value.length - 1 && <span class="property-separator">, </span>}
+              </>
+            ))}
+          </>
+        )
       }
-      return String(value)
+      return <span class="property-value-item">{String(value)}</span>
     }
 
     // Helper to create property label
@@ -51,16 +66,18 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
         // Special handling for rating (show as X/7)
         if (prop === "rating") {
           properties.push(
-            <div class="property">
-              <span class="property-label">Rating:</span>
-              <span class="property-value rating">{value}/7</span>
+            <div class="property-row">
+              <div class="property-key">{formatLabel(prop)}</div>
+              <div class="property-value">
+                <span class="property-value-item rating-value">{value}/7</span>
+              </div>
             </div>,
           )
         } else {
           properties.push(
-            <div class="property">
-              <span class="property-label">{formatLabel(prop)}:</span>
-              <span class="property-value">{formatValue(value)}</span>
+            <div class="property-row">
+              <div class="property-key">{formatLabel(prop)}</div>
+              <div class="property-value">{renderValue(value)}</div>
             </div>,
           )
         }
@@ -69,50 +86,128 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
 
     if (properties.length === 0) return null
 
+    const collapsedClass = options.collapsed ? "is-collapsed" : ""
+
     return (
-      <div class={classNames(displayClass, "frontmatter-properties")}>
-        {properties}
+      <div class={classNames(displayClass, "frontmatter-properties", collapsedClass)}>
+        <details open={!options.collapsed}>
+          <summary>
+            <svg
+              class="fold-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            <span class="properties-title">Properties</span>
+          </summary>
+          <div class="properties-list">{properties}</div>
+        </details>
       </div>
     )
   }
 
   FrontmatterProperties.css = `
 .frontmatter-properties {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.5rem;
   margin: 1rem 0;
-  padding: 0.75rem 0;
-  border-top: 1px solid var(--lightgray);
-  border-bottom: 1px solid var(--lightgray);
-  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--lightgray);
+  border-radius: 8px;
+  font-size: 0.85rem;
 }
 
-.frontmatter-properties .property {
+.frontmatter-properties details {
+  cursor: default;
+}
+
+.frontmatter-properties summary {
   display: flex;
-  gap: 0.4rem;
-  align-items: baseline;
-}
-
-.frontmatter-properties .property-label {
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
   font-weight: 600;
   color: var(--darkgray);
+  list-style: none;
+  padding: 0.25rem 0;
+}
+
+.frontmatter-properties summary::-webkit-details-marker {
+  display: none;
+}
+
+.frontmatter-properties .fold-icon {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.frontmatter-properties details[open] .fold-icon {
+  transform: rotate(0deg);
+}
+
+.frontmatter-properties details:not([open]) .fold-icon {
+  transform: rotate(-90deg);
+}
+
+.frontmatter-properties .properties-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.frontmatter-properties .properties-list {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.frontmatter-properties .property-row {
+  display: grid;
+  grid-template-columns: minmax(100px, auto) 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.frontmatter-properties .property-key {
+  font-weight: 500;
+  color: var(--darkgray);
+  font-size: 0.85rem;
 }
 
 .frontmatter-properties .property-value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
   color: var(--dark);
+  font-size: 0.85rem;
 }
 
-.frontmatter-properties .property-value.rating {
+.frontmatter-properties .property-value-item {
+  display: inline;
+}
+
+.frontmatter-properties .property-separator {
+  display: inline;
+}
+
+.frontmatter-properties .rating-value {
   font-weight: 600;
   color: var(--secondary);
 }
 
-/* Mobile: stack properties vertically with less gap */
+/* Mobile: adjust grid columns */
 @media (max-width: 600px) {
-  .frontmatter-properties {
-    flex-direction: column;
-    gap: 0.5rem;
+  .frontmatter-properties .property-row {
+    grid-template-columns: minmax(80px, auto) 1fr;
+    gap: 0.75rem;
   }
 }
 `
