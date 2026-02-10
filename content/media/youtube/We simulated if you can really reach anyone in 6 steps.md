@@ -22,9 +22,11 @@ image: 'https://img.youtube.com/vi/CYlon2tvywA/maxresdefault.jpg'
 > [!summary] Description:
 > The beautiful math behind six degrees of separation. Sponsored by Incogni - use code veritasium at https://incogni.com/veritasium to get an exclusive 60% off...
 
+!YouTube Video Notes.base
+
 ### Transcript
 > [!info] Key Takeaways
-> [[Six Degrees of Separation - Key Takeaways]] 
+> Six Degrees of Separation - Key Takeaways 
 
 ## What is six degrees of separation?
 

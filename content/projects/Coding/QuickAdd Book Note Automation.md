@@ -3,6 +3,9 @@ created: '2026-02-09'
 tags:
   - project
 status: completed
+related:
+  - QuickAdd Place Note Automation
+  - Obsidian Rules
 topics:
   - Obsidian
   - QuickAdd
@@ -24,7 +27,7 @@ QuickAdd script that automatically fetches book metadata from Google Books API a
 - ✅ Create new book notes OR update existing ones
 - ✅ Smart metadata merging (only fills in missing fields)
 - ✅ Fuzzy title matching (prevents duplicate notes)
-- ✅ Auto-wikilink authors: `[[Author Name]]`
+- ✅ Auto-wikilink authors: `Author Name`
 - ✅ Clean genre formatting (extracts main categories)
 - ✅ High-resolution cover images
 - ✅ Language code expansion (en → en-US)
@@ -71,8 +74,8 @@ QuickAdd script that automatically fetches book metadata from Google Books API a
 |------------------|----------------|--------|
 | `volumeInfo.title` | Filename | `Title.md` |
 | `volumeInfo.publishedDate` | `year` | Extracted year (e.g., `2018`) |
-| `volumeInfo.authors[]` | `author` | Wikilinked list: `["[[James Clear]]"]` |
-| `volumeInfo.categories[]` | `genre` | Wikilinked list: `["[[Self-Help]]"]` |
+| `volumeInfo.authors[]` | `author` | Wikilinked list: `["James Clear"]` |
+| `volumeInfo.categories[]` | `genre` | Wikilinked list: `["Self-Help"]` |
 | `volumeInfo.language` | `language` | Expanded code: `en-US` |
 | `volumeInfo.imageLinks.extraLarge` | `image` | URL string (high-res) |
 | `volumeInfo.industryIdentifiers` | `isbn` | ISBN-13 or ISBN-10 |
@@ -127,13 +130,13 @@ created: 2026-02-09
 tags:
   - books
 areas:
-  - "[[Books]]"
+  - "Books"
 year: 2018
 author:
-  - "[[James Clear]]"
+  - "James Clear"
 genre:
-  - "[[Self-Help]]"
-  - "[[Psychology]]"
+  - "Self-Help"
+  - "Psychology"
 topics:
 status: not started
 rating:
@@ -143,8 +146,9 @@ isbn: 9780735211292
 people:
 ---
 
-> [!info]  [[Post-Read Review - Atomic Habits]]
+> [!info]  Post-Read Review - Atomic Habits
 
+!Book Notes.base
 ```
 
 ## Limitations
@@ -198,7 +202,7 @@ Potential improvements:
 ## Related Automation
 
 Similar pattern to:
-- [[QuickAdd Place Note Automation]] - Creates/updates city and country notes with coordinates from OpenStreetMap
+- [[projects/Coding/QuickAdd Place Note Automation|QuickAdd Place Note Automation]] - Creates/updates city and country notes with coordinates from OpenStreetMap
 
 Both scripts follow the same design pattern:
 1. User input

@@ -27,4 +27,6 @@ image: >-
 isbn: 9781473545557
 ---
 
-> [!info]  [[Post-Read Review - Four Thousand Weeks]]
+> [!info]  Post-Read Review - Four Thousand Weeks
+
+!Book Notes.base

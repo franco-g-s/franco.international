@@ -36,4 +36,6 @@ rating: 5
 language: en-US
 ---
 
-> [!info]  [[Post-Watch Review - Interstellar]]
+> [!info]  Post-Watch Review - Interstellar
+
+!Movie Notes.base

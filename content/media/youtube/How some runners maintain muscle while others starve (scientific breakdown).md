@@ -21,6 +21,8 @@ image: 'https://img.youtube.com/vi/sdXtwJOWzl8/maxresdefault.jpg'
 > [!summary] Description:
 > Most runners think running and building muscle don't mix.. but they're half right.If you don't fuel, lift, and train smart, your body will burn your muscle b...
 
+!YouTube Video Notes.base
+
 ## Introduction
 Running doesn't just burn fat—it will actually burn your muscles first if you make the same mistakes that I did. I went from looking like this to this in only 50 days running the same amount of mileage. And I just remember thinking, why did I put in so much work at the gym if I'm going to lose everything in only 50 days?
 

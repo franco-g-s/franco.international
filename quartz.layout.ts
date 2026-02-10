@@ -61,7 +61,7 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.DesktopOnly(Component.TableOfContents({ collapseByDefault: true })),
-    Component.Backlinks(),
+    Component.Backlinks({ hideWhenEmpty: false }),
   ],
 }
 

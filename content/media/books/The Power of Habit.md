@@ -31,4 +31,7 @@ image: >-
 isbn: 9780812981605
 ---
 
-> [!info]  [[Post-Read Review - The Power of Habit]]
+> [!info]  Post-Read Review - The Power of Habit
+
+
+!Book Notes.base

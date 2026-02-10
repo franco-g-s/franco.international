@@ -25,11 +25,13 @@ rating: 7
 language: en-US
 ---
 
-> [!info]  [[Post-Watch Review - The Secret Life of Walter Mitty]]
+> [!info]  Post-Watch Review - The Secret Life of Walter Mitty
+
+!Movie Notes.base
 
 ## Key Scene: The Snow Leopard
 
-The film contains a powerful moment about presence and documentation that relates to [[The Broadcasting Paradox of Modern Travel]]. When Walter finally finds Sean O'Connell (the photographer he's been searching for), Sean is positioned to photograph a rare snow leopard. But when the animal appears, Sean doesn't take the picture.
+The film contains a powerful moment about presence and documentation that relates to The Broadcasting Paradox of Modern Travel. When Walter finally finds Sean O'Connell (the photographer he's been searching for), Sean is positioned to photograph a rare snow leopard. But when the animal appears, Sean doesn't take the picture.
 
 Walter asks: "When are you going to take it?"
 

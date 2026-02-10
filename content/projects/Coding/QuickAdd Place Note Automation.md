@@ -3,11 +3,16 @@ created: '2025-11-14'
 tags:
   - project
 status: completed
+related:
+  - Countries
+  - Cities
+  - Scripts
+  - Automation
 ---
 
-**Script Location:** `Scripts/place.js` ([[place.js]])
+**Script Location:** `Scripts/place.js` (place.js)
 **QuickAdd Command:** `QuickAdd: Place`
-**Developed with:** [[Claude]]
+**Developed with:** Claude
 
 ### Overview
 Automated QuickAdd script that creates or updates city and country notes with:
@@ -100,3 +105,9 @@ This script replaces the previous `/place` slash command that used:
 - Icon addition failures don't block note creation
 - API failures show user-friendly error messages
 - Graceful degradation throughout
+
+### Notes
+!Notes.base
+
+### Resources
+!Resources.base

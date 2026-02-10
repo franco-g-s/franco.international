@@ -2,16 +2,22 @@
 created: '2026-01-31'
 tags:
   - book-notes
+collections:
+  - Paradoxes
 books:
   - A Simpler Life
 topics:
   - Mindfulness
   - Presence
   - Simplicity
+related:
+  - The fruitful simplicity of quieter days
+  - Living in the Present Moment
+  - Being Present and Mindful
 ---
 ## The Paradox
 
-We miss out on the small things that are right in front of us when we try to maximize and do everything. Busyness, intended to make our lives richer and fuller, actually impoverishes our experience by blinding us to what's already present.
+We miss out on the small things that are right in front of us when we try to maximize and do everything. Busyness, intended to make our lives richer and fuller, actually impoverishes our experience by blinding us to what's already present. 
 
 ## The Insight
 

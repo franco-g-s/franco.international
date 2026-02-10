@@ -31,4 +31,6 @@ image: >-
 isbn: 9781476730776
 ---
 
-> [!info]  [[Post-Read Review - A Curious Mind]]
+> [!info]  Post-Read Review - A Curious Mind
+
+!Book Notes.base

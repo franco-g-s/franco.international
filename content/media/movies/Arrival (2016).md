@@ -30,4 +30,6 @@ rating: 5
 language: en-US
 ---
 
-> [!info]  [[Post-Watch Review - Arrival]]
+> [!info]  Post-Watch Review - Arrival
+
+!Movie Notes.base

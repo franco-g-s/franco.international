@@ -6,7 +6,7 @@ status: completed
 url:
   - 'https://github.com/franco-g-s/fda-watch-digest/tree/main'
 ---
-Automated FDA regulatory monitoring system that uses the **Federal Register API** and **eCFR API** to detect regulatory changes and generate AI-powered summaries for quick impact assessment. This project was part of my Internship at [[Accelerated Biosciences|Accelerated Biosciences]] in Taiwan. 
+Automated FDA regulatory monitoring system that uses the **Federal Register API** and **eCFR API** to detect regulatory changes and generate AI-powered summaries for quick impact assessment. This project was part of my Internship at Accelerated Biosciences in Taiwan. 
 
 ## Overview
 **Problem:** Manually monitoring FDA regulatory publications and CFR regulation changes is time-consuming and risks missing important updates that could impact business operations.

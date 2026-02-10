@@ -22,6 +22,8 @@ image: 'https://img.youtube.com/vi/FjV3tkrCYIY/maxresdefault.jpg'
 > [!summary] Description:
 > It's 2004, and two men set out on a trip not knowing they were about to create one of the last portraits of a world that was right on the precipice of changing forever.
 
+!YouTube Video Notes.base
+
 ## Two Seasons, Two Decades
 
 Everyone thinks my bike looks like a piece of  old crap, but they’ll see. Don’t judge a book   by its cover, you know? That’s what I say. I honestly didn’t think this would become  

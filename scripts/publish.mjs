@@ -260,8 +260,44 @@ function computeRoute(note) {
 
 // ── Content Transformation ─────────────────────────────────────────────
 
-function transformContent(content) {
+/**
+ * Transform wikilinks to use correct web paths
+ * @param {string} content - The markdown content
+ * @param {Map} noteTitleMap - Map of note titles (lowercase) to {webPath, filename, basename}
+ * @returns {string} - Content with transformed wikilinks
+ */
+function transformWikilinks(content, noteTitleMap) {
+  // Match [[Title]] or [[Title|Display Text]] or [[Title#heading]]
+  const wikilinkRegex = /\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]/g
+
+  return content.replace(wikilinkRegex, (match, title, heading, displayText) => {
+    const normalizedTitle = title.trim().toLowerCase()
+
+    // Look up the note in our mapping
+    const target = noteTitleMap.get(normalizedTitle)
+
+    if (!target) {
+      // Note not found in published notes - keep as plain text (broken link)
+      return displayText || title
+    }
+
+    // Build the full path
+    const fullPath = target.webPath ? `${target.webPath}/${target.basename}` : target.basename
+    const display = displayText || title
+    const headingPart = heading ? `#${heading}` : ""
+
+    // Return transformed wikilink with full path
+    return `[[${fullPath}${headingPart}|${display}]]`
+  })
+}
+
+function transformContent(content, noteTitleMap = null) {
   let result = content
+
+  // Transform wikilinks if we have the mapping
+  if (noteTitleMap) {
+    result = transformWikilinks(result, noteTitleMap)
+  }
 
   // Strip %%...%% comments (single-line and multi-line)
   result = result.replace(/%%[\s\S]*?%%/g, "")
@@ -402,6 +438,33 @@ function buildPublishPlan() {
     webPathWritebacks: [],
   }
 
+  // Build note title map for wikilink resolution
+  // Map: title (lowercase) → {webPath, basename, filename}
+  const noteTitleMap = new Map()
+  for (const note of notes) {
+    const { webPath } = computeRoute(note)
+    const filename = path.basename(note.fullPath)
+    const basename = path.basename(note.fullPath, ".md")
+
+    // Add by filename (without extension)
+    const normalizedTitle = basename.toLowerCase()
+    noteTitleMap.set(normalizedTitle, { webPath, basename, filename })
+
+    // Also add by frontmatter title if it exists and differs
+    if (note.data.title && note.data.title.toLowerCase() !== normalizedTitle) {
+      noteTitleMap.set(note.data.title.toLowerCase(), { webPath, basename, filename })
+    }
+
+    // Add by aliases
+    if (note.data.aliases && Array.isArray(note.data.aliases)) {
+      for (const alias of note.data.aliases) {
+        if (typeof alias === "string") {
+          noteTitleMap.set(alias.toLowerCase(), { webPath, basename, filename })
+        }
+      }
+    }
+  }
+
   // Collect all published note filenames for broken link detection
   const publishedFiles = new Set()
   for (const note of notes) {
@@ -414,8 +477,8 @@ function buildPublishPlan() {
     const targetPath = path.join(CONTENT_DIR, webPath, filename)
     const relativeTarget = path.relative(WEBSITE_ROOT, targetPath)
 
-    // Transform content
-    const transformedContent = transformContent(note.content)
+    // Transform content with wikilink resolution
+    const transformedContent = transformContent(note.content, noteTitleMap)
     const transformedFrontmatter = transformFrontmatter(note.data)
     const publishedOutput = matter.stringify(transformedContent, transformedFrontmatter)
     const hash = contentHash(publishedOutput)

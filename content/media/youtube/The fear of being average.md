@@ -20,6 +20,8 @@ image: 'https://img.youtube.com/vi/BLl3xREFEsY/maxresdefault.jpg'
 > [!summary] Description:
 > Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.
 
+!YouTube Video Notes.base
+
 ### Transcript
 Life is good.
 Our entire lives, we've been taught that

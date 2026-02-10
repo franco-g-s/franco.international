@@ -28,4 +28,6 @@ image: >-
 isbn: 9781446490594
 ---
 
-> [!info]  [[Post-Read Review - The 4-Hour Workweek]]
+> [!info]  Post-Read Review - The 4-Hour Workweek
+
+!Book Notes.base

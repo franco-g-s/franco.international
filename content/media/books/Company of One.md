@@ -25,4 +25,6 @@ image: >-
 isbn: 9780241380239
 ---
 
-> [!info]  [[Post-Read Review - Company of One]]
+> [!info]  Post-Read Review - Company of One
+
+!Book Notes.base

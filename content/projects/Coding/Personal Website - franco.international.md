@@ -86,9 +86,9 @@ Each section has an `index.md` landing page.
 ### Routing Rules (first match wins)
 1. Explicit `web-path` property → use literally
 2. File in `ETH/` → mirror folder structure under `eth/` (slugified)
-3. Tag `books` or area `[[Books]]` → `books/`
-4. Tag `movies` or area `[[Movies]]` → `media/`
-5. Tag `project`/`business` or area `[[Projects]]` → `projects/`
+3. Tag `books` or area `Books` → `books/`
+4. Tag `movies` or area `Movies` → `media/`
+5. Tag `project`/`business` or area `Projects` → `projects/`
 6. Tag `clippings` → `notes/`
 7. Fallback → `notes/`
 
@@ -105,11 +105,11 @@ node scripts/publish.mjs --verify         # Check published files match source
 During publishing, the script:
 - **Strips private frontmatter**: `people`, `collections`, `expenses`, `areas`, `projects`, `related`, `space`, `packing list`, `groups`, `attachments`
 - **Keeps public frontmatter**: `created`, `tags`, `title`, `status`, `url`, `author`, `year`, `genre`, `rating`, `language`, `topics`, `aliases`, `description`, `coordinates`
-- **Removes** `.base` embed lines (`![[*.base*]]`)
+- **Removes** `.base` embed lines (`!*.base*`)
 - **Removes** orphaned headings (headings with no content before next heading)
 - **Strips** `` Obsidian comments
 - **Applies** `web-title` → `title` override
-- **Strips** wikilink syntax from remaining properties (`[[Topic]]` → `Topic`)
+- **Strips** wikilink syntax from remaining properties (`Topic` → `Topic`)
 - **Formats** dates as YYYY-MM-DD strings
 - **Copies** referenced attachments to `content/attachments/`
 
@@ -222,5 +222,5 @@ This code is now being contributed upstream as PR #2292, so porting it manually 
 - $0 ongoing cost
 
 ## Related Notes
-- [[Obsidian Rules]] - Core vault principles
-- [[Automation]] - Vault automation strategies
+- Obsidian Rules - Core vault principles
+- Automation - Vault automation strategies

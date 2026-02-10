@@ -20,4 +20,6 @@ rating: 7
 language: en-US
 ---
 
-> [!info]  [[Post-Watch Review - Groundhog Day]]
+> [!info]  Post-Watch Review - Groundhog Day
+
+!Movie Notes.base

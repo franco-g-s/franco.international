@@ -23,6 +23,8 @@ image: 'https://img.youtube.com/vi/FmZH3Svbjho/maxresdefault.jpg'
 > [!summary] Description:
 > I took the Everything Presence One sensor from ‪@EverythingSmartHome‬ and made it even better, with a custom 3D printed ceiling mount and PoE power. Perfect presence sensing for every room.
 
+!YouTube Video Notes.base
+
 ### Transcript
 If you've spent any time trying to build the perfect smart home, you already know that sensors are everything.
 

@@ -47,6 +47,10 @@ ul.toc-content.overflow {
   overscroll-behavior: contain;
   list-style: none;
 
+  &.collapsed {
+    display: none;
+  }
+
   & > li > a {
     color: var(--dark);
     opacity: 0.35;

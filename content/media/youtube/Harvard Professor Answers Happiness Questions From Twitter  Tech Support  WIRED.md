@@ -24,6 +24,8 @@ image: 'https://img.youtube.com/vi/vTmixSgeOI0/maxresdefault.jpg'
 > [!summary] Description:
 > Harvard professor and "How to Build a Life" columnist Arthur C. Brooks answers the internet's burning questions about "happiness." Does anyone else feel depr...
 
+!YouTube Video Notes.base
+
 ## Introduction
 I'm Arthur Brooks, a professor at Harvard University and the happiness columnist at "The Atlantic." I'm here today to answer your questions on Twitter. This is Happiness Support.
 
