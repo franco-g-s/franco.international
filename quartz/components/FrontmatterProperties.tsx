@@ -14,7 +14,58 @@ interface FrontmatterPropertiesOptions {
 }
 
 const defaultOptions: FrontmatterPropertiesOptions = {
-  properties: ["status", "author", "year", "genre", "rating", "language", "topics"],
+  properties: [
+    // Basic metadata
+    "title",
+    "source",
+    "author",
+    "published",
+    "description",
+
+    // Status & rating
+    "status",
+    "rating",
+
+    // Dates
+    "start",
+    "end",
+    "due",
+    "date",
+    "filming_date",
+    "filmed",
+
+    // Categorization
+    "type",
+    "categories",
+    "genre",
+    "seasons",
+
+    // References & links
+    "url",
+    "topics",
+    "books",
+    "clippings",
+    "collections",
+    "trips",
+
+    // Location
+    "countries",
+    "cities",
+    "coordinates",
+
+    // Media metadata (movies, videos)
+    "cast",
+    "director",
+    "producer",
+    "writer",
+    "duration",
+    "year",
+    "language",
+
+    // Other
+    "r-value",
+    "aliases",
+  ],
   collapsed: false,
 }
 
@@ -50,9 +101,24 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
 
     // Helper to create property label
     const formatLabel = (key: string): string => {
-      // Capitalize first letter and handle special cases
-      if (key === "url") return "URL"
-      return key.charAt(0).toUpperCase() + key.slice(1)
+      // Handle special cases
+      const specialCases: Record<string, string> = {
+        url: "URL",
+        "r-value": "R-Value",
+        filming_date: "Filming Date",
+        filmed: "Filmed",
+        due: "Due Date",
+      }
+
+      if (specialCases[key]) {
+        return specialCases[key]
+      }
+
+      // Convert underscores to spaces and capitalize each word
+      return key
+        .split("_")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ")
     }
 
     // Iterate through configured properties

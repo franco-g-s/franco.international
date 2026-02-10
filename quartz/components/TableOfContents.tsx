@@ -11,15 +11,18 @@ import { concatenateResources } from "../util/resources"
 
 interface Options {
   layout: "modern" | "legacy"
+  collapseByDefault?: boolean
 }
 
 const defaultOptions: Options = {
   layout: "modern",
+  collapseByDefault: true,
 }
 
 let numTocs = 0
 export default ((opts?: Partial<Options>) => {
   const layout = opts?.layout ?? defaultOptions.layout
+  const collapseByDefault = opts?.collapseByDefault ?? defaultOptions.collapseByDefault
   const { OverflowList, overflowListAfterDOMLoaded } = OverflowListFactory()
   const TableOfContents: QuartzComponent = ({
     fileData,
@@ -30,14 +33,15 @@ export default ((opts?: Partial<Options>) => {
       return null
     }
 
+    const isCollapsed = fileData.collapseToc ?? collapseByDefault
     const id = `toc-${numTocs++}`
     return (
       <div class={classNames(displayClass, "toc")}>
         <button
           type="button"
-          class={fileData.collapseToc ? "collapsed toc-header" : "toc-header"}
+          class={isCollapsed ? "collapsed toc-header" : "toc-header"}
           aria-controls={id}
-          aria-expanded={!fileData.collapseToc}
+          aria-expanded={!isCollapsed}
         >
           <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
           <svg
@@ -57,7 +61,7 @@ export default ((opts?: Partial<Options>) => {
         </button>
         <OverflowList
           id={id}
-          class={fileData.collapseToc ? "collapsed toc-content" : "toc-content"}
+          class={isCollapsed ? "collapsed toc-content" : "toc-content"}
         >
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
@@ -78,8 +82,9 @@ export default ((opts?: Partial<Options>) => {
     if (!fileData.toc) {
       return null
     }
+    const isCollapsed = fileData.collapseToc ?? collapseByDefault
     return (
-      <details class="toc" open={!fileData.collapseToc}>
+      <details class="toc" open={!isCollapsed}>
         <summary>
           <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
         </summary>

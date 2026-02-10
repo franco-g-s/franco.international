@@ -54,21 +54,61 @@ const STRIP_PROPERTIES = new Set([
 
 // Properties to keep in published frontmatter
 const KEEP_PROPERTIES = new Set([
+  // Basic metadata
   "created",
   "tags",
   "title",
-  "status",
-  "url",
+  "source",
   "author",
-  "year",
-  "genre",
-  "rating",
-  "language",
-  "topics",
-  "aliases",
+  "published",
   "description",
-  "coordinates",
   "web-description",
+
+  // Status & rating
+  "status",
+  "rating",
+
+  // Dates
+  "start",
+  "end",
+  "due",
+  "date",
+  "filming_date",
+  "filmed",
+
+  // Categorization
+  "type",
+  "categories",
+  "genre",
+  "seasons",
+
+  // References & links
+  "url",
+  "topics",
+  "books",
+  "clippings",
+  "collections",
+  "trips",
+
+  // Location
+  "countries",
+  "cities",
+  "coordinates",
+
+  // Media metadata
+  "cast",
+  "director",
+  "producer",
+  "writer",
+  "duration",
+  "year",
+  "language",
+  "image",
+
+  // Other
+  "r-value",
+  "aliases",
+  "cssclasses",
 ])
 
 // Image/media extensions for attachment detection
@@ -132,9 +172,9 @@ function findPublishableNotes() {
 }
 
 function walkDir(dir, notes) {
-  // Skip hidden dirs, node_modules, .obsidian, Attachments
+  // Skip hidden dirs, node_modules, .obsidian, Attachments, Templates
   const basename = path.basename(dir)
-  if (basename.startsWith(".") || basename === "node_modules" || basename === "Attachments") return
+  if (basename.startsWith(".") || basename === "node_modules" || basename === "Attachments" || basename === "Templates") return
 
   let entries
   try {
