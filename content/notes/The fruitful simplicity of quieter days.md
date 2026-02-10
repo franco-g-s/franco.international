@@ -14,3 +14,9 @@ A quieter day doesn't mean a less fruitful, rich, or enjoyable day. It's just a 
 "In our slower days, we have the time, and the patience, to notice what at first seem like small sources of pleasure. As we appreciate them, we are able to realize how important and moving they really are – and how much we missed out on when, in our busier time, we tried to do everything."
 
 In a simpler day, we can allow our mind to wander, and a sort of fog is lifted. "As our body relaxes and our mind is soothed, we meditate on what we really want to do with our lives. In place of the conventional aspirations, we might become sensitive to our own authentic ambitions."
+
+<div style="display:none" class="property-backlinks">
+[[A Simpler Life]]
+[[Intentionality]]
+[[Simplicity]]
+</div>

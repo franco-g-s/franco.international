@@ -14,3 +14,8 @@ Having to constantly weigh the legitimacy of our thoughts against the imagined o
 	We tend to crave validation from others, but if we trusted that we were decent and good, we wouldn't be as affected by other's opinions about us. This is hard, since we know all our own weaknesses and shortcomings, and we have no comparable information on others. When we are too hard on ourselves, it is important to re-observe how hard it is to be ourselves. 
 3. **Childishness:**
 	Since children don't know what to think, they often go with their true feelings. Once we stop assuming how we are supposed to feel, we're free to discover what genuinely matters to us.
+
+<div style="display:none" class="property-backlinks">
+[[A Simpler Life]]
+[[Groupthink]]
+</div>

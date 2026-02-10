@@ -291,7 +291,37 @@ function transformWikilinks(content, noteTitleMap) {
   })
 }
 
-function transformContent(content, noteTitleMap = null) {
+/**
+ * Extract wikilinks from frontmatter for backlink crawling
+ * Returns array of wikilink paths (e.g., ["notes/File Name", "books/Book Title"])
+ */
+function extractPropertyLinks(frontmatter) {
+  const links = []
+  const wikilinkRegex = /\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g
+
+  // Check all property values for wikilinks
+  for (const value of Object.values(frontmatter)) {
+    if (typeof value === "string") {
+      let match
+      while ((match = wikilinkRegex.exec(value)) !== null) {
+        links.push(match[1].trim())
+      }
+    } else if (Array.isArray(value)) {
+      for (const item of value) {
+        if (typeof item === "string") {
+          let match
+          while ((match = wikilinkRegex.exec(item)) !== null) {
+            links.push(match[1].trim())
+          }
+        }
+      }
+    }
+  }
+
+  return links
+}
+
+function transformContent(content, noteTitleMap = null, frontmatter = null) {
   let result = content
 
   // Transform wikilinks if we have the mapping
@@ -334,7 +364,20 @@ function transformContent(content, noteTitleMap = null) {
   result = result.replace(/\n{4,}/g, "\n\n\n")
 
   // Trim trailing whitespace
-  result = result.trimEnd() + "\n"
+  result = result.trimEnd()
+
+  // Add hidden section with property links for backlink crawling
+  if (frontmatter && noteTitleMap) {
+    const propertyLinks = extractPropertyLinks(frontmatter)
+    if (propertyLinks.length > 0) {
+      // Add links in a hidden div that Quartz will crawl but won't display
+      result += '\n\n<div style="display:none" class="property-backlinks">\n'
+      for (const link of propertyLinks) {
+        result += `[[${link}]]\n`
+      }
+      result += "</div>\n"
+    }
+  }
 
   return result
 }
@@ -503,8 +546,8 @@ function buildPublishPlan() {
     const targetPath = path.join(CONTENT_DIR, webPath, filename)
     const relativeTarget = path.relative(WEBSITE_ROOT, targetPath)
 
-    // Transform content with wikilink resolution
-    const transformedContent = transformContent(note.content, noteTitleMap)
+    // Transform content with wikilink resolution and property backlinks
+    const transformedContent = transformContent(note.content, noteTitleMap, note.data)
     const transformedFrontmatter = transformFrontmatter(note.data, noteTitleMap)
     const publishedOutput = matter.stringify(transformedContent, transformedFrontmatter)
     const hash = contentHash(publishedOutput)

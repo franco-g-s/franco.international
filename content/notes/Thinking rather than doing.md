@@ -13,3 +13,7 @@ Despite being the "thinking organ", the brain seems to prefer action over reflec
 Most businesses and ventures fail not for a lack of effort or action, but because people haven't taken the time to think things through enough. "They have omitted to pass their plans through the robust sieve of their own intelligence. Eventually, all ideas will be judged by reality; what thinking allows us to do is anticipate problems before they have grown too large and too costly." 
 
 "A thinking culture is not one without achievement; it is one that properly understands the role played by good *thinking* in the delivery of good *work*." From the outside, it might look less productive in the traditional sense, but the real work is happening inside our brains.
+
+<div style="display:none" class="property-backlinks">
+[[A Simpler Life]]
+</div>

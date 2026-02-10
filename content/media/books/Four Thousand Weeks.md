@@ -30,3 +30,21 @@ isbn: 9781473545557
 > [!info]  Post-Read Review - Four Thousand Weeks
 
 !Book Notes.base
+
+<div style="display:none" class="property-backlinks">
+[[Books]]
+[[Oliver Burkeman]]
+[[Non-Fiction]]
+[[Philosophy]]
+[[Self-Help]]
+[[Time Management]]
+[[Productivity]]
+[[Meaning]]
+[[Philosophy]]
+[[Mortality]]
+[[Intentionality]]
+[[Self-Improvement]]
+[[Priorities]]
+[[Happiness]]
+[[Acceptance]]
+</div>

@@ -33,3 +33,19 @@ language: en-US
 > [!info]  Post-Watch Review - Arrival
 
 !Movie Notes.base
+
+<div style="display:none" class="property-backlinks">
+[[Movies]]
+[[Denis Villeneuve]]
+[[Drama]]
+[[Science Fiction]]
+[[Mystery]]
+[[Communication]]
+[[Language]]
+[[Time]]
+[[Perception]]
+[[Grief]]
+[[First Contact]]
+[[Understanding]]
+[[Presence]]
+</div>

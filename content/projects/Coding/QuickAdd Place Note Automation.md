@@ -111,3 +111,12 @@ This script replaces the previous `/place` slash command that used:
 
 ### Resources
 !Resources.base
+
+<div style="display:none" class="property-backlinks">
+[[Projects]]
+[[Coding]]
+[[Countries]]
+[[Cities]]
+[[Scripts]]
+[[Automation]]
+</div>

@@ -14,3 +14,7 @@ The silent and subconscious consensus that curiosity is threatening has roots in
 Even in school, curiosity isn’t cultivated, because it’s inconvenient and disruptive to the orderly running of the class. 
 
 “You’re born curious, and no matter how much battering your curiosity has taken, it’s standing by, ready to be awakened.”
+
+<div style="display:none" class="property-backlinks">
+[[A Curious Mind]]
+</div>

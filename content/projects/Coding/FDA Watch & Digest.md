@@ -301,3 +301,9 @@ Federal Register API
 **Last Updated:** 2025-11-17
 **Status:** Production Ready
 **Version:** 1.0
+
+<div style="display:none" class="property-backlinks">
+[[Projects]]
+[[Accelerated Biosciences]]
+[[AI]]
+</div>

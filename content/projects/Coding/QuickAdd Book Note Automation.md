@@ -211,3 +211,14 @@ Both scripts follow the same design pattern:
 2. External API fetch
 3. Smart create or update logic
 4. Open result
+
+<div style="display:none" class="property-backlinks">
+[[Projects]]
+[[Coding]]
+[[Automation]]
+[[QuickAdd Place Note Automation]]
+[[Obsidian Rules]]
+[[Obsidian]]
+[[QuickAdd]]
+[[Books]]
+</div>

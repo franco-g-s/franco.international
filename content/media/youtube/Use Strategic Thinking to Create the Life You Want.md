@@ -242,3 +242,15 @@ Now you could say, isn't a great life a chain of lucky events?
 Fortunately, Seneca said something to this too.
 "Luck is when preparation meets opportunity."
 And strategize your life helps you with the preparation.
+
+<div style="display:none" class="property-backlinks">
+[[Youtube]]
+[[Harvard Business Review]]
+[[Life]]
+[[Life Direction]]
+[[Business]]
+[[Goals]]
+[[Strategy]]
+[[Lifestyle Design]]
+[[Clippings/Use Strategic Thinking to Create the Life You Want]]
+</div>

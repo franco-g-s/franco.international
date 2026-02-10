@@ -42,3 +42,14 @@ Sean's response captures something essential about the tension between experienc
 This scene illustrates how the camera - or the phone, or the social media post - can become a barrier between us and the moment itself. Sean, the professional photographer, understands that sometimes the best way to preserve a moment is to simply be in it, fully present, without the mediation of documentation.
 
 The irony is that Sean's profession is photography, yet he's conscious enough to know when the camera would actually diminish rather than enhance the experience. This wisdom applies equally to modern travel and our constant compulsion to capture and share everything we encounter.
+
+<div style="display:none" class="property-backlinks">
+[[Movies]]
+[[Ben Stiller]]
+[[Adventure]]
+[[Comedy]]
+[[Drama]]
+[[Travel]]
+[[Presence]]
+[[Photography]]
+</div>

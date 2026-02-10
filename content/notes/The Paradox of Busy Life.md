@@ -34,3 +34,15 @@ In a simpler day, we can allow our mind to wander, and a sort of fog is lifted. 
 ## The Resolution
 
 The paradox resolves when we recognize that less can be more. By doing fewer things with more attention and presence, we experience life more richly than when we frantically try to maximize everything. The small pleasures we overlook in our busyness are often the very things that give life meaning and richness.
+
+<div style="display:none" class="property-backlinks">
+[[Notes]]
+[[Paradoxes]]
+[[A Simpler Life]]
+[[Mindfulness]]
+[[Presence]]
+[[Simplicity]]
+[[The fruitful simplicity of quieter days]]
+[[Living in the Present Moment]]
+[[Being Present and Mindful]]
+</div>

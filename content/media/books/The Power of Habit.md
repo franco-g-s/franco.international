@@ -35,3 +35,25 @@ isbn: 9780812981605
 
 
 !Book Notes.base
+
+<div style="display:none" class="property-backlinks">
+[[Books]]
+[[Charles Duhigg]]
+[[Business & Economics]]
+[[Business & Economics]]
+[[Non-Fiction]]
+[[Behavioral Science]]
+[[Self-Improvement]]
+[[Psychology]]
+[[Business]]
+[[Habits]]
+[[Organizations]]
+[[Products]]
+[[Consumers]]
+[[Purchasing]]
+[[Advertising]]
+[[Crises]]
+[[Willpower]]
+[[Peer Pressure]]
+[[Luis Gomez Cobo]]
+</div>

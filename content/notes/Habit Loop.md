@@ -15,3 +15,7 @@ The habit loop describes the three key parts of a habit that form a cycle. They 
 
 To alter or [[notes/Breaking Habits|break a habit]], any part of the habit loop can be removed or modified. As a consequence all of the other parts will change as well, seeing as they are interdependent. 
 For example, if you execute a certain routine when you get stimulated by a certain cue and receive a certain reward, you can change the routine, making sure you get the same reward and get stimulated by the same cue. This will replace the old habit with a new one, without having to avoid the cue or reward.
+
+<div style="display:none" class="property-backlinks">
+[[The Power of Habit]]
+</div>

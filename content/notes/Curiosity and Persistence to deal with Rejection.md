@@ -9,3 +9,7 @@ Curiosity rewards persistence. If you give up at the first dead end, then your c
 Persistence without curiosity may mean you chase a goal that isn’t worth the effort (or you chase a goal without adjusting as you learn new information). 
 
 Rejection (or just simply a “no”) can come from the outside world, but it can also come from inside your head. When coming from the outside world, having the curiosity to understand why you got rejected and asking the right questions can help you get around a “no”.
+
+<div style="display:none" class="property-backlinks">
+[[A Curious Mind]]
+</div>

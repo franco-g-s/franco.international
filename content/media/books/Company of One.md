@@ -28,3 +28,19 @@ isbn: 9780241380239
 > [!info]  Post-Read Review - Company of One
 
 !Book Notes.base
+
+<div style="display:none" class="property-backlinks">
+[[Books]]
+[[Paul Jarvis]]
+[[Non-Fiction]]
+[[Business]]
+[[Entrepreneurship]]
+[[Small Business]]
+[[Entrepreneurship]]
+[[Lifestyle Design]]
+[[Freedom]]
+[[Growth]]
+[[Simplicity]]
+[[Self-Employment]]
+[[Autonomy]]
+</div>
