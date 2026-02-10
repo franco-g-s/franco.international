@@ -2,6 +2,8 @@
 created: '2025-09-08'
 tags:
   - youtube
+areas:
+  - YouTube
 title: >-
   Harvard Professor Answers Happiness Questions From Twitter | Tech Support |
   WIRED

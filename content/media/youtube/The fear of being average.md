@@ -2,6 +2,8 @@
 created: '2026-02-02'
 tags:
   - youtube
+areas:
+  - YouTube
 title: The fear of being average
 author:
   - Verse Creates

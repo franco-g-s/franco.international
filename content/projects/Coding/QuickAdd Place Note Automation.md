@@ -2,6 +2,9 @@
 created: '2025-11-14'
 tags:
   - project
+areas:
+  - Projects
+  - Coding
 status: completed
 related:
   - Countries

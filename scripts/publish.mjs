@@ -40,7 +40,6 @@ const STRIP_PROPERTIES = new Set([
   "publish",
   "web-path",
   "web-title",
-  "areas",
   "people",
   "space",
   "packing list",

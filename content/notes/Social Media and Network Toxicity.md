@@ -2,6 +2,8 @@
 created: '2025-10-13'
 tags:
   - youtube-notes
+areas:
+  - Notes
 topics:
   - Network Science
   - Social Networks

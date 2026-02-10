@@ -2,6 +2,8 @@
 created: '2026-01-20'
 tags:
   - movies
+areas:
+  - Movies
 year: 1999
 director:
   - Mike Judge

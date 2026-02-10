@@ -2,6 +2,8 @@
 created: '2026-01-20'
 tags:
   - books
+areas:
+  - Books
 year: 2007
 author:
   - Timothy Ferriss

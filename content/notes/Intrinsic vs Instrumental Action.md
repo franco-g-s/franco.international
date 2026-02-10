@@ -3,6 +3,8 @@ created: '2025-10-14'
 tags:
   - movie-notes
   - clipping-notes
+areas:
+  - Notes
 movies:
   - '[[media/movies/Groundhog Day (1993)|Groundhog Day (1993)]]'
 topics:

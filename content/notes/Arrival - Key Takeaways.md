@@ -2,6 +2,8 @@
 created: '2026-01-30'
 tags:
   - movie-notes
+areas:
+  - Notes
 movies:
   - '[[media/movies/Arrival (2016)|Arrival (2016)]]'
 topics:

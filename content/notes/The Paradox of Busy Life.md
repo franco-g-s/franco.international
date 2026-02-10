@@ -2,6 +2,8 @@
 created: '2026-01-31'
 tags:
   - book-notes
+areas:
+  - Notes
 collections:
   - Paradoxes
 books:

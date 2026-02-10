@@ -3,6 +3,8 @@ title: CV
 created: '2026-02-06'
 tags:
   - notes
+areas:
+  - Notes
 ---
 
 # Franco Gómez Schumacher

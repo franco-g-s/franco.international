@@ -1,7 +1,7 @@
 ---
 title: Media
 ---
-Notes and reviews of movies, youtube videos, books, and other media I've consumed.
+Notes and reviews of [[media/movies/index|movies]], [[media/youtube/index|youtube videos]], [[media/books/index|books]], and other media I've consumed.
 
 ## Rating System
 Media is rated on a 7-point scale:

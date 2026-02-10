@@ -2,6 +2,8 @@
 created: '2025-07-10'
 tags:
   - books
+areas:
+  - Books
 year: 2015
 author:
   - Brian Grazer

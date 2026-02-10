@@ -2,6 +2,8 @@
 created: '2026-01-30'
 tags:
   - movie-notes
+areas:
+  - Notes
 collections:
   - Paradoxes
 movies:

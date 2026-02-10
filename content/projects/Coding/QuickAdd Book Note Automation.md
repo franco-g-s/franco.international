@@ -2,6 +2,10 @@
 created: '2026-02-09'
 tags:
   - project
+areas:
+  - Projects
+  - Coding
+  - Automation
 status: completed
 related:
   - >-

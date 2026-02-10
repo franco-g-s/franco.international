@@ -2,6 +2,8 @@
 created: '2025-11-11'
 tags:
   - youtube
+areas:
+  - YouTube
 title: We've Forgotten how to Travel
 author:
   - Like Stories of Old

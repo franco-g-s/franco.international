@@ -2,6 +2,9 @@
 created: '2025-09-25'
 tags:
   - youtube
+areas:
+  - YouTube
+  - Smart Home
 title: The Best Smart Home Sensor Just Got Better
 author:
   - The Stock Pot

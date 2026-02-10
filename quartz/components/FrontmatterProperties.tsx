@@ -42,6 +42,7 @@ const defaultOptions: FrontmatterPropertiesOptions = {
 
     // References & links
     "url",
+    "areas",
     "topics",
     "books",
     "clippings",

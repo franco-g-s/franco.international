@@ -2,6 +2,8 @@
 created: '2025-09-08'
 tags:
   - youtube-notes
+areas:
+  - Notes
 topics:
   - Mindfulness
   - Presence

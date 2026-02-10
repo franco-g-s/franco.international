@@ -2,6 +2,8 @@
 created: '2026-01-20'
 tags:
   - movies
+areas:
+  - Movies
 year: 2007
 director:
   - Sean Penn

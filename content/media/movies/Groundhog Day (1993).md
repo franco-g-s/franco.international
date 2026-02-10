@@ -2,6 +2,8 @@
 created: '2025-10-20'
 tags:
   - movies
+areas:
+  - Movies
 year: 1993
 director:
   - Harold Ramis

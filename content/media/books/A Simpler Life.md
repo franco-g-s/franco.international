@@ -2,6 +2,8 @@
 created: '2025-05-28'
 tags:
   - books
+areas:
+  - Books
 year: 2019
 author:
   - Life of School the

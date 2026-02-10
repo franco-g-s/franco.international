@@ -2,6 +2,10 @@
 created: '2025-11-21'
 tags:
   - youtube
+areas:
+  - YouTube
+  - Running
+  - Cycling
 title: How some runners maintain muscle while others starve (scientific breakdown)
 author:
   - Wild Rapha

@@ -2,6 +2,8 @@
 created: '2025-10-13'
 tags:
   - youtube
+areas:
+  - YouTube
 title: We simulated if you can really reach anyone in 6 steps
 author:
   - Veritasium

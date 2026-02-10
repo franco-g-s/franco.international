@@ -2,6 +2,8 @@
 created: '2026-02-09'
 tags:
   - youtube
+areas:
+  - Youtube
 title: Use Strategic Thinking to Create the Life You Want
 author:
   - Harvard Business Review

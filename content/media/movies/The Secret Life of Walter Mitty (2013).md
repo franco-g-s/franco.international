@@ -2,6 +2,8 @@
 created: '2025-12-27'
 tags:
   - movies
+areas:
+  - Movies
 year: 2013
 director:
   - Ben Stiller

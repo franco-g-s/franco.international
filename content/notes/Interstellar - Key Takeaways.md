@@ -2,6 +2,8 @@
 created: '2026-01-30'
 tags:
   - movie-notes
+areas:
+  - Notes
 movies:
   - '[[media/movies/Interstellar (2014)|Interstellar (2014)]]'
 topics:

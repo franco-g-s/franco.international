@@ -2,6 +2,10 @@
 created: '2025-10-30'
 tags:
   - project
+areas:
+  - Projects
+  - Accelerated Biosciences
+  - AI
 status: completed
 url:
   - 'https://github.com/franco-g-s/fda-watch-digest/tree/main'

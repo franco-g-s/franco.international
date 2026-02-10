@@ -3,6 +3,10 @@ title: Personal Website
 created: '2026-02-06'
 tags:
   - project
+areas:
+  - Projects
+  - Coding
+  - Obsidian
 status: in progress
 url:
   - 'https://github.com/franco-g-s/franco.international'
