@@ -4,6 +4,9 @@ tags:
   - book-notes
 books:
   - '[[media/books/A Simpler Life|A Simpler Life]]'
+topics:
+  - Intentionality
+  - Simplicity
 ---
 A quieter day doesn't mean a less fruitful, rich, or enjoyable day. It's just a simpler and more intentional day.
 

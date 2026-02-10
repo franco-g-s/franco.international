@@ -156,6 +156,45 @@ During publishing, the script:
 - [x] Date display: created date + last updated
 - [x] Dark mode toggle only in floating island (removed from list page sidebar)
 
+### Phase 4.5: Metadata & UI Enhancements ✅
+**Custom Components:**
+- [x] **FrontmatterProperties Component** - Displays metadata in Obsidian-style collapsible panel
+  - Obsidian-inspired design with gray background and fold icon
+  - Shows 30+ property types (status, rating, author, genre, topics, dates, location, media metadata, etc.)
+  - Privacy-aware: excludes people, areas, attachments, journal metrics
+  - Wikilinks in properties render as clickable links (only to published notes)
+  - Proper vertical alignment and spacing
+
+**Explorer Improvements:**
+- [x] Single-line note names with ellipsis overflow
+- [x] Reduced font weight for files (folders stay bold)
+- [x] Templates folder excluded from publishing
+
+**Table of Contents:**
+- [x] Collapsed by default with configurable option
+- [x] No animation flicker on page load (no-transition class)
+- [x] Smooth animations for user interactions
+
+**Backlinks:**
+- [x] Always visible in sidebar (shows "No backlinks found" when empty)
+- [x] Positioned below graph and TOC in right sidebar
+
+**Wikilink Resolution System:**
+- [x] **Custom link transformation** during publishing
+  - Builds note title map (by filename, frontmatter title, and aliases)
+  - Case-insensitive matching (like Obsidian)
+  - Transforms `Note Title` → `Note Title`
+  - Wikilinks to unpublished notes → plain text
+  - Works in note content AND properties
+- [x] Why custom solution needed: Quartz can't handle different vault/website structures or Obsidian-style title matching
+- [x] Proper URL generation with space-to-hyphen conversion
+
+**Property System Expansion:**
+- [x] Added 30+ properties: source, published, description, start/end dates, due dates, filming dates, categories, seasons, books, clippings, collections, trips, related, projects, countries, cities, coordinates, cast, director, producer, writer, duration, r-value, journal-index
+- [x] Smart property stripping: keep public metadata, remove private data (people, areas, groups, attachments, journal metrics)
+- [x] Date formatting: YYYY-MM-DD strings
+- [x] Trimmed whitespace from array values
+
 ### Phase 5: Content Population (Paused — waiting for Bases feature)
 - [x] Publish CV and about page
 - [ ] Publish exercise area
