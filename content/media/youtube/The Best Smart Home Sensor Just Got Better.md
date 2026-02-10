@@ -98,9 +98,3 @@ Now that I’ve got reliable room-by-room presence detection, I’ll be using th
 That’ll be the next video, so hit subscribe on [**The Stock Pot**](https://www.youtube.com/@TheStockPot-AU) if you haven’t already.
 
 And if you’ve got ideas for improving this design, I’d love to hear them. Hit me up in the comments or [drop me a message.](https://www.thestockpot.net/contact)
-
-<div style="display:none" class="property-backlinks">
-[[YouTube]]
-[[Smart Home]]
-[[The Stock Pot]]
-</div>

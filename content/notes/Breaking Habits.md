@@ -12,5 +12,5 @@ To break habits, you must alter or take [[notes/Habit Loop|Habit Loop]] apart. I
 “Change might not be fast and it isn’t always easy. But with time and effort, almost any habit can be reshaped.” The [[notes/Habit Framework|Habit Framework]] serves as a practical guide to changing habits.
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

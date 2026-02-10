@@ -213,12 +213,5 @@ Both scripts follow the same design pattern:
 4. Open result
 
 <div style="display:none" class="property-backlinks">
-[[Projects]]
-[[Coding]]
-[[Automation]]
-[[QuickAdd Place Note Automation]]
-[[Obsidian Rules]]
-[[Obsidian]]
-[[QuickAdd]]
-[[Books]]
+[[projects/Coding/QuickAdd Place Note Automation]]
 </div>

@@ -31,22 +31,3 @@ isbn: 9781446490594
 > [!info]  Post-Read Review - The 4-Hour Workweek
 
 !Book Notes.base
-
-<div style="display:none" class="property-backlinks">
-[[Books]]
-[[Timothy Ferriss]]
-[[Non-Fiction]]
-[[Self-Help]]
-[[Business]]
-[[Business & Economics]]
-[[Lifestyle Design]]
-[[Entrepreneurship]]
-[[Freedom]]
-[[Automation]]
-[[Productivity]]
-[[Remote Work]]
-[[Travel]]
-[[Self-Improvement]]
-[[Time Management]]
-[[Outsourcing]]
-</div>

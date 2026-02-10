@@ -11,6 +11,5 @@ topics:
 To become more straightforward, you have to stop doubting the legitimacy of your desires. You have to share your true feelings and desires in a polite and inoffensive way.
 
 <div style="display:none" class="property-backlinks">
-[[A Simpler Life]]
-[[Straightforwardness]]
+[[media/books/A Simpler Life]]
 </div>

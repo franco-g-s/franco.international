@@ -120,8 +120,3 @@ But there's another curve behind it called crystallized intelligence, which incr
 
 ## Conclusion
 Well, it looks like that's all we've got for today. Those are your questions. I hope you've learned a lot from this time. I hope you've enjoyed it. I hope you're a little bit happier. But here's the key thing, if you really wanna lock it in, here's the secret. You gotta think about it and you gotta adopt new habits in your life, and most of all, here's the most important part, you gotta share it. Go share it, then you'll never lose it. Thanks for taking some time with me today.
-
-<div style="display:none" class="property-backlinks">
-[[YouTube]]
-[[Arthur C. Brooks]]
-</div>

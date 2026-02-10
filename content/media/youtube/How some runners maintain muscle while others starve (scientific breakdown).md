@@ -94,10 +94,3 @@ And it's not just sleep. If you want to be smart and don't do too many junk mile
 
 ## Conclusion
 So, I hope you enjoyed this video and found it helpful. Let it flow. Stay wild and peace.
-
-<div style="display:none" class="property-backlinks">
-[[YouTube]]
-[[Running]]
-[[Cycling]]
-[[Wild Rapha]]
-</div>

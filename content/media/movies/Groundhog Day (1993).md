@@ -23,10 +23,3 @@ language: en-US
 > [!info]  Post-Watch Review - Groundhog Day
 
 !Movie Notes.base
-
-<div style="display:none" class="property-backlinks">
-[[Movies]]
-[[Harold Ramis]]
-[[Fantasy]]
-[[Romantic Comedy]]
-</div>

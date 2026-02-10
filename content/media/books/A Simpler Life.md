@@ -36,25 +36,3 @@ isbn: 9781912891689
 
 
 !Book Notes.base
-
-<div style="display:none" class="property-backlinks">
-[[Books]]
-[[Life of School the]]
-[[The School of Life]]
-[[Non-Fiction]]
-[[Philosophy]]
-[[Self-Help]]
-[[Minimalism]]
-[[Psychology]]
-[[Self-Improvement]]
-[[Philosophy]]
-[[Self-Help]]
-[[Simplicity]]
-[[Straightforwardness]]
-[[Relationships]]
-[[Groupthink]]
-[[Aristocracy]]
-[[Opinions]]
-[[Contemplations]]
-[[Validation]]
-</div>

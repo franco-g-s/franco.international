@@ -82,7 +82,3 @@ Born in Mexico, raised in Shanghai, Panama, and currently based in Switzerland, 
 ---
 
 *Last updated: February 2026*
-
-<div style="display:none" class="property-backlinks">
-[[Notes]]
-</div>

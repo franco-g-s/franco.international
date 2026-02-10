@@ -583,8 +583,3 @@ for ourselves and for the future and you’ll  become part of a global conserva
 dedicated to preserving nature and maintaining  the world’s sacred wilderness. If you want to  
 
 see Planet Wild in action, watch their video  protecting Europe’s ancient forests here.
-
-<div style="display:none" class="property-backlinks">
-[[YouTube]]
-[[Like Stories of Old]]
-</div>

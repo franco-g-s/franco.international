@@ -16,7 +16,5 @@ A simpler and more practical approach is to be frank from the start. This means 
 A prerequisite to being honest when dating is to have a certain understanding and acceptance of yourself. Knowing your preferences, imperfections, and views allows you to be open about them. And by being open and honest about yourself, you invite your date to do the same. Nobody is perfect, so if they insist that they don't have any quirks, they aren't being truthful ("They are a human being, and to be human is to be complicated.").
 
 <div style="display:none" class="property-backlinks">
-[[A Simpler Life]]
-[[Dating]]
-[[Relationships]]
+[[media/books/A Simpler Life]]
 </div>

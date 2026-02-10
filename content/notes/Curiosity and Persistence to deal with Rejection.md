@@ -11,5 +11,5 @@ Persistence without curiosity may mean you chase a goal that isn’t worth the e
 Rejection (or just simply a “no”) can come from the outside world, but it can also come from inside your head. When coming from the outside world, having the curiosity to understand why you got rejected and asking the right questions can help you get around a “no”.
 
 <div style="display:none" class="property-backlinks">
-[[A Curious Mind]]
+[[media/books/A Curious Mind]]
 </div>

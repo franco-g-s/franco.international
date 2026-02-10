@@ -12,5 +12,5 @@ However, what Duhigg doesn’t do, or at least not very clearly, is how exactly 
 As a result, Atomic Habits will be the book next up for learning how to actually change habits.
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

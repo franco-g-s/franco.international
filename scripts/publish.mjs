@@ -546,9 +546,11 @@ function buildPublishPlan() {
     const targetPath = path.join(CONTENT_DIR, webPath, filename)
     const relativeTarget = path.relative(WEBSITE_ROOT, targetPath)
 
-    // Transform content with wikilink resolution and property backlinks
-    const transformedContent = transformContent(note.content, noteTitleMap, note.data)
+    // Transform frontmatter first (to get properly resolved wikilinks)
     const transformedFrontmatter = transformFrontmatter(note.data, noteTitleMap)
+
+    // Then transform content, passing transformed frontmatter for backlink extraction
+    const transformedContent = transformContent(note.content, noteTitleMap, transformedFrontmatter)
     const publishedOutput = matter.stringify(transformedContent, transformedFrontmatter)
     const hash = contentHash(publishedOutput)
 

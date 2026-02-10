@@ -296,8 +296,3 @@ So, it was never about a 9 to5 or a
 routine or even comfort. Those were not
 the enemies. It was always about letting
 those things control you.
-
-<div style="display:none" class="property-backlinks">
-[[YouTube]]
-[[Verse Creates]]
-</div>

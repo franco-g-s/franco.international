@@ -16,5 +16,5 @@ Even in school, curiosity isn’t cultivated, because it’s inconvenient and di
 “You’re born curious, and no matter how much battering your curiosity has taken, it’s standing by, ready to be awakened.”
 
 <div style="display:none" class="property-backlinks">
-[[A Curious Mind]]
+[[media/books/A Curious Mind]]
 </div>

@@ -18,5 +18,5 @@ Even if you're curiosity is received negatively by the person you are talking to
 From a network perspective, curiosity conversations are a deliberate strategy for creating Network Shortcuts—connections outside your usual social and professional circles. By systematically reaching out to people in different industries, fields, and communities, you're building the [[notes/Weak Ties|weak ties]] that make your network "small" and give you access to novel information and opportunities. The discipline required—at least one conversation every two weeks for over 35 years—reflects the reality that valuable shortcuts don't form accidentally.
 
 <div style="display:none" class="property-backlinks">
-[[A Curious Mind]]
+[[media/books/A Curious Mind]]
 </div>

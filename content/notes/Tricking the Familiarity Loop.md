@@ -9,5 +9,5 @@ To trick [[notes/Familiarity Loop|Familiarity Loop]], you can “dress something
 On an individual level, people tend to be more likely to stick to working out if they do it in groups where they can socialize and meet new people. In this case, a new thing (exercising) is wrapped in something people already know (meeting new people).
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

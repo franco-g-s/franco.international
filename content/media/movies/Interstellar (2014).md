@@ -39,20 +39,3 @@ language: en-US
 > [!info]  Post-Watch Review - Interstellar
 
 !Movie Notes.base
-
-<div style="display:none" class="property-backlinks">
-[[Movies]]
-[[Christopher Nolan]]
-[[Adventure]]
-[[Drama]]
-[[Science Fiction]]
-[[Space]]
-[[Time]]
-[[Love]]
-[[Sacrifice]]
-[[Survival]]
-[[Physics]]
-[[Exploration]]
-[[Humanity]]
-[[Family]]
-</div>

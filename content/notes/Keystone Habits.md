@@ -9,5 +9,5 @@ Keystone habits are specific habits that have the power to trigger a chain react
 Keystone habits also create cultures that make hard decisions easy and make tough experiences bearable.
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

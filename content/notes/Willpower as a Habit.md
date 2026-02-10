@@ -11,5 +11,5 @@ Additionally, the willpower muscle can be strengthened, and when it is, it acts 
 To make willpower a habit, **inflection points** have to be identified and routines have to be planned. Inflections points are times when your willpower runs out. When the inflection points occur, the predetermined routine is followed. Then a reward is received and a [[notes/Habit Loop|habit loop]] is established.
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

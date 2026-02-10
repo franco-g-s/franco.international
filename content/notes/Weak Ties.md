@@ -12,5 +12,5 @@ Weak ties can be extremely [[notes/The Power of Weak Ties|powerful]], even more 
 In network science, weak ties function as Network Shortcuts—connections that bridge distant parts of the social network and make the world "small."
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

@@ -15,5 +15,5 @@ Most businesses and ventures fail not for a lack of effort or action, but becaus
 "A thinking culture is not one without achievement; it is one that properly understands the role played by good *thinking* in the delivery of good *work*." From the outside, it might look less productive in the traditional sense, but the real work is happening inside our brains.
 
 <div style="display:none" class="property-backlinks">
-[[A Simpler Life]]
+[[media/books/A Simpler Life]]
 </div>

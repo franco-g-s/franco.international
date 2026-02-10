@@ -38,5 +38,5 @@ Because habits form when allow our brain to follow cues, execute routines, and r
 Sometimes, changing habits can take a long time, and it might require repeated experiments and failures, but eventually, you will gain power over it.
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

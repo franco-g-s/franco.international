@@ -34,26 +34,3 @@ isbn: 9781476730776
 > [!info]  Post-Read Review - A Curious Mind
 
 !Book Notes.base
-
-<div style="display:none" class="property-backlinks">
-[[Books]]
-[[Brian Grazer]]
-[[Charles Fishman]]
-[[Non-Fiction]]
-[[Memoir]]
-[[Self-Help]]
-[[Curiosity]]
-[[Creativity]]
-[[Storytelling]]
-[[Innovation]]
-[[Hollywood]]
-[[Self-Improvement]]
-[[Self-Help]]
-[[Psychology]]
-[[Problem-Solving]]
-[[Communication]]
-[[Learning]]
-[[Interviews]]
-[[Success]]
-[[Luis Gomez Cobo]]
-</div>

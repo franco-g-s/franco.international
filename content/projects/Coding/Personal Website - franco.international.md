@@ -263,9 +263,3 @@ This code is now being contributed upstream as PR #2292, so porting it manually 
 ## Related Notes
 - Obsidian Rules - Core vault principles
 - Automation - Vault automation strategies
-
-<div style="display:none" class="property-backlinks">
-[[Projects]]
-[[Coding]]
-[[Obsidian]]
-</div>

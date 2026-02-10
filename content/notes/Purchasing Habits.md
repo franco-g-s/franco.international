@@ -8,5 +8,5 @@ books:
 “Consumers sometimes act like creatures of habit, automatically repeating past behavior with little regard to current goals”. Purchasing habits are a main factor for a lot of people when shopping, but when major life events or changes occur, they are subject to change. At these points, habits are vulnerable to marketing and manipulation. One of the biggest is pregnancy.
 
 <div style="display:none" class="property-backlinks">
-[[The Power of Habit]]
+[[media/books/The Power of Habit]]
 </div>

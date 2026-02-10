@@ -12,5 +12,5 @@ Curiosity also dictates the quality of many ordinary experiences. A curious sale
 “Curiosity isn’t just a tool for improving your own life and happiness, your ability to win a great job or a great spouse. It is the key to the things we say we value most in the modern world: independence, self-determination, self government, self-improvement. Curiosity is the path to freedom itself.”
 
 <div style="display:none" class="property-backlinks">
-[[A Curious Mind]]
+[[media/books/A Curious Mind]]
 </div>
