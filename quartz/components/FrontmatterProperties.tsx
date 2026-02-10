@@ -305,6 +305,12 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
   display: inline;
 }
 
+.frontmatter-properties .property-value a.internal {
+  vertical-align: baseline;
+  display: inline;
+  line-height: inherit;
+}
+
 .frontmatter-properties .rating-value {
   font-weight: 600;
   color: var(--secondary);

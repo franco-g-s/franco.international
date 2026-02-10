@@ -77,23 +77,39 @@ export default ((opts?: Partial<Options>) => {
 
   TableOfContents.css = modernStyle
 
-  // Prevent animation flicker on initial load by removing transitions class after a moment
-  const preventFlickerScript = `
+  // Force initial collapsed state and prevent animation flicker
+  const initializeTocScript = `
 document.addEventListener("nav", () => {
-  // Remove no-transition class after initial render to re-enable animations
-  setTimeout(() => {
-    const tocs = document.querySelectorAll(".toc")
-    tocs.forEach((toc) => {
+  const collapseByDefault = ${collapseByDefault}
+  const tocs = document.querySelectorAll(".toc")
+
+  tocs.forEach((toc) => {
+    const button = toc.querySelector(".toc-header")
+    const content = toc.querySelector(".toc-content")
+
+    if (button && content && collapseByDefault) {
+      // Ensure collapsed state is set (in case hydration reset it)
+      if (!button.classList.contains("collapsed")) {
+        button.classList.add("collapsed")
+      }
+      if (!content.classList.contains("collapsed")) {
+        content.classList.add("collapsed")
+      }
+      button.setAttribute("aria-expanded", "false")
+    }
+
+    // Remove no-transition class after ensuring correct state
+    setTimeout(() => {
       toc.classList.remove("no-transition")
-    })
-  }, 50)
+    }, 100)
+  })
 })
 `
 
   TableOfContents.afterDOMLoaded = concatenateResources(
     script,
     overflowListAfterDOMLoaded,
-    preventFlickerScript,
+    initializeTocScript,
   )
 
   const LegacyTableOfContents: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => {
