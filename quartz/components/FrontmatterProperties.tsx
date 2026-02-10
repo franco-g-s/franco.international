@@ -16,7 +16,6 @@ interface FrontmatterPropertiesOptions {
 const defaultOptions: FrontmatterPropertiesOptions = {
   properties: [
     // Basic metadata
-    "title",
     "source",
     "author",
     "published",
@@ -47,6 +46,8 @@ const defaultOptions: FrontmatterPropertiesOptions = {
     "clippings",
     "collections",
     "trips",
+    "related",
+    "projects",
 
     // Location
     "countries",
@@ -65,6 +66,7 @@ const defaultOptions: FrontmatterPropertiesOptions = {
     // Other
     "r-value",
     "aliases",
+    "journal-index",
   ],
   collapsed: false,
 }
@@ -105,6 +107,7 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
       const specialCases: Record<string, string> = {
         url: "URL",
         "r-value": "R-Value",
+        "journal-index": "Journal Index",
         filming_date: "Filming Date",
         filmed: "Filmed",
         due: "Due Date",

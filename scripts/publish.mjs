@@ -41,10 +41,7 @@ const STRIP_PROPERTIES = new Set([
   "web-path",
   "web-title",
   "areas",
-  "collections",
-  "projects",
   "people",
-  "related",
   "space",
   "packing list",
   "expenses",
@@ -89,6 +86,8 @@ const KEEP_PROPERTIES = new Set([
   "clippings",
   "collections",
   "trips",
+  "related",
+  "projects",
 
   // Location
   "countries",
@@ -109,6 +108,7 @@ const KEEP_PROPERTIES = new Set([
   "r-value",
   "aliases",
   "cssclasses",
+  "journal-index",
 ])
 
 // Image/media extensions for attachment detection

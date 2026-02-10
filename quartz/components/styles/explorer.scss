@@ -130,6 +130,13 @@ button.desktop-explorer {
       color: var(--dark);
       opacity: 0.75;
       pointer-events: all;
+      font-weight: $normalWeight;
+
+      // Single-line with ellipsis
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       &.active {
         opacity: 1;
