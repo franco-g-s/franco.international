@@ -5,13 +5,15 @@ tags:
 collections:
   - Paradoxes
 books:
-  - A Simpler Life
+  - '[[media/books/A Simpler Life|A Simpler Life]]'
 topics:
   - Mindfulness
   - Presence
   - Simplicity
 related:
-  - The fruitful simplicity of quieter days
+  - >-
+    [[notes/The fruitful simplicity of quieter days|The fruitful simplicity of
+    quieter days]]
   - Living in the Present Moment
   - Being Present and Mindful
 ---

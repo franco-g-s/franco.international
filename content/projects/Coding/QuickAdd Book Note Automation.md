@@ -4,7 +4,9 @@ tags:
   - project
 status: completed
 related:
-  - QuickAdd Place Note Automation
+  - >-
+    [[projects/Coding/QuickAdd Place Note Automation|QuickAdd Place Note
+    Automation]]
   - Obsidian Rules
 topics:
   - Obsidian

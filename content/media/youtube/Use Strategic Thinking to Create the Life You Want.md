@@ -21,7 +21,7 @@ topics:
 language: en-US
 image: 'https://img.youtube.com/vi/dbiNhAZlXZk/maxresdefault.jpg'
 related:
-  - Clippings/Use Strategic Thinking to Create the Life You Want
+  - Use Strategic Thinking to Create the Life You Want
 ---
 ![Use Strategic Thinking to Create the Life You Want](https://www.youtube.com/watch?v=dbiNhAZlXZk)
 

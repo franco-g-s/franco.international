@@ -3,7 +3,7 @@ created: '2026-01-21'
 tags:
   - book-notes
 books:
-  - A Simpler Life
+  - '[[media/books/A Simpler Life|A Simpler Life]]'
 ---
 A quieter day doesn't mean a less fruitful, rich, or enjoyable day. It's just a simpler and more intentional day.
 

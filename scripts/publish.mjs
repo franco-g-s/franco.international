@@ -339,7 +339,7 @@ function transformContent(content, noteTitleMap = null) {
   return result
 }
 
-function transformFrontmatter(data) {
+function transformFrontmatter(data, noteTitleMap = null) {
   const result = {}
 
   // Apply web-title override
@@ -363,18 +363,44 @@ function transformFrontmatter(data) {
     }
   }
 
-  // Strip wikilink syntax from any remaining properties (like topics)
+  // Transform or strip wikilink syntax from properties
   for (const [key, value] of Object.entries(result)) {
     if (typeof value === "string") {
-      result[key] = value.replace(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g, "$1")
+      result[key] = transformPropertyWikilinks(value, noteTitleMap)
     } else if (Array.isArray(value)) {
       result[key] = value.map((v) =>
-        typeof v === "string" ? v.replace(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g, "$1") : v,
+        typeof v === "string" ? transformPropertyWikilinks(v, noteTitleMap) : v,
       )
     }
   }
 
   return result
+}
+
+/**
+ * Transform wikilinks in property values
+ * If note exists in published notes, keep as wikilink; otherwise strip to plain text
+ */
+function transformPropertyWikilinks(value, noteTitleMap) {
+  if (!noteTitleMap) {
+    // No map available, just strip wikilinks
+    return value.replace(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g, "$1")
+  }
+
+  return value.replace(/\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\]]+))?\]\]/g, (match, title, displayText) => {
+    const normalizedTitle = title.trim().toLowerCase()
+    const target = noteTitleMap.get(normalizedTitle)
+
+    if (!target) {
+      // Note not published - strip to plain text
+      return displayText || title
+    }
+
+    // Note exists - keep as wikilink with full path
+    const fullPath = target.webPath ? `${target.webPath}/${target.basename}` : target.basename
+    const display = displayText || title
+    return `[[${fullPath}|${display}]]`
+  })
 }
 
 // ── Attachment Handling ────────────────────────────────────────────────
@@ -479,7 +505,7 @@ function buildPublishPlan() {
 
     // Transform content with wikilink resolution
     const transformedContent = transformContent(note.content, noteTitleMap)
-    const transformedFrontmatter = transformFrontmatter(note.data)
+    const transformedFrontmatter = transformFrontmatter(note.data, noteTitleMap)
     const publishedOutput = matter.stringify(transformedContent, transformedFrontmatter)
     const hash = contentHash(publishedOutput)
 
