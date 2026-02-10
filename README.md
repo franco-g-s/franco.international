@@ -26,13 +26,23 @@ This is my personal knowledge base where I share:
 This repository contains the public-facing website. Content is selectively published from my private Obsidian vault using a custom publishing workflow:
 
 1. Notes in private vault are marked with `publish: true` property
-2. Publishing script filters and copies notes to this repo
-3. Quartz builds the static site
+2. Publishing script (`scripts/publish.mjs`) processes content:
+   - **Wikilink transformation**: Resolves `[[Note Title]]` to proper web paths (case-insensitive, alias-aware)
+   - **Metadata filtering**: Strips private properties, preserves public metadata
+   - **Content cleaning**: Removes Obsidian comments, base embeds, orphaned headings
+   - **Attachment handling**: Copies referenced images and media files
+3. Quartz builds the static site with custom components
 4. GitHub Pages auto-deploys
 
 **Two-vault system:**
 - **Private vault** (separate repo): Full personal knowledge base with private notes
 - **Public website** (this repo): Curated selection for public consumption
+
+**Custom Components:**
+- `FrontmatterProperties`: Displays note metadata in collapsible Obsidian-style panel
+- Enhanced Explorer with single-line overflow
+- Collapsible Table of Contents
+- Always-visible Backlinks
 
 ## Features
 
@@ -42,6 +52,9 @@ This repository contains the public-facing website. Content is selectively publi
 - 🌓 Dark/light mode
 - 📱 Responsive design
 - 🗂️ File explorer navigation
+- 📋 **Frontmatter properties display** - Obsidian-style metadata panel showing 30+ property types
+- 🔗 **Intelligent wikilink resolution** - Case-insensitive, alias-aware link transformation
+- 🎨 Cupertino-inspired design with custom Inter typography
 
 ## Structure
 
