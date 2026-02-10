@@ -2,7 +2,6 @@
 created: '2026-02-09'
 tags:
   - project
-  - coding
 status: completed
 topics:
   - Obsidian
