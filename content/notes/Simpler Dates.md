@@ -17,6 +17,4 @@ A prerequisite to being honest when dating is to have a certain understanding an
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Simpler Life]] 
-</p>

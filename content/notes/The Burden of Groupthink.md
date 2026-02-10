@@ -17,6 +17,4 @@ Having to constantly weigh the legitimacy of our thoughts against the imagined o
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Simpler Life]] 
-</p>

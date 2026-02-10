@@ -13,6 +13,4 @@ As a result, Atomic Habits will be the book next up for learning how to actually
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

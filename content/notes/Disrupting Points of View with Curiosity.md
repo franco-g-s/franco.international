@@ -17,6 +17,4 @@ Seeking out people from other industries and communities doesn't just disrupt yo
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

@@ -13,6 +13,4 @@ Strong ties create high clustering in social networks—your friends tend to kno
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

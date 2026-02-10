@@ -17,6 +17,4 @@ Even in school, curiosity isn’t cultivated, because it’s inconvenient and di
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

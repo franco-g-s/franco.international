@@ -10,6 +10,4 @@ Keystone habits also create cultures that make hard decisions easy and make toug
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

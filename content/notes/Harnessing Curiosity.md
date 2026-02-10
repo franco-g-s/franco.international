@@ -9,6 +9,4 @@ For curiosity to be effective, it has to be harnessed to at least two other key 
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

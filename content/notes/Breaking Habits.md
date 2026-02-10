@@ -13,6 +13,4 @@ To break habits, you must alter or take [[notes/Habit Loop|Habit Loop]] apart. I
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

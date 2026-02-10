@@ -39,6 +39,4 @@ Sometimes, changing habits can take a long time, and it might require repeated e
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

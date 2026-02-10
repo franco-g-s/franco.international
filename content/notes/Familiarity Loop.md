@@ -10,6 +10,4 @@ Our brains crave familiarity. It simplifies a lot of decision-making and helps t
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

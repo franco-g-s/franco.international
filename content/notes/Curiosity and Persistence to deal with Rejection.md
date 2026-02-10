@@ -12,6 +12,4 @@ Rejection (or just simply a “no”) can come from the outside world, but it ca
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

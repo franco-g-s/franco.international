@@ -12,6 +12,4 @@ To make willpower a habit, **inflection points** have to be identified and routi
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

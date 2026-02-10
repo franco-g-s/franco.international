@@ -9,6 +9,4 @@ Having the curiosity to ask questions at the start and throughout a project can 
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

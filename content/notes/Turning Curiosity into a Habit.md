@@ -9,6 +9,4 @@ Curiosity can be turned into a habit and made part of a routine. One way of doin
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

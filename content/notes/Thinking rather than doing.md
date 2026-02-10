@@ -16,6 +16,4 @@ Most businesses and ventures fail not for a lack of effort or action, but becaus
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Simpler Life]] 
-</p>

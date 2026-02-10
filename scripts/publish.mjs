@@ -367,16 +367,16 @@ function transformContent(content, noteTitleMap = null, frontmatter = null) {
   result = result.trimEnd()
 
   // Add hidden section with property links for backlink crawling
-  // Put wikilinks in paragraph that we'll hide with global CSS
+  // Output as pure markdown (not HTML) so Quartz processes the wikilinks
   if (frontmatter && noteTitleMap) {
     const propertyLinks = extractPropertyLinks(frontmatter)
     if (propertyLinks.length > 0) {
-      // Add horizontal rule to separate, then links in a paragraph
-      result += '\n\n---\n\n<p class="property-backlinks-hidden">\n'
+      // Add horizontal rule to separate, then links as markdown paragraph
+      result += '\n\n---\n\n'
       for (const link of propertyLinks) {
         result += `[[${link}]] `
       }
-      result += '\n</p>\n'
+      result += '\n'
     }
   }
 

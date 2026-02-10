@@ -13,6 +13,4 @@ In network science, weak ties function as Network Shortcuts—connections that b
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

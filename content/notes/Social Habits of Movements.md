@@ -17,6 +17,4 @@ This three-part process maps directly onto network science principles: strong ti
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

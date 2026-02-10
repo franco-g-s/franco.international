@@ -18,6 +18,4 @@ For example, if you execute a certain routine when you get stimulated by a certa
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

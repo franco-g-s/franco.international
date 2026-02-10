@@ -13,6 +13,4 @@ Curiosity also dictates the quality of many ordinary experiences. A curious sale
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

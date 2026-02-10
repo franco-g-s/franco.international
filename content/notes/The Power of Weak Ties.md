@@ -16,6 +16,4 @@ The power of weak ties comes from their role as Network Shortcuts that connect o
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

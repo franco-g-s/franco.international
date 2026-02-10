@@ -9,6 +9,4 @@ During crises, [[notes/Organizational Habits|Organizational Habits]] are much mo
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

@@ -9,6 +9,4 @@ To act outgoing, it is helpful to ask questions, and let the other people do the
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

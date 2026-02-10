@@ -19,6 +19,4 @@ From a network perspective, curiosity conversations are a deliberate strategy fo
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

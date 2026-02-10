@@ -12,6 +12,4 @@ To become more straightforward, you have to stop doubting the legitimacy of your
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Simpler Life]] 
-</p>

@@ -11,6 +11,4 @@ Curiosity can be urgent and trivial. Some questions have kind of impatient compu
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Curious Mind]] 
-</p>

@@ -214,6 +214,4 @@ Both scripts follow the same design pattern:
 
 ---
 
-<p class="property-backlinks-hidden">
 [[projects/Coding/QuickAdd Place Note Automation]] 
-</p>

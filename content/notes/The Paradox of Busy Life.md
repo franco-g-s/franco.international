@@ -37,6 +37,4 @@ The paradox resolves when we recognize that less can be more. By doing fewer thi
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Simpler Life]] [[notes/The fruitful simplicity of quieter days]] 
-</p>

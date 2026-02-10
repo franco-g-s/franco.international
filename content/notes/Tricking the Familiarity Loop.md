@@ -10,6 +10,4 @@ On an individual level, people tend to be more likely to stick to working out if
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

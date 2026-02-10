@@ -12,6 +12,4 @@ Materialism isn't inherently bad. As with many things in life, it's the dose tha
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Simpler Life]] 
-</p>

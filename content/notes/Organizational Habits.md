@@ -10,6 +10,4 @@ These organizational habits promise that continued profits if the patters and tr
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/The Power of Habit]] 
-</p>

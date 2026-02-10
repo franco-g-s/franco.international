@@ -12,6 +12,4 @@ Simplicity in the modern age is often something that people strive for. This lon
 
 ---
 
-<p class="property-backlinks-hidden">
 [[media/books/A Simpler Life]] 
-</p>
