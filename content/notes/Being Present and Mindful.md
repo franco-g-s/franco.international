@@ -51,7 +51,7 @@ We're naturally time travelers. Our brains are constantly:
 - Imagining different possibilities
 - Avoiding present discomfort
 
-## The Paradox of Memory Making
+## [[notes/The Paradox of Memory Making|The Paradox of Memory Making]]
 When you're focused on creating memories (taking photos, planning Instagram posts), you're not actually present for the experience you're trying to preserve. You're living in the future memory rather than the present moment.
 
 ## The Practice
