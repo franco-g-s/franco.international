@@ -8,10 +8,7 @@ author:
 url:
   - 'https://www.youtube.com/watch?app=desktop&v=CYlon2tvywA'
 published: '2025-10-01'
-description: >-
-  The beautiful math behind six degrees of separation. Sponsored by Incogni -
-  use code veritasium at https://incogni.com/veritasium to get an exclusive 60%
-  off...
+description: The beautiful math behind six degrees of separation.
 language: en-US
 image: 'https://img.youtube.com/vi/CYlon2tvywA/maxresdefault.jpg'
 ---
@@ -20,13 +17,13 @@ image: 'https://img.youtube.com/vi/CYlon2tvywA/maxresdefault.jpg'
 
 
 > [!summary] Description:
-> The beautiful math behind six degrees of separation. Sponsored by Incogni - use code veritasium at https://incogni.com/veritasium to get an exclusive 60% off...
+> The beautiful math behind six degrees of separation. 
 
 !YouTube Video Notes.base
 
 ### Transcript
 > [!info] Key Takeaways
-> Six Degrees of Separation - Key Takeaways 
+> [[notes/Six Degrees of Separation - Key Takeaways|Six Degrees of Separation - Key Takeaways]] 
 
 ## What is six degrees of separation?
 

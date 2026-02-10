@@ -13,7 +13,7 @@ Similarly, great products anticipate how we'll want to use them or what we'll wa
 
 Not everybody appreciated being the target of curiosity, and that too is a way of seeing the world from someone else's point of view.
 
-Seeking out people from other industries and communities doesn't just disrupt your point of view—it also strategically positions you in the network. By maintaining connections across different fields and communities through [[notes/Curiosity Conversations|Curiosity Conversations]], you create Network Shortcuts that give you access to information and opportunities that would never reach you through your immediate circle. The best professionals who can think from their rivals' perspectives have often built networks that expose them to these diverse viewpoints.
+Seeking out people from other industries and communities doesn't just disrupt your point of view—it also strategically positions you in the network. By maintaining connections across different fields and communities through [[notes/Curiosity Conversations|Curiosity Conversations]], you create [[notes/Network Shortcuts|Network Shortcuts]] that give you access to information and opportunities that would never reach you through your immediate circle. The best professionals who can think from their rivals' perspectives have often built networks that expose them to these diverse viewpoints.
 
 ---
 

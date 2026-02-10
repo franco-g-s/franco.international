@@ -9,7 +9,7 @@ Weak ties are “casual acquaintances—friends of friends—people who are neit
 
 Weak ties can be extremely [[notes/The Power of Weak Ties|powerful]], even more so than strong ties
 
-In network science, weak ties function as Network Shortcuts—connections that bridge distant parts of the social network and make the world "small."
+In network science, weak ties function as [[notes/Network Shortcuts|Network Shortcuts]]—connections that bridge distant parts of the social network and make the world "small."
 
 ---
 

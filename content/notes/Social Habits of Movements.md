@@ -13,7 +13,7 @@ When all three parts are fulfilled, the movement can become self-propelling.
 
 "Movements don't emerge because everyone suddenly decides to face theSame direction at once. They rely on social patterns that begin as the habits of friendship, grow throughout the habits of communities , and are sustained by new habits that change participants' sense of self."
 
-This three-part process maps directly onto network science principles: strong ties create the initial clustering where cooperation emerges naturally through repeated interactions, weak ties act as Network Shortcuts that bridge between clusters while maintaining enough structure for the movement to remain coherent, and new habits sustain cooperation by creating the repeated interactions necessary as the network grows.
+This three-part process maps directly onto network science principles: strong ties create the initial clustering where [[notes/Network Structure and Cooperation|cooperation emerges naturally]] through repeated interactions, weak ties act as [[notes/Network Shortcuts|Network Shortcuts]] that bridge between clusters while maintaining enough structure for the movement to remain coherent, and new habits sustain cooperation by creating the repeated interactions necessary as the network grows.
 
 ---
 

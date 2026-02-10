@@ -112,6 +112,7 @@ During publishing, the script:
 - **Strips** wikilink syntax from remaining properties (`Topic` → `Topic`)
 - **Formats** dates as YYYY-MM-DD strings
 - **Copies** referenced attachments to `content/attachments/`
+- **Extracts property wikilinks** and appends as hidden markdown for backlink generation (pure markdown, not HTML, so Quartz processes them)
 
 ### Safety Features
 - **Dry-run by default** — must pass `--execute` to write anything
@@ -178,6 +179,12 @@ During publishing, the script:
 **Backlinks:**
 - [x] Always visible in sidebar (shows "No backlinks found" when empty)
 - [x] Positioned below graph and TOC in right sidebar
+- [x] **Property Backlinks Feature** - Includes links from frontmatter properties in link graph
+  - Extracts wikilinks from all frontmatter properties (e.g., `books: Book Title`)
+  - Appends property links as hidden markdown after content (hidden with CSS)
+  - Quartz's link crawler processes the markdown wikilinks for backlink generation
+  - Enables Obsidian-like behavior where property links create backlinks
+  - CSS hides the property link section using `:last-of-type` selector on `<hr>`
 
 **Wikilink Resolution System:**
 - [x] **Custom link transformation** during publishing

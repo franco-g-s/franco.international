@@ -14,8 +14,8 @@ related:
   - >-
     [[notes/The fruitful simplicity of quieter days|The fruitful simplicity of
     quieter days]]
-  - Living in the Present Moment
-  - Being Present and Mindful
+  - '[[notes/Living in the Present Moment|Living in the Present Moment]]'
+  - '[[notes/Being Present and Mindful|Being Present and Mindful]]'
 ---
 ## The Paradox
 
@@ -37,4 +37,4 @@ The paradox resolves when we recognize that less can be more. By doing fewer thi
 
 ---
 
-[[media/books/A Simpler Life]] [[notes/The fruitful simplicity of quieter days]] 
+[[media/books/A Simpler Life]] [[notes/The fruitful simplicity of quieter days]] [[notes/Living in the Present Moment]] [[notes/Being Present and Mindful]] 

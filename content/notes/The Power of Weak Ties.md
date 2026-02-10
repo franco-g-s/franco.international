@@ -12,7 +12,7 @@ Peer pressure (and other social habits that encourage people to conform to group
 
 In the case of landing a job, these relationships are also more important than strong ties. They "give access to social networks where we don't otherwise belong."
 
-The power of weak ties comes from their role as Network Shortcuts that connect otherwise distant clusters. In highly clustered social networks where most people know their neighbors, just a few connections to people outside your immediate circle can reduce the degrees of separation from millions of steps to just six. This structural property explains why weak ties are so effective for spreading movements, finding jobs, and accessing novel information—they provide bridges to entirely different parts of the network that your close friends cannot reach.
+The power of weak ties comes from their role as [[notes/Network Shortcuts|Network Shortcuts]] that connect otherwise distant clusters. In highly clustered social networks where most people know their neighbors, just a few connections to people outside your immediate circle can reduce the degrees of separation from millions of steps to just six. This structural property explains why weak ties are so effective for spreading movements, finding jobs, and accessing novel information—they provide bridges to entirely different parts of the network that your close friends cannot reach.
 
 ---
 
