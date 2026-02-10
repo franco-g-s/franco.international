@@ -36,7 +36,7 @@ export default ((opts?: Partial<Options>) => {
     const isCollapsed = fileData.collapseToc ?? collapseByDefault
     const id = `toc-${numTocs++}`
     return (
-      <div class={classNames(displayClass, "toc")}>
+      <div class={classNames(displayClass, "toc", "no-transition")}>
         <button
           type="button"
           class={isCollapsed ? "collapsed toc-header" : "toc-header"}
@@ -77,26 +77,24 @@ export default ((opts?: Partial<Options>) => {
 
   TableOfContents.css = modernStyle
 
-  // Force initial collapsed state if needed
-  const forceCollapseScript = `
+  // Prevent animation flicker on initial load by removing transitions class after a moment
+  const preventFlickerScript = `
 document.addEventListener("nav", () => {
-  const collapseByDefault = ${collapseByDefault}
-  if (collapseByDefault) {
+  // Remove no-transition class after initial render to re-enable animations
+  setTimeout(() => {
     const tocs = document.querySelectorAll(".toc")
     tocs.forEach((toc) => {
-      const button = toc.querySelector(".toc-header")
-      const content = toc.querySelector(".toc-content")
-      if (button && content && !button.classList.contains("collapsed")) {
-        button.classList.add("collapsed")
-        content.classList.add("collapsed")
-        button.setAttribute("aria-expanded", "false")
-      }
+      toc.classList.remove("no-transition")
     })
-  }
+  }, 50)
 })
 `
 
-  TableOfContents.afterDOMLoaded = concatenateResources(script, overflowListAfterDOMLoaded, forceCollapseScript)
+  TableOfContents.afterDOMLoaded = concatenateResources(
+    script,
+    overflowListAfterDOMLoaded,
+    preventFlickerScript,
+  )
 
   const LegacyTableOfContents: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => {
     if (!fileData.toc) {

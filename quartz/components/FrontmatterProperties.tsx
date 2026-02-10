@@ -97,11 +97,13 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
           parts.push(text.slice(lastIndex, match.index))
         }
 
-        const path = match[1]
-        const display = match[2] || path.split("/").pop() || path
+        const path = match[1].trim()
+        const display = match[2]?.trim() || path.split("/").pop() || path
 
-        // Create link to the note
-        const href = resolveRelative(fileData.slug!, path as any)
+        // Construct proper URL - path is already the full web path
+        // e.g., "notes/The fruitful simplicity" -> "/notes/The-fruitful-simplicity"
+        const href = "/" + path.replace(/ /g, "-")
+
         parts.push(
           <a href={href} class="internal">
             {display}
@@ -126,15 +128,15 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
         return (
           <>
             {value.map((item, idx) => (
-              <>
-                <span class="property-value-item">{parseWikilinks(String(item))}</span>
+              <span key={idx}>
+                <span class="property-value-item">{parseWikilinks(String(item).trim())}</span>
                 {idx < value.length - 1 && <span class="property-separator">, </span>}
-              </>
+              </span>
             ))}
           </>
         )
       }
-      return <span class="property-value-item">{parseWikilinks(String(value))}</span>
+      return <span class="property-value-item">{parseWikilinks(String(value).trim())}</span>
     }
 
     // Helper to create property label

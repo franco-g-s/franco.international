@@ -9,6 +9,11 @@
   &:has(button.toc-header.collapsed) {
     flex: 0 1 1.4rem;
   }
+
+  // Disable all transitions on initial load to prevent collapse animation
+  &.no-transition * {
+    transition: none !important;
+  }
 }
 
 button.toc-header {
