@@ -366,11 +366,11 @@ function transformFrontmatter(data, noteTitleMap = null) {
   // Transform or strip wikilink syntax from properties
   for (const [key, value] of Object.entries(result)) {
     if (typeof value === "string") {
-      result[key] = transformPropertyWikilinks(value, noteTitleMap)
+      result[key] = transformPropertyWikilinks(value, noteTitleMap).trim()
     } else if (Array.isArray(value)) {
-      result[key] = value.map((v) =>
-        typeof v === "string" ? transformPropertyWikilinks(v, noteTitleMap) : v,
-      )
+      result[key] = value
+        .map((v) => (typeof v === "string" ? transformPropertyWikilinks(v, noteTitleMap).trim() : v))
+        .filter((v) => v !== "") // Remove empty strings
     }
   }
 

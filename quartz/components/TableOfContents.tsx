@@ -76,7 +76,27 @@ export default ((opts?: Partial<Options>) => {
   }
 
   TableOfContents.css = modernStyle
-  TableOfContents.afterDOMLoaded = concatenateResources(script, overflowListAfterDOMLoaded)
+
+  // Force initial collapsed state if needed
+  const forceCollapseScript = `
+document.addEventListener("nav", () => {
+  const collapseByDefault = ${collapseByDefault}
+  if (collapseByDefault) {
+    const tocs = document.querySelectorAll(".toc")
+    tocs.forEach((toc) => {
+      const button = toc.querySelector(".toc-header")
+      const content = toc.querySelector(".toc-content")
+      if (button && content && !button.classList.contains("collapsed")) {
+        button.classList.add("collapsed")
+        content.classList.add("collapsed")
+        button.setAttribute("aria-expanded", "false")
+      }
+    })
+  }
+})
+`
+
+  TableOfContents.afterDOMLoaded = concatenateResources(script, overflowListAfterDOMLoaded, forceCollapseScript)
 
   const LegacyTableOfContents: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => {
     if (!fileData.toc) {

@@ -1,6 +1,7 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
 import { JSX } from "preact"
+import { resolveRelative } from "../util/path"
 
 interface FrontmatterPropertiesOptions {
   /**
@@ -83,7 +84,42 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
 
     const properties: JSX.Element[] = []
 
-    // Helper to render value(s) - handles arrays
+    // Helper to parse and render wikilinks in text
+    const parseWikilinks = (text: string): (string | JSX.Element)[] => {
+      const parts: (string | JSX.Element)[] = []
+      const wikilinkRegex = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g
+      let lastIndex = 0
+      let match
+
+      while ((match = wikilinkRegex.exec(text)) !== null) {
+        // Add text before the wikilink
+        if (match.index > lastIndex) {
+          parts.push(text.slice(lastIndex, match.index))
+        }
+
+        const path = match[1]
+        const display = match[2] || path.split("/").pop() || path
+
+        // Create link to the note
+        const href = resolveRelative(fileData.slug!, path as any)
+        parts.push(
+          <a href={href} class="internal">
+            {display}
+          </a>,
+        )
+
+        lastIndex = match.index + match[0].length
+      }
+
+      // Add remaining text after last wikilink
+      if (lastIndex < text.length) {
+        parts.push(text.slice(lastIndex))
+      }
+
+      return parts.length > 0 ? parts : [text]
+    }
+
+    // Helper to render value(s) - handles arrays and wikilinks
     const renderValue = (value: any): JSX.Element => {
       if (Array.isArray(value)) {
         if (value.length === 0) return <></>
@@ -91,14 +127,14 @@ export default ((opts?: Partial<FrontmatterPropertiesOptions>) => {
           <>
             {value.map((item, idx) => (
               <>
-                <span class="property-value-item">{String(item)}</span>
+                <span class="property-value-item">{parseWikilinks(String(item))}</span>
                 {idx < value.length - 1 && <span class="property-separator">, </span>}
               </>
             ))}
           </>
         )
       }
-      return <span class="property-value-item">{String(value)}</span>
+      return <span class="property-value-item">{parseWikilinks(String(value))}</span>
     }
 
     // Helper to create property label
