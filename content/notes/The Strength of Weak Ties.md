@@ -3,7 +3,7 @@ created: '2025-10-13'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Network Science
   - Social Networks
@@ -63,4 +63,4 @@ This sense of obligation is what allows movements to grow beyond initial friend 
 
 ---
 
-[[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/Network Shortcuts]] 
+[[notes/index]] [[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/Network Shortcuts]] 

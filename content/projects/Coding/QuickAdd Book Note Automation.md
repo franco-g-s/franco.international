@@ -3,7 +3,7 @@ created: '2026-02-09'
 tags:
   - project
 areas:
-  - Projects
+  - '[[projects/index|Projects]]'
   - Coding
   - Automation
 status: completed
@@ -15,7 +15,7 @@ related:
 topics:
   - Obsidian
   - QuickAdd
-  - Books
+  - '[[media/books/index|Books]]'
 ---
 
 ## Overview
@@ -218,4 +218,4 @@ Both scripts follow the same design pattern:
 
 ---
 
-[[projects/Coding/QuickAdd Place Note Automation]] 
+[[projects/index]] [[projects/Coding/QuickAdd Place Note Automation]] [[media/books/index]] 

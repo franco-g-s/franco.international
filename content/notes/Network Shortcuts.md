@@ -3,7 +3,7 @@ created: '2025-10-13'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Network Science
 videos:
@@ -54,4 +54,4 @@ These intentional connections serve multiple purposes: they create valuable shor
 
 ---
 
-[[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/The Small-World Paradox]] [[notes/The Strength of Weak Ties]] 
+[[notes/index]] [[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/The Small-World Paradox]] [[notes/The Strength of Weak Ties]] 

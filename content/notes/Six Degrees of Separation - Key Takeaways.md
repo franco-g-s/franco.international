@@ -3,7 +3,7 @@ created: '2025-10-13'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Network Science
   - Social Networks
@@ -61,4 +61,4 @@ Any two people on Earth can be connected through approximately six steps or fewe
 
 ---
 
-[[media/youtube/We simulated if you can really reach anyone in 6 steps]] 
+[[notes/index]] [[media/youtube/We simulated if you can really reach anyone in 6 steps]] 

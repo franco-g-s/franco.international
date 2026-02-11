@@ -3,7 +3,7 @@ created: '2025-09-08'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Purpose
   - Satisfaction
@@ -89,4 +89,4 @@ If any area is lacking, that's where to focus your energy for greater overall ha
 
 ---
 
-[[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] [[notes/Finding Purpose]] 
+[[notes/index]] [[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] [[notes/Finding Purpose]] 

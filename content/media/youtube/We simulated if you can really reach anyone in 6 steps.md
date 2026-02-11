@@ -3,7 +3,7 @@ created: '2025-10-13'
 tags:
   - youtube
 areas:
-  - YouTube
+  - '[[media/youtube/index|YouTube]]'
 title: We simulated if you can really reach anyone in 6 steps
 author:
   - Veritasium
@@ -270,3 +270,7 @@ Yeah. Learning all about network science has taught me many things, but perhaps 
 ---
 
 Hey, if you made it this far, all the simulations we ran through with Derek, we will actually make them available on a website that you can go to so you can play around with them yourself. So thank you so much for watching, we really appreciate it. And yeah, see you for the next one.
+
+---
+
+[[media/youtube/index]] 

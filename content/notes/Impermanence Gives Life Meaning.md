@@ -4,7 +4,7 @@ tags:
   - movie-notes
   - clipping-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 movies:
   - '[[media/movies/Groundhog Day (1993)|Groundhog Day (1993)]]'
 topics:
@@ -37,4 +37,4 @@ Phil's loop nightmare is the flip side of our death anxiety. We fear death, loss
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] [[notes/Groundhog Day - Key Takeaways]] [[notes/Living in the Present Moment]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] [[notes/Groundhog Day - Key Takeaways]] [[notes/Living in the Present Moment]] 

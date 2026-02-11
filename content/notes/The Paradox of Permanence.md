@@ -3,7 +3,7 @@ created: '2026-01-31'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 movies:
@@ -50,4 +50,4 @@ We need impermanence to give weight to our choices, create meaning in relationsh
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] [[notes/Impermanence Gives Life Meaning]] [[notes/Living in the Present Moment]] [[notes/Groundhog Day - Key Takeaways]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] [[notes/Impermanence Gives Life Meaning]] [[notes/Living in the Present Moment]] [[notes/Groundhog Day - Key Takeaways]] 

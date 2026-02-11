@@ -3,7 +3,7 @@ created: '2026-01-31'
 tags:
   - notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 topics:
@@ -54,4 +54,4 @@ Sometimes the best way to preserve a moment is to simply be in it. The richest m
 
 ---
 
-[[notes/Being Present and Mindful]] [[notes/Living in the Present Moment]] [[notes/The Broadcasting Paradox of Modern Travel]] [[media/movies/The Secret Life of Walter Mitty (2013)]] 
+[[notes/index]] [[notes/Being Present and Mindful]] [[notes/Living in the Present Moment]] [[notes/The Broadcasting Paradox of Modern Travel]] [[media/movies/The Secret Life of Walter Mitty (2013)]] 

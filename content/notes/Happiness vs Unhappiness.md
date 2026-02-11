@@ -3,7 +3,7 @@ created: '2025-09-08'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Psychology
   - Happiness
@@ -47,4 +47,4 @@ The key is recognizing that reducing unhappiness creates space for happiness, bu
 
 ---
 
-[[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 
+[[notes/index]] [[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 

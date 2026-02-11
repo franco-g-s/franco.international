@@ -3,7 +3,7 @@ created: '2026-01-31'
 tags:
   - book-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 books:
@@ -39,4 +39,4 @@ The paradox resolves when we recognize that less can be more. By doing fewer thi
 
 ---
 
-[[media/books/A Simpler Life]] [[notes/The fruitful simplicity of quieter days]] [[notes/Living in the Present Moment]] [[notes/Being Present and Mindful]] 
+[[notes/index]] [[media/books/A Simpler Life]] [[notes/The fruitful simplicity of quieter days]] [[notes/Living in the Present Moment]] [[notes/Being Present and Mindful]] 

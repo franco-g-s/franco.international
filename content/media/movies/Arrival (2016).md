@@ -3,7 +3,7 @@ created: '2026-01-20'
 tags:
   - movies
 areas:
-  - Movies
+  - '[[media/movies/index|Movies]]'
 year: 2016
 director:
   - Denis Villeneuve
@@ -35,3 +35,7 @@ language: en-US
 > [!info]  Post-Watch Review - Arrival
 
 !Movie Notes.base
+
+---
+
+[[media/movies/index]] 

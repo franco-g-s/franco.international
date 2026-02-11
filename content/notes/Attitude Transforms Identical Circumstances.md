@@ -4,7 +4,7 @@ tags:
   - movie-notes
   - clipping-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 movies:
   - '[[media/movies/Groundhog Day (1993)|Groundhog Day (1993)]]'
 topics:
@@ -33,4 +33,4 @@ You have more control over your experience through attitude than through changin
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] [[notes/Groundhog Day - Key Takeaways]] [[notes/Living in the Present Moment]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Small Changes Cascade]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] [[notes/Groundhog Day - Key Takeaways]] [[notes/Living in the Present Moment]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Small Changes Cascade]] 

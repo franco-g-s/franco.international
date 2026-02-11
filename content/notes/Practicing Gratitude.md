@@ -3,7 +3,7 @@ created: '2025-09-08'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Gratitude
   - Metacognition
@@ -58,4 +58,4 @@ Gratitude isn't about feeling grateful - it's about **deciding** to be grateful 
 
 ---
 
-[[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 
+[[notes/index]] [[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 

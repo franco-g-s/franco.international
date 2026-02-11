@@ -6,11 +6,10 @@ This is my personal knowledge base and digital garden, where I share my notes, p
 
 ## What You'll Find Here
 - **[[about/index|About Me]]** - Learn more about who I am and what I do
-- **[[eth/index|ETH]]** - Academic notes from my Mechanical Engineering studies
-- [[exercise/index|Exercise]] - Sports I do and my health protocol for longevity
-- **[[notes/index|Notes]]** - General notes and reflections on various topics
+- **[[media/index|Media]]** - Books, movies, YouTube videos, and other media I've consumed
 - **[[projects/index|Projects]]** - Personal and professional projects I'm working on
-- **[[media/index|Media]]** - Books, movies, youtube videos, and other media I've consumed
+- **[[exercise/index|Exercise]]** - Sports, training, and fitness
+- **[[notes/index|Notes]]** - General notes and reflections on various topics
 
 ## Recent Updates
 This site is built with [Quartz](https://quartz.jzhao.xyz) and published from my Obsidian vault. The content is continuously evolving as I learn and explore new topics.

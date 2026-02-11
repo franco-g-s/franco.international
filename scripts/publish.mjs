@@ -430,8 +430,27 @@ function transformPropertyWikilinks(value, noteTitleMap) {
     return value.replace(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g, "$1")
   }
 
+  // Map area names to their index pages
+  const areaIndexMap = {
+    books: "media/books/index",
+    movies: "media/movies/index",
+    youtube: "media/youtube/index",
+    media: "media/index",
+    notes: "notes/index",
+    projects: "projects/index",
+    exercise: "exercise/index",
+    about: "about/index",
+  }
+
   return value.replace(/\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\]]+))?\]\]/g, (match, title, displayText) => {
     const normalizedTitle = title.trim().toLowerCase()
+
+    // Check if this is a known area name
+    if (areaIndexMap[normalizedTitle]) {
+      const display = displayText || title
+      return `[[${areaIndexMap[normalizedTitle]}|${display}]]`
+    }
+
     const target = noteTitleMap.get(normalizedTitle)
 
     if (!target) {

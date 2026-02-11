@@ -3,7 +3,7 @@ created: '2025-10-30'
 tags:
   - project
 areas:
-  - Projects
+  - '[[projects/index|Projects]]'
   - Accelerated Biosciences
   - AI
 status: completed
@@ -305,3 +305,7 @@ Federal Register API
 **Last Updated:** 2025-11-17
 **Status:** Production Ready
 **Version:** 1.0
+
+---
+
+[[projects/index]] 

@@ -3,7 +3,7 @@ created: '2025-11-14'
 tags:
   - project
 areas:
-  - Projects
+  - '[[projects/index|Projects]]'
   - Coding
 status: completed
 related:
@@ -114,3 +114,7 @@ This script replaces the previous `/place` slash command that used:
 
 ### Resources
 !Resources.base
+
+---
+
+[[projects/index]] 

@@ -3,7 +3,7 @@ created: '2026-01-30'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 movies:
   - '[[media/movies/Arrival (2016)|Arrival (2016)]]'
 topics:
@@ -45,4 +45,4 @@ Both Arrival and [[notes/Interstellar - Key Takeaways|Interstellar]] explore sim
 
 ---
 
-[[media/movies/Arrival (2016)]] 
+[[notes/index]] [[media/movies/Arrival (2016)]] 

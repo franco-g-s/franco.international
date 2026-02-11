@@ -3,7 +3,7 @@ created: '2025-09-08'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Life Direction
   - Existential Questions
@@ -68,4 +68,4 @@ The goal isn't to find the "perfect" purpose, but to live with intentional atten
 
 ---
 
-[[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 
+[[notes/index]] [[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 

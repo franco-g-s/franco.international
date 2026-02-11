@@ -3,7 +3,7 @@ created: '2025-05-28'
 tags:
   - books
 areas:
-  - Books
+  - '[[media/books/index|Books]]'
 year: 2012
 author:
   - Charles Duhigg
@@ -37,3 +37,7 @@ isbn: 9780812981605
 
 
 !Book Notes.base
+
+---
+
+[[media/books/index]] 

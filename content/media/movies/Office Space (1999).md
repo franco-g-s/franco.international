@@ -3,7 +3,7 @@ created: '2026-01-20'
 tags:
   - movies
 areas:
-  - Movies
+  - '[[media/movies/index|Movies]]'
 year: 1999
 director:
   - Mike Judge
@@ -31,3 +31,7 @@ language: en-US
 > [!info]  Post-Watch Review - Office Space
 
 !Movie Notes.base
+
+---
+
+[[media/movies/index]] 

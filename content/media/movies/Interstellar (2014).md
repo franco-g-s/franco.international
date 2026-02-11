@@ -3,7 +3,7 @@ created: '2026-01-20'
 tags:
   - movies
 areas:
-  - Movies
+  - '[[media/movies/index|Movies]]'
 year: 2014
 director:
   - Christopher Nolan
@@ -41,3 +41,7 @@ language: en-US
 > [!info]  Post-Watch Review - Interstellar
 
 !Movie Notes.base
+
+---
+
+[[media/movies/index]] 

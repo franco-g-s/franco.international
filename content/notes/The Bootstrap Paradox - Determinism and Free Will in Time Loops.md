@@ -3,7 +3,7 @@ created: '2026-01-30'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 movies:
@@ -86,4 +86,4 @@ The only thing that matters is how you experience and engage with each moment as
 
 ---
 
-[[media/movies/Interstellar (2014)]] [[media/movies/Arrival (2016)]] [[notes/Interstellar - Key Takeaways]] [[notes/Arrival - Key Takeaways]] [[notes/Living in the Present Moment]] [[notes/The Paradox of Skipping Forward in Time]] 
+[[notes/index]] [[media/movies/Interstellar (2014)]] [[media/movies/Arrival (2016)]] [[notes/Interstellar - Key Takeaways]] [[notes/Arrival - Key Takeaways]] [[notes/Living in the Present Moment]] [[notes/The Paradox of Skipping Forward in Time]] 

@@ -3,7 +3,7 @@ created: '2026-01-31'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 movies:
@@ -52,4 +52,4 @@ The paradox: the natural human strategy for dealing with life (avoid pain, seek 
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Intrinsic vs Instrumental Action]] [[notes/Wanting Less Instead of Having More]] [[notes/Groundhog Day - Key Takeaways]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Intrinsic vs Instrumental Action]] [[notes/Wanting Less Instead of Having More]] [[notes/Groundhog Day - Key Takeaways]] 

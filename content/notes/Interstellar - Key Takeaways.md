@@ -3,7 +3,7 @@ created: '2026-01-30'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 movies:
   - '[[media/movies/Interstellar (2014)|Interstellar (2014)]]'
 topics:
@@ -32,4 +32,4 @@ Interstellar explores profound themes around time, love, sacrifice, and humanity
 
 ---
 
-[[media/movies/Interstellar (2014)]] 
+[[notes/index]] [[media/movies/Interstellar (2014)]] 

@@ -3,7 +3,7 @@ created: '2026-01-31'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 movies:
@@ -39,4 +39,4 @@ You have more control over your experience through attitude than through changin
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] [[notes/Attitude Transforms Identical Circumstances]] [[notes/Living in the Present Moment]] [[notes/Groundhog Day - Key Takeaways]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] [[notes/Attitude Transforms Identical Circumstances]] [[notes/Living in the Present Moment]] [[notes/Groundhog Day - Key Takeaways]] 

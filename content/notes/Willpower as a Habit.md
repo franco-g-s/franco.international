@@ -4,6 +4,9 @@ tags:
   - book-notes
 books:
   - '[[media/books/The Power of Habit|The Power of Habit]]'
+topics:
+  - Willpower
+  - Habits
 ---
 Willpower is one of the most important [[notes/Keystone Habits|Keystone Habits]] for individual success. It has a bigger influence on academic performance than intelligence. 
 Willpower by itself isn't a skill, it’s more like a muscle. It can be used up, restored and conserved. 

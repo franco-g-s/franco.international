@@ -3,7 +3,7 @@ created: '2026-01-20'
 tags:
   - books
 areas:
-  - Books
+  - '[[media/books/index|Books]]'
 year: 2019
 author:
   - Paul Jarvis
@@ -30,3 +30,7 @@ isbn: 9780241380239
 > [!info]  Post-Read Review - Company of One
 
 !Book Notes.base
+
+---
+
+[[media/books/index]] 

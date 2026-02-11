@@ -3,7 +3,7 @@ created: '2026-01-20'
 tags:
   - books
 areas:
-  - Books
+  - '[[media/books/index|Books]]'
 year: 2007
 author:
   - Timothy Ferriss
@@ -33,3 +33,7 @@ isbn: 9781446490594
 > [!info]  Post-Read Review - The 4-Hour Workweek
 
 !Book Notes.base
+
+---
+
+[[media/books/index]] 

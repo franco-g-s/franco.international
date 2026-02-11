@@ -3,7 +3,7 @@ created: '2026-01-31'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 movies:
@@ -48,4 +48,4 @@ This shift from instrumental to intrinsic action represents finding authentic pu
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] [[notes/Intrinsic vs Instrumental Action]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Finding Purpose]] [[notes/Groundhog Day - Key Takeaways]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] [[notes/Intrinsic vs Instrumental Action]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Finding Purpose]] [[notes/Groundhog Day - Key Takeaways]] 

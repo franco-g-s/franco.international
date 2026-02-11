@@ -3,7 +3,7 @@ created: '2025-09-08'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Mindfulness
   - Presence
@@ -63,4 +63,4 @@ The goal isn't to eliminate all future thinking, but to be conscious of when you
 
 ---
 
-[[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 
+[[notes/index]] [[media/youtube/Harvard Professor Answers Happiness Questions From Twitter  Tech Support  WIRED]] 

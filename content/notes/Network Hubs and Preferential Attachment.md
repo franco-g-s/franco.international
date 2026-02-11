@@ -3,7 +3,7 @@ created: '2025-10-13'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Network Science
   - Complexity
@@ -63,4 +63,4 @@ The same structural property that makes networks efficient (hubs connecting ever
 
 ---
 
-[[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] 
+[[notes/index]] [[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] 

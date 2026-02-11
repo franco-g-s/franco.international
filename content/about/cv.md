@@ -4,7 +4,7 @@ created: '2026-02-06'
 tags:
   - notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 ---
 
 # Franco Gómez Schumacher
@@ -84,3 +84,7 @@ Born in Mexico, raised in Shanghai, Panama, and currently based in Switzerland, 
 ---
 
 *Last updated: February 2026*
+
+---
+
+[[notes/index]] 

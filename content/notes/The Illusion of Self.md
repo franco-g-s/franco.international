@@ -4,7 +4,7 @@ tags:
   - movie-notes
   - clipping-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 movies:
   - '[[media/movies/Groundhog Day (1993)|Groundhog Day (1993)]]'
 topics:
@@ -35,4 +35,4 @@ This is core to Buddhist philosophy: the self is an illusion, and attachment to 
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] [[notes/Groundhog Day - Key Takeaways]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Practicing Gratitude]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] [[notes/Groundhog Day - Key Takeaways]] [[notes/The Cycle of Craving and Suffering (Samsara)]] [[notes/Practicing Gratitude]] 

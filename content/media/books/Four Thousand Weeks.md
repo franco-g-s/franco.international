@@ -3,7 +3,7 @@ created: '2026-01-20'
 tags:
   - books
 areas:
-  - Books
+  - '[[media/books/index|Books]]'
 year: 2021
 author:
   - Oliver Burkeman
@@ -32,3 +32,7 @@ isbn: 9781473545557
 > [!info]  Post-Read Review - Four Thousand Weeks
 
 !Book Notes.base
+
+---
+
+[[media/books/index]] 

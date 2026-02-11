@@ -3,7 +3,7 @@ created: '2025-11-21'
 tags:
   - youtube
 areas:
-  - YouTube
+  - '[[media/youtube/index|YouTube]]'
   - Running
   - Cycling
 title: How some runners maintain muscle while others starve (scientific breakdown)
@@ -98,3 +98,7 @@ And it's not just sleep. If you want to be smart and don't do too many junk mile
 
 ## Conclusion
 So, I hope you enjoyed this video and found it helpful. Let it flow. Stay wild and peace.
+
+---
+
+[[media/youtube/index]] 

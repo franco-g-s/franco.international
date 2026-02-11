@@ -3,7 +3,7 @@ created: '2025-10-13'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 topics:
@@ -39,4 +39,4 @@ The paradox is resolved by [[notes/Network Shortcuts|Network Shortcuts]]—a sma
 
 ---
 
-[[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/Network Shortcuts]] 
+[[notes/index]] [[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/Network Shortcuts]] 

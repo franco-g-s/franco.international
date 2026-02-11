@@ -3,7 +3,7 @@ created: '2026-02-02'
 tags:
   - youtube
 areas:
-  - YouTube
+  - '[[media/youtube/index|YouTube]]'
 title: The fear of being average
 author:
   - Verse Creates
@@ -13,6 +13,8 @@ published: '2026-01-24'
 description: >-
   Enjoy the videos and music you love, upload original content, and share it all
   with friends, family, and the world on YouTube.
+topics:
+  - Fear
 language: en-US
 image: 'https://img.youtube.com/vi/BLl3xREFEsY/maxresdefault.jpg'
 ---
@@ -298,3 +300,7 @@ So, it was never about a 9 to5 or a
 routine or even comfort. Those were not
 the enemies. It was always about letting
 those things control you.
+
+---
+
+[[media/youtube/index]] 

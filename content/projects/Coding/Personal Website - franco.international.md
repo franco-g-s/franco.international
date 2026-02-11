@@ -4,7 +4,7 @@ created: '2026-02-06'
 tags:
   - project
 areas:
-  - Projects
+  - '[[projects/index|Projects]]'
   - Coding
   - Obsidian
 status: in progress
@@ -107,8 +107,8 @@ node scripts/publish.mjs --verify         # Check published files match source
 
 ### Content Transformations
 During publishing, the script:
-- **Strips private frontmatter**: `people`, `collections`, `expenses`, `areas`, `projects`, `related`, `space`, `packing list`, `groups`, `attachments`
-- **Keeps public frontmatter**: `created`, `tags`, `title`, `status`, `url`, `author`, `year`, `genre`, `rating`, `language`, `topics`, `aliases`, `description`, `coordinates`
+- **Strips private frontmatter**: `people`, `collections`, `expenses`, `projects`, `related`, `space`, `packing list`, `groups`, `attachments`
+- **Keeps public frontmatter**: `created`, `tags`, `title`, `status`, `url`, `author`, `year`, `genre`, `rating`, `language`, `topics`, `areas`, `aliases`, `description`, `coordinates`
 - **Removes** `.base` embed lines (`!*.base*`)
 - **Removes** orphaned headings (headings with no content before next heading)
 - **Strips** `` Obsidian comments
@@ -201,10 +201,11 @@ During publishing, the script:
 - [x] Proper URL generation with space-to-hyphen conversion
 
 **Property System Expansion:**
-- [x] Added 30+ properties: source, published, description, start/end dates, due dates, filming dates, categories, seasons, books, clippings, collections, trips, related, projects, countries, cities, coordinates, cast, director, producer, writer, duration, r-value, journal-index
-- [x] Smart property stripping: keep public metadata, remove private data (people, areas, groups, attachments, journal metrics)
+- [x] Added 30+ properties: source, published, description, start/end dates, due dates, filming dates, categories, seasons, books, clippings, collections, trips, related, projects, countries, cities, coordinates, cast, director, producer, writer, duration, r-value, journal-index, areas
+- [x] Smart property stripping: keep public metadata, remove private data (people, groups, attachments, journal metrics)
 - [x] Date formatting: YYYY-MM-DD strings
 - [x] Trimmed whitespace from array values
+- [x] **Areas property now published** - Added to frontmatter display and included in published notes
 
 ### Phase 5: Content Population (Paused — waiting for Bases feature)
 - [x] Publish CV and about page
@@ -274,3 +275,7 @@ This code is now being contributed upstream as PR #2292, so porting it manually 
 ## Related Notes
 - Obsidian Rules - Core vault principles
 - Automation - Vault automation strategies
+
+---
+
+[[projects/index]] 

@@ -3,7 +3,7 @@ created: '2025-09-08'
 tags:
   - youtube
 areas:
-  - YouTube
+  - '[[media/youtube/index|YouTube]]'
 title: >-
   Harvard Professor Answers Happiness Questions From Twitter | Tech Support |
   WIRED
@@ -16,6 +16,8 @@ description: >-
   Harvard professor and "How to Build a Life" columnist Arthur C. Brooks answers
   the internet's burning questions about "happiness." Does anyone else feel
   depr...
+topics:
+  - Happiness
 language: en-US
 image: 'https://img.youtube.com/vi/vTmixSgeOI0/maxresdefault.jpg'
 ---
@@ -122,3 +124,7 @@ But there's another curve behind it called crystallized intelligence, which incr
 
 ## Conclusion
 Well, it looks like that's all we've got for today. Those are your questions. I hope you've learned a lot from this time. I hope you've enjoyed it. I hope you're a little bit happier. But here's the key thing, if you really wanna lock it in, here's the secret. You gotta think about it and you gotta adopt new habits in your life, and most of all, here's the most important part, you gotta share it. Go share it, then you'll never lose it. Thanks for taking some time with me today.
+
+---
+
+[[media/youtube/index]] 

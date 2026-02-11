@@ -4,6 +4,9 @@ tags:
   - book-notes
 books:
   - '[[media/books/A Curious Mind|A Curious Mind]]'
+topics:
+  - Conversations
+  - Curiosity
 ---
 Curiosity conversations are structured, intentional meetings with fascinating people from diverse fields outside one's immediate professional circle, driven purely by curiosity and the desire to understand different perspectives and experiences. 
 

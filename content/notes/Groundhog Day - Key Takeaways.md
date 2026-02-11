@@ -4,7 +4,7 @@ tags:
   - movie-notes
   - clipping-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 movies:
   - '[[media/movies/Groundhog Day (1993)|Groundhog Day (1993)]]'
 topics:
@@ -86,4 +86,4 @@ The film provides a lived illustration of how these principles work together. Ph
 
 ---
 
-[[media/movies/Groundhog Day (1993)]] 
+[[notes/index]] [[media/movies/Groundhog Day (1993)]] 

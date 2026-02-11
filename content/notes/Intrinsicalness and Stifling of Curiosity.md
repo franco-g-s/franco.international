@@ -4,6 +4,8 @@ tags:
   - book-notes
 books:
   - '[[media/books/A Curious Mind|A Curious Mind]]'
+topics:
+  - Curiosity
 ---
 From a young age, children start asking questions and being curious about the world. However, instead of answers, children often get patronizing and dismissive answers when lines of questioning go a little further than most adults can easily answer. 
 

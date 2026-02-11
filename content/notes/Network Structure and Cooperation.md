@@ -3,7 +3,7 @@ created: '2025-10-13'
 tags:
   - youtube-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 topics:
   - Network Science
   - Game Theory
@@ -83,4 +83,4 @@ The three-part structure mirrors the network principles: strong ties provide the
 
 ---
 
-[[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/Network Shortcuts]] [[notes/Social Media and Network Toxicity]] 
+[[notes/index]] [[media/youtube/We simulated if you can really reach anyone in 6 steps]] [[notes/Six Degrees of Separation - Key Takeaways]] [[notes/Network Shortcuts]] [[notes/Social Media and Network Toxicity]] 

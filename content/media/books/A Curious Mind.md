@@ -3,7 +3,7 @@ created: '2025-07-10'
 tags:
   - books
 areas:
-  - Books
+  - '[[media/books/index|Books]]'
 year: 2015
 author:
   - Brian Grazer
@@ -36,3 +36,7 @@ isbn: 9781476730776
 > [!info]  Post-Read Review - A Curious Mind
 
 !Book Notes.base
+
+---
+
+[[media/books/index]] 

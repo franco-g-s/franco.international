@@ -3,7 +3,7 @@ created: '2026-01-30'
 tags:
   - movie-notes
 areas:
-  - Notes
+  - '[[notes/index|Notes]]'
 collections:
   - Paradoxes
 movies:
@@ -41,4 +41,4 @@ In Interstellar, Cooper experiences this directly through time dilation—he "sk
 
 ---
 
-[[media/movies/Interstellar (2014)]] [[notes/Interstellar - Key Takeaways]] [[notes/Living in the Present Moment]] [[notes/Groundhog Day - Key Takeaways]] 
+[[notes/index]] [[media/movies/Interstellar (2014)]] [[notes/Interstellar - Key Takeaways]] [[notes/Living in the Present Moment]] [[notes/Groundhog Day - Key Takeaways]] 

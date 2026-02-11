@@ -3,7 +3,7 @@ created: '2025-10-20'
 tags:
   - movies
 areas:
-  - Movies
+  - '[[media/movies/index|Movies]]'
 year: 1993
 director:
   - Harold Ramis
@@ -25,3 +25,7 @@ language: en-US
 > [!info]  Post-Watch Review - Groundhog Day
 
 !Movie Notes.base
+
+---
+
+[[media/movies/index]] 

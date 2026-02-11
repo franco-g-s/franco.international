@@ -3,7 +3,7 @@ created: '2026-01-20'
 tags:
   - movies
 areas:
-  - Movies
+  - '[[media/movies/index|Movies]]'
 year: 2007
 director:
   - Sean Penn
@@ -37,3 +37,7 @@ language: en-US
 > [!info]  Post-Watch Review - Into the Wild
 
 !Movie Notes.base
+
+---
+
+[[media/movies/index]] 

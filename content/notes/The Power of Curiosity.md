@@ -4,6 +4,8 @@ tags:
   - book-notes
 books:
   - '[[media/books/A Curious Mind|A Curious Mind]]'
+topics:
+  - Curiosity
 ---
 Curiosity is universal. Labradors, porpoises, two-year-olds, and every person who presses *enter* on Google is curious. However, it is much more powerful than we realize. It is “the spark that starts a filtration—in a bar, at a party, across the lecture hall in Economics 101.” Curiosity nourishes our best human relationships by prompting simple questions like, to listen to the answer, and to [[notes/Curiosity Prompts Questions|ask the next question]]. 
 

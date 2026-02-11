@@ -3,7 +3,7 @@ created: '2025-11-11'
 tags:
   - youtube
 areas:
-  - YouTube
+  - '[[media/youtube/index|YouTube]]'
 title: We've Forgotten how to Travel
 author:
   - Like Stories of Old
@@ -14,6 +14,8 @@ description: >-
   It's 2004, and two men set out on a trip not knowing they were about to create
   one of the last portraits of a world that was right on the precipice of
   changing forever.
+topics:
+  - Travel
 language: en-US
 image: 'https://img.youtube.com/vi/FjV3tkrCYIY/maxresdefault.jpg'
 ---
@@ -585,3 +587,7 @@ for ourselves and for the future and you’ll  become part of a global conserva
 dedicated to preserving nature and maintaining  the world’s sacred wilderness. If you want to  
 
 see Planet Wild in action, watch their video  protecting Europe’s ancient forests here.
+
+---
+
+[[media/youtube/index]] 

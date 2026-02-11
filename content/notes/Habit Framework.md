@@ -4,6 +4,9 @@ tags:
   - book-notes
 books:
   - '[[media/books/The Power of Habit|The Power of Habit]]'
+topics:
+  - Habits
+  - Framework
 ---
 The habit framework serves as a practical guide to [[notes/Breaking Habits|changing habits]] that distills the lessons from [[media/books/The Power of Habit|The Power of Habit]]. 
 
