@@ -383,7 +383,7 @@ function transformContent(content, noteTitleMap = null, frontmatter = null) {
   return result
 }
 
-function transformFrontmatter(data, noteTitleMap = null) {
+function transformFrontmatter(data, noteTitleMap = null, indexNoteTitle = null) {
   const result = {}
 
   // Apply web-title override
@@ -398,6 +398,11 @@ function transformFrontmatter(data, noteTitleMap = null) {
     if (value === null || value === undefined || value === "") continue
     if (Array.isArray(value) && value.length === 0) continue
     result[key] = value
+  }
+
+  // If this is an index note and no title is set, use the basename (capitalized)
+  if (indexNoteTitle && !result.title) {
+    result.title = indexNoteTitle.charAt(0).toUpperCase() + indexNoteTitle.slice(1)
   }
 
   // Format dates as YYYY-MM-DD strings (gray-matter parses them into Date objects)
@@ -568,7 +573,8 @@ function buildPublishPlan() {
     // If note basename matches the last segment of webPath, make it index.md
     const webPathSegments = webPath.split("/")
     const lastSegment = webPathSegments[webPathSegments.length - 1]
-    if (basename.toLowerCase() === lastSegment.toLowerCase()) {
+    const isIndexNote = basename.toLowerCase() === lastSegment.toLowerCase()
+    if (isIndexNote) {
       filename = "index.md"
     }
 
@@ -576,7 +582,8 @@ function buildPublishPlan() {
     const relativeTarget = path.relative(WEBSITE_ROOT, targetPath)
 
     // Transform frontmatter first (to get properly resolved wikilinks)
-    const transformedFrontmatter = transformFrontmatter(note.data, noteTitleMap)
+    // Pass isIndexNote and basename so we can set proper title for index notes
+    const transformedFrontmatter = transformFrontmatter(note.data, noteTitleMap, isIndexNote ? basename : null)
 
     // Then transform content, passing transformed frontmatter for backlink extraction
     const transformedContent = transformContent(note.content, noteTitleMap, transformedFrontmatter)

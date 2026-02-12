@@ -7,6 +7,7 @@ areas:
 aliases:
   - Sport
   - exercise
+title: Exercise
 ---
 
 ### My Training Philosophy
