@@ -6,6 +6,15 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "Recently Edited Notes",
+        limit: 5,
+        showTags: false,
+        linkToMore: false,
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
     Component.FloatingControls({
       components: [Component.Darkmode(), Component.ReaderMode()],
     }),
