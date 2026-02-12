@@ -15,13 +15,11 @@ language: en-US
 image: 'https://img.youtube.com/vi/CYlon2tvywA/maxresdefault.jpg'
 ---
 
-![We simulated if you can really reach anyone in 6 steps](https://www.youtube.com/watch?app=desktop&v=CYlon2tvywA)
+![We simulated if you can really reach anyone in 6 steps](https://www.youtube.com/watch?app=desktop&v=CYlon2tvywA)  
 
 
 > [!summary] Description:
-> The beautiful math behind six degrees of separation. 
-
-!YouTube Video Notes.base
+> The beautiful math behind six degrees of separation.   
 
 ### Transcript
 > [!info] Key Takeaways

@@ -32,7 +32,7 @@ Groundhog Day presents a philosophical exploration of depression, Buddhist conce
 ## Connections to Happiness Research
 Phil's journey illustrates what happens when the three macronutrients of happiness—enjoyment, satisfaction, and purpose—are pursued in unhealthy ways versus their authentic forms:
 
-**The Problem Illustrated:**
+**The Problem Illustrated:**  
 - Craving and [[notes/Wanting Less Instead of Having More|seeking more perpetuates dissatisfaction]]
 - [[notes/Being Present and Mindful|Mental time travel causes us to miss our actual lives]]
 - [[notes/Finding Purpose|Ego-driven action prevents authentic purpose]]
@@ -45,7 +45,7 @@ Phil's journey illustrates what happens when the three macronutrients of happine
 - Small, consistent changes compound into complete transformation
 
 **The Integration:**
-The film provides a lived illustration of how these principles work together. Phil only finds genuine happiness when he develops all three macronutrients in their healthy forms: enjoyment (present-moment consciousness), satisfaction (intrinsic action), and purpose (compassion without ego). Together, Groundhog Day and happiness research show that transformation comes not through achieving more or escaping circumstances, but through fundamental shifts in how we relate to our experience.
+The film provides a lived illustration of how these principles work together. Phil only finds genuine happiness when he develops all three macronutrients in their healthy forms: enjoyment (present-moment consciousness), satisfaction (intrinsic action), and purpose (compassion without ego). Together, Groundhog Day and happiness research show that transformation comes not through achieving more or escaping circumstances, but through fundamental shifts in how we relate to our experience.  
 
 ## Key Applications Summary
 **Personal wellbeing:**

@@ -28,12 +28,12 @@ Running from pain and running toward pleasure—the natural human response to li
 
 ## The Buddhist Concept
 
-Samsara is the cycle of mundane existence—a perpetual state of running from pain and chasing pleasure that keeps you trapped. As Shantideva says, this is the fate of most humans: "a half-conscious, lifelong struggle between running from pain and running towards pleasure."
+Samsara is the cycle of mundane existence—a perpetual state of running from pain and chasing pleasure that keeps you trapped. As Shantideva says, this is the fate of most humans: "a half-conscious, lifelong struggle between running from pain and running towards pleasure."  
 
 ## The Demonstration in Groundhog Day
 
 Phil embodies both sides of samsara:
-- **Running from pain**: Through insults, escape mechanisms (drinking, sleeping), self-loathing
+- **Running from pain**: Through insults, escape mechanisms (drinking, sleeping), self-loathing  
 - **Running toward pleasure**: "Another drink, more recognition"—always wanting more
 
 Neither brings satisfaction; both keep him trapped.
@@ -42,7 +42,7 @@ Neither brings satisfaction; both keep him trapped.
 
 When Phil discovers he can do anything without consequences—eat whatever, rob banks, pursue any pleasure—he becomes deeply dissatisfied. Pure desire without meaning is "like being a dumb animal eating grass at the edge of a cliff."
 
-This illustrates the satisfaction dilemma: achieving goals brings only temporary satisfaction before the dopamine drops and you need to start again. You can't escape the cycle by winning at its game. When nothing matters, everything loses meaning. Phil reaches pure nihilism where even death offers no escape.
+This illustrates the satisfaction dilemma: achieving goals brings only temporary satisfaction before the dopamine drops and you need to start again. You can't escape the cycle by winning at its game. When nothing matters, everything loses meaning. Phil reaches pure nihilism where even death offers no escape.  
 
 ## Liberation
 

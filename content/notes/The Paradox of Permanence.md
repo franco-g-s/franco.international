@@ -24,14 +24,14 @@ We fear impermanence—death, loss, aging, endings. Yet permanence, the thing we
 
 ## The Demonstration
 
-In Groundhog Day, Phil gets exactly what many people think they want: a day where nothing bad persists, no consequences matter, and tomorrow brings a fresh reset. Yet this leaves him deeply dissatisfied. "All things lose meaning. Change laces the objects of our affection with some ponderance. Things matter because they eventually end."
+In Groundhog Day, Phil gets exactly what many people think they want: a day where nothing bad persists, no consequences matter, and tomorrow brings a fresh reset. Yet this leaves him deeply dissatisfied. "All things lose meaning. Change laces the objects of our affection with some ponderance. Things matter because they eventually end."  
 
 When nothing changes—when no day leads into the next, actions have no lasting impact, relationships can't develop, growth is impossible—everything becomes equally meaningless.
 
 ## What Impermanence Provides
 
 Without impermanence, there is:
-- No urgency (this moment won't come again)
+- No urgency (this moment won't come again)  
 - No weight (choices have no lasting consequences)
 - No growth (cannot develop over time)
 - No relationship depth (no shared history or progression)
@@ -40,7 +40,7 @@ Without impermanence, there is:
 
 ## Phil's Realization
 
-When Phil finally breaks free and realizes it's February 3rd, his response is profound: "Any change is good." This reflects deep acceptance of impermanence. The thing we fear (impermanence) is actually what makes life worth living. The thing we think we want (permanence) is actually a nightmare.
+When Phil finally breaks free and realizes it's February 3rd, his response is profound: "Any change is good." This reflects deep acceptance of impermanence. The thing we fear (impermanence) is actually what makes life worth living. The thing we think we want (permanence) is actually a nightmare.  
 
 ## The Buddhist Teaching
 

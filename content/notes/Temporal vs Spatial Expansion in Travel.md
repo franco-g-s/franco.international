@@ -17,13 +17,13 @@ related:
     Distance in Slow Travel]]
   - The journey is more important than the destination
 ---
-There's something counterintuitive about slow travel: it actually gives you *more* time, not less.
+There's something counterintuitive about slow travel: it actually gives you *more* time, not less.  
 
 
 When you fly somewhere, those 8 hours disappear into a void. You board, maybe sleep fitfully, watch a movie you won't remember, eat food you can't taste, and arrive disoriented. The time was *consumed* by travel without actually *being* travel. It's dead time, a gap between departure and arrival.
 
 But when you bikepack for 8 hours, every one of those hours is full:
-- The early morning cold that gradually warms as you ride
+- The early morning cold that gradually warms as you ride  
 - The conversation with someone at a rest stop who points you toward a better route
 - The problem-solving when you realize you've taken a wrong turn
 - The decision about whether to push on or start looking for camp

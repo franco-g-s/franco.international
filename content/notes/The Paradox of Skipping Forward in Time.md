@@ -24,7 +24,7 @@ We often wish to know the future or to time travel forward and see what happened
 ## What Gets Lost
 But by skipping forward, we lose out on the in-between—we stay static. In a certain sense, that defeats the point of time even passing. While everything else might have changed around us, we didn't change. We missed out on that change.
 
-The irony is profound: we want to skip ahead precisely because we believe our future self will be better, more accomplished, or more fulfilled. But that future self will only be who they are because they were once the current self and had to pass through time, experiencing all the growth, failures, lessons, and transformations along the way.
+The irony is profound: we want to skip ahead precisely because we believe our future self will be better, more accomplished, or more fulfilled. But that future self will only be who they are because they were once the current self and had to pass through time, experiencing all the growth, failures, lessons, and transformations along the way.  
 
 ## Why the Journey Matters
 This shows the importance of appreciating the moment and not taking anything for granted, even if you aren't necessarily where you want to be just yet and would much rather be further along in the future.

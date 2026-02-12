@@ -30,8 +30,6 @@ language: en-US
 
 > [!info]  Post-Watch Review - Office Space
 
-!Movie Notes.base
-
 ---
 
 [[media/movies/index]] 

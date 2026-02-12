@@ -17,21 +17,23 @@ url:
 
 
 ## Project Overview
-A personal website at **[franco.international](https://franco.international)** that publishes selected content from this private Obsidian vault to the web. Showcases CV, class notes, projects, book reviews, and other public-facing content while keeping the private vault completely separate and secure.
+A personal website at **[franco.international](https://franco.international)** that publishes selected content from this private Obsidian vault to the web. Showcases CV, class notes, projects, book reviews, and other public-facing content while keeping the private vault completely separate and secure.  
 
 ## Inspiration
 - **[Steph Ango's approach](https://stephango.com/vault)**: Separate vault for website with different structure than private vault
 - **[ewan.my](https://ewan.my/)**: Digital garden built with Quartz, featuring interconnected notes, graph view, and Obsidian Bases rendering
 - **[Quartz static site generator](https://quartz.jzhao.xyz/)**: Purpose-built for publishing Obsidian vaults as static websites
 
+## Architecture
+
 ### Two-Vault System
 - **Private Vault**: Stays private on iCloud + GitHub private repo, unchanged structure
 - **Public Website Vault**: Separate Quartz project folder , public GitHub repo at [github.com/franco-g-s/franco.international](https://github.com/franco-g-s/franco.international)
 
-This separation ensures: private vault structure stays intact, website has different organization optimized for web, zero risk of exposing private notes, and different structures for different audiences.
+This separation ensures: private vault structure stays intact, website has different organization optimized for web, zero risk of exposing private notes, and different structures for different audiences.  
 
 ### Publishing Flow
-1. Mark notes with `publish: true` in private vault
+1. Mark notes with `publish: true` in private vault  
 2. Run `node scripts/publish.mjs` from website repo (dry-run by default)
 3. Script transforms notes (strips private properties, removes `.base` embeds, strips ``)
 4. Run with `--execute` to publish, preview locally, then push
@@ -81,6 +83,8 @@ content/
 
 Each section has an `index.md` landing page.
 
+## Publishing System
+
 ### Publishing Properties
 - `publish: true` — Required. Marks note for publication
 - `web-path` — Optional. Explicit destination folder (e.g., `about`, `projects/coding`). Auto-populated on first publish
@@ -107,7 +111,7 @@ node scripts/publish.mjs --verify         # Check published files match source
 
 ### Content Transformations
 During publishing, the script:
-- **Strips private frontmatter**: `people`, `collections`, `expenses`, `projects`, `related`, `space`, `packing list`, `groups`, `attachments`
+- **Strips private frontmatter**: `people`, `collections`, `expenses`, `projects`, `related`, `space`, `packing list`, `groups`, `attachments`  
 - **Keeps public frontmatter**: `created`, `tags`, `title`, `status`, `url`, `author`, `year`, `genre`, `rating`, `language`, `topics`, `areas`, `aliases`, `description`, `coordinates`
 - **Removes** `.base` embed lines (`!*.base*`)
 - **Removes** orphaned headings (headings with no content before next heading)
@@ -125,6 +129,8 @@ During publishing, the script:
 - **Orphan detection** — removes files whose source no longer has `publish: true`
 - **Preview before push** — starts local Quartz server + auto-opens browser for review
 - **Web-path writeback** — auto-populates routing metadata back to source notes in private vault
+
+## Progress
 
 ### Phase 1: Setup ✅
 - [x] Install Quartz locally
@@ -234,8 +240,10 @@ During publishing, the script:
 - [ ] Dynamic content (trip maps, book rating visualizations)
 - [ ] Include emoji in note title
 
+## Bases Feature Research
+
 ### Official Quartz Support (PR #2292)
-Bases rendering is being added to Quartz as an official feature via [PR #2292](https://github.com/jackyzha0/quartz/pull/2292) (`feat/bases` branch). This is the same feature that powers [ewan.my](https://ewan.my) — Ewan contributed his implementation upstream.
+Bases rendering is being added to Quartz as an official feature via [PR #2292](https://github.com/jackyzha0/quartz/pull/2292) (`feat/bases` branch). This is the same feature that powers [ewan.my](https://ewan.my) — Ewan contributed his implementation upstream.  
 
 - **PR opened**: January 30, 2026
 - **Status**: Open, with unresolved review feedback (anchor normalization bugs, documentation gaps, unanswered maintainer questions)
@@ -245,7 +253,7 @@ Bases rendering is being added to Quartz as an official feature via [PR #2292](h
 **Decision**: Wait for the official merge rather than porting Ewan's custom implementation. This avoids maintaining a fork and ensures compatibility with future Quartz updates.
 
 ### Ewan's Implementation (Reference)
-Ewan's website ([ewan.my](https://ewan.my)) already renders `.base` files as interactive card/table views. His implementation is in his [public Quartz fork](https://github.com/gassandrid/ewan.my) and consists of ~4,800 lines of custom TypeScript/SCSS:
+Ewan's website ([ewan.my](https://ewan.my)) already renders `.base` files as interactive card/table views. His implementation is in his [public Quartz fork](https://github.com/gassandrid/ewan.my) and consists of ~4,800 lines of custom TypeScript/SCSS:  
 - **Transformer plugin** (`quartz/plugins/transformers/bases.ts`): Parses `.base` YAML, handles inline base code blocks
 - **Emitter plugin** (`quartz/plugins/emitters/base.tsx`): Renders tables, cards, lists, and maps with filtering, sorting, grouping, and summaries
 - **Query engine** (`quartz/util/base/query.ts`): Full filter evaluation, property resolution, formula computation
@@ -254,6 +262,7 @@ Ewan's website ([ewan.my](https://ewan.my)) already renders `.base` files as int
 
 This code is now being contributed upstream as PR #2292, so porting it manually is unnecessary.
 
+## Key Decisions
 ### Why Separate Vaults?
 - Private vault structure unchanged (no "Public/" folder)
 - Website has different organization optimized for web

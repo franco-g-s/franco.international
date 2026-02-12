@@ -22,14 +22,13 @@ language: en-US
 image: 'https://img.youtube.com/vi/vTmixSgeOI0/maxresdefault.jpg'
 ---
 
-![Harvard Professor Answers Happiness Questions From Twitter | Tech Support | WIRED](https://www.youtube.com/watch?app=desktop&v=vTmixSgeOI0)
+![Harvard Professor Answers Happiness Questions From Twitter | Tech Support | WIRED](https://www.youtube.com/watch?app=desktop&v=vTmixSgeOI0)  
 
 
 > [!summary] Description:
-> Harvard professor and "How to Build a Life" columnist Arthur C. Brooks answers the internet's burning questions about "happiness." Does anyone else feel depr...
+> Harvard professor and "How to Build a Life" columnist Arthur C. Brooks answers the internet's burning questions about "happiness." Does anyone else feel depr...  
 
-!YouTube Video Notes.base
-
+### Transcript
 ## Introduction
 I'm Arthur Brooks, a professor at Harvard University and the happiness columnist at "The Atlantic." I'm here today to answer your questions on Twitter. This is Happiness Support.
 
@@ -72,7 +71,7 @@ Enjoyment is not just pleasure, it's pleasure with consciousness. It's using you
 ## Purpose and Happiness
 **Question from GeeorgeStyles:** "Is happiness connected to having a purpose?"
 
-Purpose is literally one of the macronutrients of happiness, but it's a weird one. It's actually hard to figure out even what it is. If you're feeling like life doesn't have enough purpose, that life doesn't have enough meaning, answer the following two questions: why am I alive, and for what would I be willing to die?
+Purpose is literally one of the macronutrients of happiness, but it's a weird one. It's actually hard to figure out even what it is. If you're feeling like life doesn't have enough purpose, that life doesn't have enough meaning, answer the following two questions: why am I alive, and for what would I be willing to die?  
 
 If you don't have an answer to one or both of those questions, you're gonna have an existential crisis. And you need to go in search with your life of an answer to those two questions. I'm not gonna tell you what those answers are. They're different for different people. So yes, does purpose lead to happiness? Oh, yeah. How do you find your purpose? Answer those two questions. Find the answer to those two questions. That's your assignment.
 
@@ -88,7 +87,7 @@ Here's the deal. If you're gonna use social media, make sure it only ever compli
 
 Most people think they're gonna be happier at 38 than they were at 28, and the reason is because these have these goals and they think that they're gonna meet their goals. Most people think they're gonna get happier as they get older, and it's gonna reach a max point, and then it's gonna head back down again.
 
-The truth is exactly the opposite. Most people, on average, they get a slight diminution of their happiness from their early 20s until their late 40s or early 50s, but it's like eight to seven on a 1 to 10 scale. This is not a huge problem. Noticeable but not horrible. Then in your early 50s it turns around and you start back up again, and almost everybody actually gets increasing happiness from their early 50s until about 70, except two groups: people who have unremediated mental illness and people who have untreated substance use disorders.
+The truth is exactly the opposite. Most people, on average, they get a slight diminution of their happiness from their early 20s until their late 40s or early 50s, but it's like eight to seven on a 1 to 10 scale. This is not a huge problem. Noticeable but not horrible. Then in your early 50s it turns around and you start back up again, and almost everybody actually gets increasing happiness from their early 50s until about 70, except two groups: people who have unremediated mental illness and people who have untreated substance use disorders.  
 
 So if this is you, get treated for anxiety and depression and mood disorders and get treated for addiction.
 
@@ -97,7 +96,7 @@ So if this is you, get treated for anxiety and depression and mood disorders and
 
 That's a good one. One of the things that actually gets better and better and better as you age is your expectations about the future because you understand how things work. There's this tyranny that people don't understand until they're usually a little after 50 years old. They think that if they get that thing that they want, they're gonna get it and they're gonna enjoy it and it's never gonna go away, and then it does. They also think that if something bad happens to them that they're gonna stay in a bad mood or sad or angry or afraid forever.
 
-Here's what you learn after 50: nothing lasts and it doesn't matter. There's a thing that all biologists talk about, which is homeostasis, the tendency of every biological process to go back to its equilibrium. Well, it works emotionally as well. Your anger, your sadness, your disgust, your fear, your joy, your interest, those things don't last for good and for bad. Your heart is broken? It won't last. When you figure that out, this is power, and if you harness that, every year's better than the last. Or it can be.
+Here's what you learn after 50: nothing lasts and it doesn't matter. There's a thing that all biologists talk about, which is homeostasis, the tendency of every biological process to go back to its equilibrium. Well, it works emotionally as well. Your anger, your sadness, your disgust, your fear, your joy, your interest, those things don't last for good and for bad. Your heart is broken? It won't last. When you figure that out, this is power, and if you harness that, every year's better than the last. Or it can be.  
 
 ## Transcending Mortal Anguish
 **Question from Father Poster:** "How do I transcend from my mortal anguish?"

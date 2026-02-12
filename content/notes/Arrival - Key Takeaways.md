@@ -16,14 +16,14 @@ topics:
 ## Overview
 *[Notes in progress - watched 2026-01-30]*
 
-Arrival explores how language shapes perception, particularly our experience of time. Where Interstellar examines the desire to skip through time, Arrival presents a different question: what does it mean to experience time non-linearly—to know the future but still choose to live through each moment?
+Arrival explores how language shapes perception, particularly our experience of time. Where Interstellar examines the desire to skip through time, Arrival presents a different question: what does it mean to experience time non-linearly—to know the future but still choose to live through each moment?  
 
 ## Core Concepts
 - [[notes/The Bootstrap Paradox - Determinism and Free Will in Time Loops|The Bootstrap Paradox - Determinism and Free Will in Time Loops]] - How Louise's future knowledge enables her present choices, creating a causality loop with no beginning
 
 ## Initial Observations
 Both Arrival and [[notes/Interstellar - Key Takeaways|Interstellar]] explore similar themes around time and presence, but from different angles:
-- Interstellar: The cost of skipping forward through time
+- Interstellar: The cost of skipping forward through time  
 - Arrival: Living with full knowledge of the future while remaining present
 
 ## Themes to Explore Further

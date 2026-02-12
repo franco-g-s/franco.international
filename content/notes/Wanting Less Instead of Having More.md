@@ -24,6 +24,7 @@ Most people experience post-achievement depression or uncertainty after reaching
 
 This is the biological basis of why having more doesn't create lasting satisfaction.
 
+## The Formula for True Satisfaction
 ### The Wrong Model (What Society Teaches)
 Mother Nature teaches us that to get satisfaction and keep it, you need to have **more**. This is fundamentally flawed.
 
@@ -31,7 +32,7 @@ Mother Nature teaches us that to get satisfaction and keep it, you need to have 
 **Satisfaction = What You Have ÷ What You Want**
 
 You have two ways to increase this ratio:
-1. **Increase the numerator** (have more) - temporary and ultimately futile
+1. **Increase the numerator** (have more) - temporary and ultimately futile  
 2. **Decrease the denominator** (want less) - sustainable and powerful
 
 ## Why Wanting Less Works
@@ -41,6 +42,7 @@ You have two ways to increase this ratio:
 - It addresses the root cause rather than symptoms
 - It's mathematically more effective for long-term satisfaction
 
+## Practical Applications
 ### Instead of asking:
 - "How can I get more?"
 - "What else do I need?"

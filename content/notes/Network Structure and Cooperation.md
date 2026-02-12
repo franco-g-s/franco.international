@@ -23,7 +23,7 @@ related:
 ---
 ## The Prisoner's Dilemma
 Two players can cooperate or defect:
-- Both cooperate: 3 coins each
+- Both cooperate: 3 coins each  
 - One defects: Defector gets 5, cooperator gets 0
 - Both defect: 1 coin each
 **Rational outcome:** Both defect (getting 1 instead of 3)
@@ -31,7 +31,7 @@ Two players can cooperate or defect:
 
 ## Revolutionary Finding: Same People, Different Outcome
 Take identical people with identical strategies. Change **only** how they're connected:
-### Highly Clustered Networks → Cooperation Thrives
+### Highly Clustered Networks → Cooperation Thrives  
 - Players interact repeatedly with same small group
 - Cooperation spreads and dominates
 - Trust develops through familiarity
@@ -49,7 +49,7 @@ You can go from a world of cooperation to a world of betrayal by **only changing
 
 ## The Knife Edge Effect
 Real human experiments revealed:
-- Networks are "on a knife edge" of instability
+- Networks are "on a knife edge" of instability  
 - One person's initial choice can tip the entire network
 - If one person starts cooperating → everyone cooperates
 - If one person starts defecting → everyone defects
@@ -57,7 +57,7 @@ The world could go either way depending on seemingly random initial conditions.
 
 ## Adding Choice Changes Everything
 When players could **choose who to interact with** (avoiding defectors):
-- Cooperation emerged reliably
+- Cooperation emerged reliably  
 - The more choice players had, the more cooperation appeared
 - Being proactive about relationships enables cooperation
 **Key insight:** You can't just hope for cooperation—you have to actively curate who you interact with.

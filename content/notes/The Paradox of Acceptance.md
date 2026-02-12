@@ -31,7 +31,7 @@ Similarly, when Phil stops trying to use the present to escape or build toward s
 
 ## Why This Is Paradoxical
 
-We intuitively believe that change requires force, struggle, and resistance against what is. But the film reveals the opposite: acceptance is what creates the space for genuine transformation. By ceasing to fight reality, you paradoxically gain the ability to change it.
+We intuitively believe that change requires force, struggle, and resistance against what is. But the film reveals the opposite: acceptance is what creates the space for genuine transformation. By ceasing to fight reality, you paradoxically gain the ability to change it.  
 
 ## The Deeper Truth
 

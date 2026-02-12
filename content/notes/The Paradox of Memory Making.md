@@ -30,7 +30,7 @@ When you're focused on creating memories (taking photos, planning Instagram post
 ## The Problem
 
 The very act of trying to preserve a moment can prevent you from truly experiencing it. When you're thinking about:
-- Camera angles and photo composition
+- Camera angles and photo composition  
 - What caption to write
 - How it will look on social media
 - Proving you were there
@@ -48,7 +48,7 @@ This connects to [[notes/The Broadcasting Paradox of Modern Travel|The Broadcast
 
 ## The Resolution
 
-In [[media/movies/The Secret Life of Walter Mitty (2013)|The Secret Life of Walter Mitty (2013)]], photographer Sean O'Connell chooses not to photograph a rare snow leopard: "Sometimes I don't. If I like a moment, for me, personally, I don't like to have the distraction of the camera. I just want to stay in it."
+In [[media/movies/The Secret Life of Walter Mitty (2013)|The Secret Life of Walter Mitty (2013)]], photographer Sean O'Connell chooses not to photograph a rare snow leopard: "Sometimes I don't. If I like a moment, for me, personally, I don't like to have the distraction of the camera. I just want to stay in it."  
 
 Sometimes the best way to preserve a moment is to simply be in it. The richest memories often come from experiences where we were fully present, not from experiences we documented most thoroughly.
 

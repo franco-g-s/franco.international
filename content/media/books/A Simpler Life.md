@@ -36,9 +36,6 @@ isbn: 9781912891689
 
 > [!info]  Post-Read Review - A Simpler Life
 
-
-!Book Notes.base
-
 ---
 
 [[media/books/index]] 

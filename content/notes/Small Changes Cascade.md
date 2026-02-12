@@ -28,7 +28,7 @@ Phil doesn't wake up enlightened—he makes one small shift, that shift opens up
 One behavior change → new interactions → new perspectives → more behavior changes → transformation
 
 ## The Daily Choice Points
-Every day you face moments where you can repeat the same pattern or make a slightly different choice. Most people keep choosing the same patterns, wondering why nothing changes. You're not waiting for the perfect moment to transform your life—you're facing choice points right now: how you respond to frustration, whether you engage with curiosity or cynicism, how you treat people who annoy you, whether you act from compassion or self-interest. Each is an opportunity for a small shift that could cascade into everything.
+Every day you face moments where you can repeat the same pattern or make a slightly different choice. Most people keep choosing the same patterns, wondering why nothing changes. You're not waiting for the perfect moment to transform your life—you're facing choice points right now: how you respond to frustration, whether you engage with curiosity or cynicism, how you treat people who annoy you, whether you act from compassion or self-interest. Each is an opportunity for a small shift that could cascade into everything.  
 
 [[notes/Practicing Gratitude|Simple daily practices can lead to measurable transformation over just weeks]]. The film illustrates that you're not stuck because you lack ability to change; you're stuck because you keep repeating the same behaviors.
 

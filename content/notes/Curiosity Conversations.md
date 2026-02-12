@@ -14,7 +14,7 @@ In general, people are happy to talk, especially about themselves and their work
 
 For them to be effective, they have to be a kind of discipline, "because you don't get to talk to busy, interesting people unless you put steady effort into persuading them to see you."
 
-Grazer maintained this practice for over 35 years, tracking down people about whom he was curious and asking if he could sit down with them for an hour, with his goal being at least one every two weeks. His strongest sense of curiosity is what he calls "emotional curiosity": he wants to understand what makes people tick and see if he can connect a person's attitude and personality with their work, challenges, and accomplishments. 
+Grazer maintained this practice for over 35 years, tracking down people about whom he was curious and asking if he could sit down with them for an hour, with his goal being at least one every two weeks. His strongest sense of curiosity is what he calls "emotional curiosity": he wants to understand what makes people tick and see if he can connect a person's attitude and personality with their work, challenges, and accomplishments.   
 
 Even if you're curiosity is received negatively by the person you are talking to, you still get a vivid sense of the person. If you persevere and keep the conversation going, you can still get a good understanding of their opinions and, more importantly, get [[notes/Disrupting Points of View with Curiosity|insight into their point of view]].
 

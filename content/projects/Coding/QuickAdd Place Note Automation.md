@@ -19,7 +19,7 @@ related:
 
 ### Overview
 Automated QuickAdd script that creates or updates city and country notes with:
-- Automatic coordinate fetching from OpenStreetMap
+- Automatic coordinate fetching from OpenStreetMap  
 - Fuzzy matching with typo tolerance
 - Automatic country flag emoji icons via Iconize plugin
 - Opens the note immediately after creation
@@ -45,7 +45,7 @@ Automated QuickAdd script that creates or updates city and country notes with:
 
 ### How to Use
 1. Open Command Palette (`Cmd+P`)
-2. Run `QuickAdd: Place`
+2. Run `QuickAdd: Place`  
 3. Enter place name (typos OK!)
 4. Select correct location if multiple matches
 5. Choose status ("been" or "bucket list")
@@ -70,7 +70,7 @@ Automated QuickAdd script that creates or updates city and country notes with:
 
 ### Replaced System
 This script replaces the previous `/place` slash command that used:
-- Claude AI for parsing and execution
+- Claude AI for parsing and execution  
 - Complex multi-place input syntax (`name1/status & name2/status`)
 - Manual Claude Code invocation
 
@@ -108,12 +108,6 @@ This script replaces the previous `/place` slash command that used:
 - Icon addition failures don't block note creation
 - API failures show user-friendly error messages
 - Graceful degradation throughout
-
-### Notes
-!Notes.base
-
-### Resources
-!Resources.base
 
 ---
 

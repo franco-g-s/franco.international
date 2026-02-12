@@ -18,6 +18,7 @@ videos:
 ## The Core Concept
 To be present means to be "here now" (Ram Dass). Mindfulness is our modern language for this ancient wisdom.
 
+## The Problem: We Are Time Travelers
 ### The Statistics
 The average person spends **30-50% of their time thinking about the future**. This is extraordinary - you're literally not here now most of the time.
 
@@ -36,19 +37,20 @@ When you're constantly time traveling mentally, you're not actually present for 
 ## The Thich Nhat Hanh Approach
 The Vietnamese Buddhist monk Thich Nhat Hanh demonstrates mindfulness through washing dishes:
 
-*"I'm washing the dishes, and I'm conscious of washing the dishes because if I don't think about washing the dishes I will not be present in the act of washing the dishes."*
+*"I'm washing the dishes, and I'm conscious of washing the dishes because if I don't think about washing the dishes I will not be present in the act of washing the dishes."*  
 
+## Practical Methods for Mindfulness
 ### Formal Practices:
 - **Meditation**
 - **Prayer** 
 - **Therapy**
 
 ### Informal Practice:
-Sitting with hands folded, looking out a train window, saying: *"I am sitting on the train right now because I don't want to miss my life."*
+Sitting with hands folded, looking out a train window, saying: *"I am sitting on the train right now because I don't want to miss my life."*  
 
 ## Why Mindfulness Is Hard
 We're naturally time travelers. Our brains are constantly:
-- Processing past experiences
+- Processing past experiences  
 - Planning future scenarios
 - Imagining different possibilities
 - Avoiding present discomfort

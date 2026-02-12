@@ -19,12 +19,10 @@ language: en-US
 image: 'https://img.youtube.com/vi/BLl3xREFEsY/maxresdefault.jpg'
 ---
 
-![The fear of being average](https://www.youtube.com/watch?v=BLl3xREFEsY)
+![The fear of being average](https://www.youtube.com/watch?v=BLl3xREFEsY)  
 
 > [!summary] Description:
-> Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.
-
-!YouTube Video Notes.base
+> Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.  
 
 ### Transcript
 Life is good.

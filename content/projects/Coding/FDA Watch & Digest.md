@@ -17,6 +17,7 @@ Automated FDA regulatory monitoring system that uses the **Federal Register API*
 
 **Solution:** Automated tool that monitors both Federal Register announcements and CFR regulation text via official government APIs, detects changes, cross-references them, and provides AI-generated summaries with email notifications.
 
+## Key Features
 ### Federal Register Monitoring
 - **Automated Detection**: Weekly checks of Federal Register for FDA publications
 - **Intelligent Filtering**: 3-stage hybrid system (keywords → scoring → AI review)
@@ -39,9 +40,10 @@ Automated FDA regulatory monitoring system that uses the **Federal Register API*
 - **Unified CLI**: Single command-line tool for all operations
 
 
+## Usage
 ### Primary Command: Interactive Workflow
 The **recommended way** to use FDA Watch & Digest is through the interactive workflow:
-```bash
+```bash  
 python fda.py workflow
 ```
 
@@ -86,7 +88,7 @@ python fda.py workflow --quick
 
 ### Individual Commands
 For granular control, use individual commands:
-```bash
+```bash  
 # Document detection
 python fda.py run --days 60          # Detect and save new documents
 
@@ -130,7 +132,7 @@ python fda.py workflow --help        # Help for specific command
 
 ## Filtering System
 The system uses a **3-stage hybrid approach** to identify relevant documents:
-### Stage 1: Keyword Pre-screening
+### Stage 1: Keyword Pre-screening  
 - Searches entire document (title + abstract + body text)
 - Case-insensitive matching
 - Keywords: cell therapy, gene therapy, stem cells, exosomes, secretomes, regenerative medicine
@@ -159,7 +161,7 @@ The system uses a **3-stage hybrid approach** to identify relevant documents:
 Uses **Claude Haiku 4.5** to generate concise, regulatory-focused summaries.
 ### Summary Structure
 Each AI-generated summary includes:
-- **KEY POINTS:** 2-3 bullet points highlighting the most important takeaways
+- **KEY POINTS:** 2-3 bullet points highlighting the most important takeaways  
 - **SUMMARY:** Exactly 2 paragraphs:
   - First paragraph: What the regulation/guidance is about and why it was issued (context and background)
   - Second paragraph: Regulatory impact on cell/gene therapy companies, what changes, deadlines, and comment periods
@@ -199,7 +201,7 @@ The system now monitors actual CFR regulation text changes, not just Federal Reg
 
 ### CFR Change Data
 Each detected CFR change includes:
-- **Citation:** e.g., "21 CFR § 1271.90"
+- **Citation:** e.g., "21 CFR § 1271.90"  
 - **Change Type:** ADDED, MODIFIED, REMOVED, or RENAMED
 - **Before/After Text:** Full text comparison
 - **Diff Summary:** Brief description of what changed
@@ -212,13 +214,14 @@ Each detected CFR change includes:
 
 ### Email Integration
 CFR changes are automatically included in email digests:
-- Displayed in separate section after Federal Register documents
+- Displayed in separate section after Federal Register documents  
 - Color-coded by change type (green=ADDED, yellow=MODIFIED, red=REMOVED)
 - Collapsible before/after text sections
 - Expandable AI analysis and compliance notes
 - Related Federal Register documents listed with confidence levels
 
 
+## Technical Architecture
 ### Data Flow
 ```
 Federal Register API
@@ -232,7 +235,7 @@ Federal Register API
         ▼
 ┌──────────────────────────┐
 │  Relevance Filter        │  3-stage hybrid system:
-│  (3-stage hybrid)        │  1. Keywords
+│  (3-stage hybrid)        │  1. Keywords  
 │                          │  2. Scoring
 │                          │  3. AI validation
 └──────────────────────────┘

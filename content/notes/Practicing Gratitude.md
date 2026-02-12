@@ -19,10 +19,11 @@ videos:
 ## The Bottom Line
 You decide to be grateful. Gratitude is not something that happens to you - it's something you choose to do with your consciousness.
 
+## Understanding Your Brain Architecture
 ### Three-Part Brain System
-1. **Ancient part**: Motor functions, breathing, brain stem, spinal column
-2. **Limbic system**: Takes outside signals and converts them into feelings that "happen to you"
-3. **Neocortex**: The wrinkly outer part where you decide what emotions mean and what to do
+1. **Ancient part**: Motor functions, breathing, brain stem, spinal column  
+2. **Limbic system**: Takes outside signals and converts them into feelings that "happen to you"  
+3. **Neocortex**: The wrinkly outer part where you decide what emotions mean and what to do  
 
 The **prefrontal cortex** (behind your forehead) is the most evolved part - this is where you can take control.
 
@@ -32,11 +33,12 @@ Many people go through life in a "limbic state" - just being delivered emotions 
 ## The Solution: Metacognition
 **Metacognition** = Being aware of your emotions and thinking
 
-This is uniquely human. Unlike animals (Brooks uses his dog Chucho as example: "sees cookie, eats cookie"), humans can:
+This is uniquely human. Unlike animals (Brooks uses his dog Chucho as example: "sees cookie, eats cookie"), humans can:  
 - Deliver emotional information to the prefrontal cortex
 - Make executive decisions about actions regardless of feelings
 - Choose their response to emotions
 
+## The Harvard Gratitude Practice
 ### Weekly Structure:
 - **Sunday nights**: Make a list of 5 things you're most grateful for
 - **Monday-Saturday**: Spend 5 minutes each night looking at your gratitude list

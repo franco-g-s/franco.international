@@ -11,7 +11,7 @@ From a young age, children start asking questions and being curious about the wo
 
 Curiosity isn’t celebrated and cultivated. It is an inherent trait of humans, but it is often regarded as impertinent and inconvenient, due to it’s potential to be dangerous, insurgent, and revolutionary. 
 
-The silent and subconscious consensus that curiosity is threatening has roots in one of the first stories of the Bible: The story of Adam, Eve, the serpent, and the tree does not end well for the curious. “The parable could not be blunter: curiosity causes suffering.” 
+The silent and subconscious consensus that curiosity is threatening has roots in one of the first stories of the Bible: The story of Adam, Eve, the serpent, and the tree does not end well for the curious. “The parable could not be blunter: curiosity causes suffering.”   
 
 Even in school, curiosity isn’t cultivated, because it’s inconvenient and disruptive to the orderly running of the class. 
 

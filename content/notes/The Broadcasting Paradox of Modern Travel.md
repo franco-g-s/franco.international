@@ -28,7 +28,7 @@ There's something lost when you *perform* travel in real-time rather than *exper
 
 But there's a tension here that I wrestle with. Complete disconnection isn't really an option for me. I value staying in contact with friends and family. I have more friends abroad than at home, so seeing what they're up to via social media is genuinely valuable. I also like my family knowing where I am and that I'm safe. So zero sharing isn't the answer.
 
-The question becomes: how do you stay connected without performing?
+The question becomes: how do you stay connected without performing?  
 
 **The delayed sharing paradox**: You might think posting after the trip solves this. But I've noticed that it doesn't necessarily fix the problem - it just changes it. Instead of worrying about posting in the moment, you're constantly thinking about capturing content for future posts. You're still not fully present; you're just procrastinating the performance.
 
@@ -39,7 +39,7 @@ This relates to that scene in [[media/movies/The Secret Life of Walter Mitty (20
 **What I'm aiming for**: Intentional sharing that doesn't interfere with presence. Share for connection, not for performance. Share to maintain relationships, not to prove I'm traveling. The core principle is presence over broadcasting.
 
 This might mean:
-- Writing to specific people rather than broadcasting to everyone
+- Writing to specific people rather than broadcasting to everyone  
 - Sharing *after* I've left a place, not while I'm in it
 - Being okay with some experiences remaining unshared, uncaptured, just mine
 - Using social media to receive (see what friends are doing) without constantly broadcasting

@@ -20,7 +20,7 @@ related:
 ## The Critical Discovery
 You only need **3 out of every 10,000 friendships** to be "shortcuts" for six degrees of separation to emerge.
 When just **1% of links** are rewired to shortcuts:
-- Average path length drops from **50 steps to 10 steps**
+- Average path length drops from **50 steps to 10 steps**  
 - The world becomes as small as a random network
 - Yet clustering remains high (unlike random networks)
 
@@ -29,7 +29,7 @@ You can have **both** local clustering AND global connectivity simultaneously. T
 
 ## What Are Shortcuts?
 Shortcuts are connections outside your normal social circle:
-- A friend from an international conference
+- A friend from an international conference  
 - Someone you met online through a niche hobby
 - A college friend who moved to another continent
 - A connection through an unusual activity or interest
@@ -38,7 +38,7 @@ These weak, seemingly random connections collapse vast distances in social netwo
 
 ## Why So Few Are Needed
 In a highly clustered network, most paths stay local. But a single shortcut can:
-- Jump across vast social distances in one step
+- Jump across vast social distances in one step  
 - Provide alternative paths that bypass millions of local steps
 - Create new bridges between previously distant clusters
 The effect is exponential—each shortcut opens up entire new regions of the network.

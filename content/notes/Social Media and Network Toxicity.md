@@ -24,6 +24,7 @@ related:
 ## The Keyboard Warrior Phenomenon
 People say things online they'd never say in person. This isn't about individuals being bad—it's about network structure enabling bad behavior.
 
+## Traditional Communities vs. Social Media
 ### Traditional Communities (Enable Cooperation)
 - **High clustering:** Repeated interactions with same people
 - **Few shortcuts:** Limited outside contact
@@ -38,10 +39,10 @@ People say things online they'd never say in person. This isn't about individual
 
 ## Why Structure Matters More Than People
 The prisoner's dilemma research shows:
-- Same people in clustered networks → cooperate
+- Same people in clustered networks → cooperate  
 - Same people with too many [[notes/Network Shortcuts|Network Shortcuts]] → defect and betray
 Most people are **nice in real life** because real life has:
-- Repeated encounters
+- Repeated encounters  
 - Local communities (clustering)
 - Face-to-face accountability
 Social media removes all these cooperative-enabling structures.
@@ -57,7 +58,7 @@ Social media removes all these cooperative-enabling structures.
 - Attack vectors for malevolence
 
 ## What Went Wrong
-The initial promise: "Connect people who have been separated geographically."
+The initial promise: "Connect people who have been separated geographically."  
 **What we lost:**
 - Local clustering that makes cooperation possible
 - Repeated interactions that build trust
@@ -72,7 +73,7 @@ The initial promise: "Connect people who have been separated geographically."
 
 ## The Structural Problem
 You can't fix toxic social media just by:
-- Asking people to be nicer
+- Asking people to be nicer  
 - Better moderation (though it helps)
 - Education about online behavior
 The structure itself—low clustering, many random shortcuts, few repeated interactions—is **fundamentally incompatible with cooperation**.

@@ -26,9 +26,9 @@ Often when you stop trying to use actions to get what you want, you end up getti
 
 ## The Demonstration
 
-In Groundhog Day, Phil's early phase is purely instrumental: he uses his knowledge to manipulate, tries to "win" Rita through calculated moves—everything serves his desires and ego. This approach fails completely.
+In Groundhog Day, Phil's early phase is purely instrumental: he uses his knowledge to manipulate, tries to "win" Rita through calculated moves—everything serves his desires and ego. This approach fails completely.  
 
-Phil only "gets" Rita when he stops trying to get her. He finds fulfillment when he stops chasing it. In his final phase, he acts from genuine care: he masters piano for the joy of mastery, learns ice sculpting for the art itself, saves the homeless man knowing it won't succeed because trying is what matters.
+Phil only "gets" Rita when he stops trying to get her. He finds fulfillment when he stops chasing it. In his final phase, he acts from genuine care: he masters piano for the joy of mastery, learns ice sculpting for the art itself, saves the homeless man knowing it won't succeed because trying is what matters.  
 
 ## Instrumental vs Intrinsic Action
 
@@ -42,7 +42,7 @@ We assume that pursuing goals strategically is the path to getting what we want.
 
 ## The Buddhist Teaching
 
-This embodies the Buddhist eight-fold path: right action (acting ethically for its own sake), right intention (compassion, not craving), and right effort (skillful action without attachment to outcome). Do what's most skillful, what's right—not what serves your desires.
+This embodies the Buddhist eight-fold path: right action (acting ethically for its own sake), right intention (compassion, not craving), and right effort (skillful action without attachment to outcome). Do what's most skillful, what's right—not what serves your desires.  
 
 This shift from instrumental to intrinsic action represents finding authentic purpose—not through pursuing ego-driven goals, but through acting from genuine care.
 

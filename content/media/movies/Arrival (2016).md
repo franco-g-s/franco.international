@@ -34,8 +34,6 @@ language: en-US
 
 > [!info]  Post-Watch Review - Arrival
 
-!Movie Notes.base
-
 ---
 
 [[media/movies/index]] 

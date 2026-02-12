@@ -323,27 +323,21 @@ function extractPropertyLinks(frontmatter) {
 function transformContent(content, noteTitleMap = null, frontmatter = null) {
   let result = content
 
+  // Strip %%...%% comments (single-line and multi-line)
+  result = result.replace(/%%[\s\S]*?%%/g, "")
+
+  // Remove .base embed lines (BEFORE wikilink transformation)
+  result = result.replace(/^\s*!\[\[.*\.base.*\]\]\s*$/gm, "")
+
+  // Remove heading directly above base embed (if it exists)
+  result = result.replace(/^#{1,6}\s+.+\n(?:\s*!\[\[.*\.base.*\]\]\s*\n?)+/gm, "")
+
   // Transform wikilinks if we have the mapping
   if (noteTitleMap) {
     result = transformWikilinks(result, noteTitleMap)
   }
 
-  // Strip %%...%% comments (single-line and multi-line)
-  result = result.replace(/%%[\s\S]*?%%/g, "")
-
-  // Remove .base embed lines
-  result = result.replace(/^\s*!\[\[.*\.base.*\]\]\s*$/gm, "")
-
-  // Remove orphaned headings (heading followed by only blank lines before next heading)
-  // Do multiple passes to handle cascading orphans
-  let prev
-  do {
-    prev = result
-    result = result.replace(/^#{1,6}\s+.+\n(?:\s*\n)*(?=#{1,6}\s)/gm, "")
-  } while (result !== prev)
-
   // Remove trailing orphaned headings (heading at the very end with no content after)
-  // Work backwards through lines to strip headings that have no content below them
   const lines = result.split("\n")
   while (lines.length > 0) {
     const last = lines[lines.length - 1].trim()
@@ -361,6 +355,13 @@ function transformContent(content, noteTitleMap = null, frontmatter = null) {
 
   // Clean up excessive blank lines (more than 2 consecutive)
   result = result.replace(/\n{4,}/g, "\n\n\n")
+
+  // Escape > at the start of list items to prevent callout rendering
+  result = result.replace(/^(\s*[-*+]\s+)>/gm, "$1\\>")
+
+  // Add double spaces at end of lines that match "Label: value" pattern
+  // to force line breaks in markdown (only if not already a list item or heading)
+  result = result.replace(/^([^#\-*+\s][^:\n]*:\s*[^\n]+)$/gm, "$1  ")
 
   // Trim trailing whitespace
   result = result.trimEnd()
@@ -561,7 +562,16 @@ function buildPublishPlan() {
 
   for (const note of notes) {
     const { webPath, rule } = computeRoute(note)
-    const filename = path.basename(note.fullPath)
+    let filename = path.basename(note.fullPath)
+    const basename = path.basename(note.fullPath, ".md")
+
+    // If note basename matches the last segment of webPath, make it index.md
+    const webPathSegments = webPath.split("/")
+    const lastSegment = webPathSegments[webPathSegments.length - 1]
+    if (basename.toLowerCase() === lastSegment.toLowerCase()) {
+      filename = "index.md"
+    }
+
     const targetPath = path.join(CONTENT_DIR, webPath, filename)
     const relativeTarget = path.relative(WEBSITE_ROOT, targetPath)
 

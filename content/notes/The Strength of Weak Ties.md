@@ -19,7 +19,7 @@ related:
 ---
 ## The Counterintuitive Finding
 When people are asked how they got their job, they rarely say "my best friend told me." 
-Usually it's: "I heard about it from Randy—he's not really a friend, just an acquaintance."
+Usually it's: "I heard about it from Randy—he's not really a friend, just an acquaintance."  
 
 ## Why Weak Ties Are Powerful
 **Your close friends:**
@@ -35,7 +35,7 @@ Usually it's: "I heard about it from Randy—he's not really a friend, just an a
 
 ## The Mechanism
 Weak ties are essentially the shortcuts that make the world small. They:
-- Connect you to distant parts of the social network
+- Connect you to distant parts of the social network  
 - Bring novel information that your close friends don't have
 - Open doors your immediate circle can't
 
@@ -49,7 +49,7 @@ You gain access to information and opportunities that would **never** reach you 
 
 ## The Paradox of Weak Ties
 The people you're least close to are often most valuable for:
-- Job opportunities
+- Job opportunities  
 - New ideas and perspectives
 - Access to different communities
 - Novel information

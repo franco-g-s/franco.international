@@ -17,6 +17,7 @@ A high school graduate with a broad international background, currently in a gap
 
 ---
 
+## Education
 ### [Planned] ETH Zürich (2026–2029)
 - **Mechanical Engineering Bachelor**
 
@@ -37,6 +38,7 @@ A high school graduate with a broad international background, currently in a gap
 
 ---
 
+## Experience
 ### [Autonomous Systems Lab](https://asl.ethz.ch/) (ASL) Internship – ETH Zürich (Current)
 **January – February 2026**
 - Assisting in robotics and mechatronics research as part of my Swiss social service
@@ -60,6 +62,7 @@ A high school graduate with a broad international background, currently in a gap
 
 ---
 
+## Skills & Competencies
 ### Technical Design
 Shapr3D (CAD), Fusion360 (basic), prototyping, PCB design (KiCad)
 

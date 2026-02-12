@@ -20,12 +20,16 @@ Purpose is one of the three macronutrients of happiness, but it's "a weird one" 
 
 ## What Purpose Provides
 Purpose involves finding:
-- **Coherence** in your life
+- **Coherence** in your life  
 - **Goals** that matter to you  
 - **Significance** in your existence
 
 ## The Two Essential Questions
 If you're feeling like life doesn't have enough purpose or meaning, you need to answer these fundamental questions:
+### 1. "Why am I alive?"  
+### 2. "For what would I be willing to die?"
+
+
 ## The Consequence of Not Having Answers
 If you don't have an answer to **one or both** of these questions, you're going to have an **existential crisis**.
 
@@ -33,7 +37,7 @@ This isn't a threat - it's a natural human response to lack of meaning and direc
 
 ## The Search Process
 You need to "go in search with your life" of answers to these two questions. This means:
-- Active exploration, not passive waiting
+- Active exploration, not passive waiting  
 - Living experimentally to discover what matters
 - Paying attention to what energizes vs. drains you
 - Reflecting on moments of deep fulfillment
@@ -52,10 +56,10 @@ You need to "go in search with your life" of answers to these two questions. Thi
 Purpose isn't just nice to have - it's essential for sustained happiness. Without it, you can have enjoyment and satisfaction but still feel empty or directionless.
 
 ## Your Assignment
-1. Seriously contemplate: "Why am I alive?"
-2. Honestly ask yourself: "For what would I be willing to die?"
+1. Seriously contemplate: "Why am I alive?"  
+2. Honestly ask yourself: "For what would I be willing to die?"  
 3. If you can't answer, begin actively searching through:
-   - New experiences
+   - New experiences  
    - Service to others
    - Creative expression
    - Deep reflection

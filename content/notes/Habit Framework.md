@@ -20,14 +20,14 @@ By experimenting with different rewards, you can isolate what you are actually c
 
 ### Step 3: Isolate the Cue
 To identify cues amid noise, we can (as psychologists do) identify categorize of behaviors ahead of time to scrutinize in order to see patterns. Almost all habitual cues fit into one of five categories:
-- Location
+- Location  
 - Time
 - Emotional State
 - Other People
 - Immediately Preceding Action
 
 So when figuring out the cue for a habit, write down five things the moment the urge hits:
-- Where are you:
+- Where are you:  
 - What time is it?
 - What’s your emotional state?
 - Who else is around?

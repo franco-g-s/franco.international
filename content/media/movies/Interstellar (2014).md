@@ -40,8 +40,6 @@ language: en-US
 
 > [!info]  Post-Watch Review - Interstellar
 
-!Movie Notes.base
-
 ---
 
 [[media/movies/index]] 

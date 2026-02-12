@@ -18,17 +18,17 @@ related:
 ---
 ## Scale-Free Networks
 Real networks don't follow a bell curve (most nodes with average connections). Instead they're **scale-free**:
-- Many nodes with few connections
+- Many nodes with few connections  
 - A few "hubs" with 100x more connections than average
 - Power-law distribution (long tail)
 
 ## How Hubs Form Naturally
 Two principles create hubs inevitably:
-### 1. Growth
+### 1. Growth  
 Networks expand one node at a time over time. They don't pop into existence fully formed.
 ### 2. Preferential Attachment
 New connections favor already well-connected nodes:
-- You're more likely to have heard of popular people/sites
+- You're more likely to have heard of popular people/sites  
 - Popular becomes more popular ("rich get richer")
 - Even a **tiny bias** toward connecting with well-connected nodes produces hubs
 
@@ -49,7 +49,7 @@ New connections favor already well-connected nodes:
 
 ## The Achilles' Heel Problem
 Hubs create **vulnerability through centrality**:
-### When Hubs Fail
+### When Hubs Fail  
 - Weather shutting down O'Hare affects entire country within 24 hours
 - Removing keystone species destabilizes entire ecosystems
 - Attacking critical infrastructure cascades across networks

@@ -6,7 +6,7 @@ books:
   - '[[media/books/The Power of Habit|The Power of Habit]]'
 ---
 Many movements are based on a three-part process:
-1. "A movement starts because of the social habits of friendship and the [[notes/Strong Ties|strong ties]] between close acquaintances."
+1. "A movement starts because of the social habits of friendship and the [[notes/Strong Ties|strong ties]] between close acquaintances."  
 2. "It grows because of the habits of a community, and the [[notes/Weak Ties|weak ties]] that hold neighborhoods and clans together."
 3. "It endures because a movement's leaders give participants new habits that create a fresh sense of identity and a feeling of ownership."
 When all three parts are fulfilled, the movement can become self-propelling. 

@@ -25,7 +25,7 @@ related:
 ## When Future and Past Dissolve
 Stuck in an endless loop with no future to work toward and no past that matters, Phil discovers that the present moment is all we truly have. With no ability to build toward tomorrow, learn from yesterday, or develop relationships beyond today, the only thing left is the present moment and what you do with it right now.
 
-When Phil can no longer build toward a future, every single interaction gains equal weight: helping an old homeless man, learning piano, being kind to the annoying insurance salesman. None of these "lead" anywhere—they can only be valuable for their own sake, in this present moment. This reveals the truth: things have always only had present-moment value. We just convince ourselves they're valuable because they lead somewhere.
+When Phil can no longer build toward a future, every single interaction gains equal weight: helping an old homeless man, learning piano, being kind to the annoying insurance salesman. None of these "lead" anywhere—they can only be valuable for their own sake, in this present moment. This reveals the truth: things have always only had present-moment value. We just convince ourselves they're valuable because they lead somewhere.  
 
 ## Gratitude and Presence
 Phil begins to see the value in small acts of kindness, the joy in mastering something purely for mastery, and the richness in conversations when fully present. His transformation correlates with growing gratitude for the people in his day, the opportunities to help, and the present moment itself. [[notes/Practicing Gratitude|Being grateful is fundamentally about being present]]—you can only be grateful for what is, not what was or what could be.

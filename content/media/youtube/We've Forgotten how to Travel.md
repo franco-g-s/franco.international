@@ -20,14 +20,13 @@ language: en-US
 image: 'https://img.youtube.com/vi/FjV3tkrCYIY/maxresdefault.jpg'
 ---
 
-![We've Forgotten how to Travel](https://www.youtube.com/watch?v=FjV3tkrCYIY)
+![We've Forgotten how to Travel](https://www.youtube.com/watch?v=FjV3tkrCYIY)  
 
 
 > [!summary] Description:
-> It's 2004, and two men set out on a trip not knowing they were about to create one of the last portraits of a world that was right on the precipice of changing forever.
+> It's 2004, and two men set out on a trip not knowing they were about to create one of the last portraits of a world that was right on the precipice of changing forever.  
 
-!YouTube Video Notes.base
-
+### Transcript
 ## Two Seasons, Two Decades
 
 Everyone thinks my bike looks like a piece of  old crap, but they’ll see. Don’t judge a book   by its cover, you know? That’s what I say. I honestly didn’t think this would become  
@@ -78,7 +77,7 @@ of going on a trip together became inevitable. We always talked about doing a tr
 
 Maybe to Spain or somewhere like that. But what initially started as a simple  
 
-holiday eventually snowballed into a much  greater ambition: to travel from London all  
+holiday eventually snowballed into a much  greater ambition: to travel from London all    
 
 the way to New York by going east across the  Eurasian continent, and to document the whole  
 
@@ -302,7 +301,7 @@ that is no longer really defined by discovery,  or by adventure, but rather by 
 
 Oh goodness, this wasn’t quite the experience  I was expecting to have up here, ah well.  Today, it feels like we no longer travel into the  unknown as much as we are trying to actualize a  
 
-pre-existing mental image of it. Or to put it like  this: the foreign is no longer just a fascination,  
+pre-existing mental image of it. Or to put it like  this: the foreign is no longer just a fascination,    
 
 it has also become a commodity, it has become  a product to be selected and purchased,  
 
@@ -558,7 +557,7 @@ to inspire actual material change, which is why  I was so happy to once again b
 
 up with the amazing community-funded organization  that is protecting biodiversity around the globe:  
 
-the nature protection organization Planet Wild. Through a global community of nature enthusiasts  
+the nature protection organization Planet Wild. Through a global community of nature enthusiasts    
 
 who care deeply about the natural world, Planet  Wild is engaged in a wide variety of conservation  
 

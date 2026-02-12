@@ -22,7 +22,7 @@ related:
 ---
 ## Simulation Results
 Time for infection to spread globally in different network structures:
-- **Fully clustered network:** 73 days
+- **Fully clustered network:** 73 days  
 - **10% shortcuts (small-world):** 26 days (almost 3x faster!)
 - **Fully random network:** 25 days (barely faster than small-world)
 
@@ -41,7 +41,7 @@ With less than **1% of links being shortcuts**, diseases spread almost as fast a
 
 ## The Exponential Effect
 In the simulation, introducing shortcuts:
-- Created exponential growth at the beginning
+- Created exponential growth at the beginning  
 - Then nearly linear spread (can't go faster than moving to each node)
 - Final result: 3x faster than without shortcuts
 The ramp-up is what's dangerous—by the time you notice widespread infection, it's already too late to prevent global spread.

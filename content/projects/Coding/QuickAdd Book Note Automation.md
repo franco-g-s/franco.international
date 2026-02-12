@@ -40,6 +40,8 @@ QuickAdd script that automatically fetches book metadata from Google Books API a
 - ✅ Cover image URL in frontmatter
 - ✅ ISBN support (ISBN-13 preferred, fallback to ISBN-10)
 
+## Setup
+
 ### 1. Prerequisites
 
 - QuickAdd plugin installed and activated
@@ -58,17 +60,19 @@ QuickAdd script that automatically fetches book metadata from Google Books API a
 
 **Note:** The script has the Google Books API key embedded directly, so no additional plugin dependencies are needed.
 
+## Usage
+
 ### Creating a New Book Note
 
-1. Run `QuickAdd: Book` from command palette
+1. Run `QuickAdd: Book` from command palette  
 2. Enter book title or ISBN
 3. Select from search results (if multiple matches)
-4. Choose status: `not started`, `reading`, `completed`, or `backlog`
+4. Choose status: `not started`, `reading`, `completed`, or `backlog`  
 5. Note is created and opened
 
 ### Updating an Existing Book Note
 
-1. Run `QuickAdd: Book` from command palette
+1. Run `QuickAdd: Book` from command palette  
 2. Enter the book title (doesn't need to be exact - fuzzy matching handles variations)
 3. Select from search results
 4. Script detects existing note and updates only missing metadata
@@ -80,9 +84,9 @@ QuickAdd script that automatically fetches book metadata from Google Books API a
 |------------------|----------------|--------|
 | `volumeInfo.title` | Filename | `Title.md` |
 | `volumeInfo.publishedDate` | `year` | Extracted year (e.g., `2018`) |
-| `volumeInfo.authors[]` | `author` | Wikilinked list: `["James Clear"]` |
-| `volumeInfo.categories[]` | `genre` | Wikilinked list: `["Self-Help"]` |
-| `volumeInfo.language` | `language` | Expanded code: `en-US` |
+| `volumeInfo.authors[]` | `author` | Wikilinked list: `["James Clear"]` |  
+| `volumeInfo.categories[]` | `genre` | Wikilinked list: `["Self-Help"]` |  
+| `volumeInfo.language` | `language` | Expanded code: `en-US` |  
 | `volumeInfo.imageLinks.extraLarge` | `image` | URL string (high-res) |
 | `volumeInfo.industryIdentifiers` | `isbn` | ISBN-13 or ISBN-10 |
 | Manual input | `status` | User selected |
@@ -90,23 +94,25 @@ QuickAdd script that automatically fetches book metadata from Google Books API a
 
 **Note:** `topics` property is left empty and should be filled manually, as Google Books categories are too broad for specific topics.
 
+## How It Works
+
 ### Search Flow
 
-1. **Input:** User enters book title or ISBN
-2. **API Call:** Script calls Google Books API with query
-3. **Results:** Returns up to 10 matching books
-4. **Selection:** User selects correct book from suggester (or auto-selects if only one match)
-5. **Fetch Details:** Script fetches full volume details for high-res cover images
-6. **Check Existing:** Script checks if note already exists using fuzzy title matching in `Personal/Books/`
-7. **Update or Create:**
+1. **Input:** User enters book title or ISBN  
+2. **API Call:** Script calls Google Books API with query  
+3. **Results:** Returns up to 10 matching books  
+4. **Selection:** User selects correct book from suggester (or auto-selects if only one match)  
+5. **Fetch Details:** Script fetches full volume details for high-res cover images  
+6. **Check Existing:** Script checks if note already exists using fuzzy title matching in `Personal/Books/`  
+7. **Update or Create:**  
    - If exists: Updates only empty frontmatter fields
    - If new: Prompts for status, then creates full note
-8. **Open:** Opens the note in a new tab
+8. **Open:** Opens the note in a new tab  
 
 ### Smart Metadata Merging
 
 When updating existing notes, the script:
-- Checks each frontmatter property
+- Checks each frontmatter property  
 - Only updates if the property is **empty** or **missing**
 - Never overwrites existing user-entered data
 - Preserves all other content in the note
@@ -115,7 +121,7 @@ When updating existing notes, the script:
 
 Supports 60+ languages with proper locale codes:
 
-| Input Code | Expanded |
+| Input Code | Expanded |  
 |------------|----------|
 | `en` | `en-US` |
 | `de` | `de` |
@@ -124,37 +130,38 @@ Supports 60+ languages with proper locale codes:
 | `ja` | `ja` |
 | etc. | See script for full list |
 
+## Example
+
 ### Input
 ```
-Query: "Atomic Habits"
+Query: "Atomic Habits"  
 ```
 
 ### Output (New Note)
 ```yaml
 ---
-created: 2026-02-09
+created: 2026-02-09  
 tags:
-  - books
+  - books  
 areas:
-  - "Books"
-year: 2018
+  - "Books"  
+year: 2018  
 author:
-  - "James Clear"
+  - "James Clear"  
 genre:
-  - "Self-Help"
+  - "Self-Help"  
   - "Psychology"
 topics:
-status: not started
+status: not started  
 rating:
-language: en-US
-image: https://books.google.com/books/content?id=...
-isbn: 9780735211292
+language: en-US  
+image: https://books.google.com/books/content?id=...  
+isbn: 9780735211292  
 people:
----
+---  
 
 > [!info]  Post-Read Review - Atomic Habits
 
-!Book Notes.base
 ```
 
 ## Limitations
@@ -167,7 +174,7 @@ people:
 ## Future Enhancements
 
 Potential improvements:
-- [ ] Custom suggester modal with cover image previews
+- [ ] Custom suggester modal with cover image previews  
 - [ ] Batch update multiple books at once
 - [ ] Extract topics from book description using keywords
 - [ ] Download cover images to Attachments/ folder (optional)
@@ -208,10 +215,10 @@ Potential improvements:
 ## Related Automation
 
 Similar pattern to:
-- [[projects/Coding/QuickAdd Place Note Automation|QuickAdd Place Note Automation]] - Creates/updates city and country notes with coordinates from OpenStreetMap
+- [[projects/Coding/QuickAdd Place Note Automation|QuickAdd Place Note Automation]] - Creates/updates city and country notes with coordinates from OpenStreetMap  
 
 Both scripts follow the same design pattern:
-1. User input
+1. User input  
 2. External API fetch
 3. Smart create or update logic
 4. Open result

@@ -6,7 +6,7 @@ books:
   - '[[media/books/The Power of Habit|The Power of Habit]]'
 ---
 The habit loop describes the three key parts of a habit that form a cycle. They are:
-1. The Cue
+1. The Cue  
 	- First stage of the habit loop, in which you are triggered by a stimulus that initiates the habit. The stimulus can be internal (thoughts, feelings, emotions) or external (time of day, location, something you see or do). 
 2. The Routine
 	- Second stage of the habit loop, in which the actual behavior is executed in response to the cue. It can be a physical action, a mental response, or even an emotional reaction.

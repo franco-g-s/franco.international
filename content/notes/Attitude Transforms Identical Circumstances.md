@@ -24,7 +24,7 @@ related:
 ## Core Insight
 In Groundhog Day, Phil experiences the exact same February 2nd over 10,000 times—same people, same events, same opportunities. Yet by gradually shifting only his attitude and perspective, he transforms what was "one of the worst days of his life" into a fulfilling, meaningful experience. When external circumstances remain completely identical, internal attitude is the only variable that changes outcomes.
 
-Phil's transformation happens through incremental attitude shifts: from cynicism to openness, from self-centeredness to caring about others, from seeking escape to embracing the present, from grasping for pleasure to finding intrinsic value. Each [[notes/Small Changes Cascade|small shift ripples outward]], changing how he interacts with the same people and events, which transforms the entire day's experience.
+Phil's transformation happens through incremental attitude shifts: from cynicism to openness, from self-centeredness to caring about others, from seeking escape to embracing the present, from grasping for pleasure to finding intrinsic value. Each [[notes/Small Changes Cascade|small shift ripples outward]], changing how he interacts with the same people and events, which transforms the entire day's experience.  
 
 ## [[notes/The Paradox of Acceptance|The Paradox of Acceptance]]
 The film reveals that accepting circumstances (rather than fighting them) often leads to the most dramatic positive change. What we resist persists; what we accept can evolve. Phil only breaks free from the loop when he stops trying to escape it and fully embraces being present in February 2nd.

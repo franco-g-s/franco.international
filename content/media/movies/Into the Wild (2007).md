@@ -36,8 +36,6 @@ language: en-US
 
 > [!info]  Post-Watch Review - Into the Wild
 
-!Movie Notes.base
-
 ---
 
 [[media/movies/index]] 

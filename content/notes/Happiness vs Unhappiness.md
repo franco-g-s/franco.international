@@ -24,9 +24,10 @@ Happiness and unhappiness are not opposites - they are processed in different he
 
 Evidence for this separation can be observed through facial expressions - the left side of the face (controlled by the right brain hemisphere) becomes more active when experiencing negative emotions.
 
+## Practical Implications
 ### What Reduces Unhappiness vs What Creates Happiness
 Many activities that people think create happiness actually just reduce unhappiness:
-- **Diet and nutrition**
+- **Diet and nutrition**  
 - **Exercise** 
 - **Sleep schedules**
 - **General health practices**
@@ -35,7 +36,7 @@ These are valuable for lowering negative feelings but won't directly make you ha
 
 ## Why This Matters
 Understanding this distinction helps explain why:
-- Someone can have their basic needs met but still feel unfulfilled
+- Someone can have their basic needs met but still feel unfulfilled  
 - Addressing negative feelings alone doesn't guarantee positive ones
 - Both systems need attention for overall wellbeing
 - Different strategies are needed for each system

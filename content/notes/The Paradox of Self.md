@@ -27,7 +27,7 @@ Letting go of your self—your ego, identity, and sense of "I"—paradoxically m
 ## The Demonstration
 
 In Groundhog Day, Phil is trapped in a single day with no ability to develop identity through the normal means:
-- Cannot build relationships over time
+- Cannot build relationships over time  
 - Cannot pursue a career or reputation
 - Cannot create a past or future
 - Cannot be remembered or build a legacy
@@ -37,7 +37,7 @@ By all accounts, there is no "Phil" as we typically conceive of a self. Yet he s
 ## The Result of Losing Self
 
 When Phil's ego and identity dissolve, he becomes:
-- More authentic
+- More authentic  
 - More deeply connected to others
 - More capable of genuine compassion
 
@@ -45,7 +45,7 @@ The self—the ego with its desires, fears, and need for validation—was the ve
 
 ## The Buddhist Teaching
 
-This is core to Buddhist philosophy: the self is an illusion, and attachment to this illusion is the root of suffering. When Phil lets go of his ego ("I'm a celebrity weatherman"), his desires ("I want Rita, I want to escape"), and his self-concept entirely, he becomes enlightened—free from the cycle precisely because there's no "self" left to be trapped in it.
+This is core to Buddhist philosophy: the self is an illusion, and attachment to this illusion is the root of suffering. When Phil lets go of his ego ("I'm a celebrity weatherman"), his desires ("I want Rita, I want to escape"), and his self-concept entirely, he becomes enlightened—free from the cycle precisely because there's no "self" left to be trapped in it.  
 
 ## The Ultimate Paradox
 

@@ -24,8 +24,6 @@ language: en-US
 
 > [!info]  Post-Watch Review - Groundhog Day
 
-!Movie Notes.base
-
 ---
 
 [[media/movies/index]] 
