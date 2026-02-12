@@ -144,7 +144,7 @@ created: 2026-02-09
 tags:
   - books  
 areas:
-  - "Books"  
+  - "[[media/books/Books|Books]]"  
 year: 2018  
 author:
   - "James Clear"  

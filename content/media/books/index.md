@@ -1,5 +1,13 @@
 ---
+created: '2025-05-28'
+tags:
+  - sub-areas
+areas:
+  - '[[media/index|Media]]'
 title: Books
 ---
-My reading notes, reviews, and reflections on books I've read.
+Books I've read, am currently reading, or want to read, all linked to notes about each of them.
 
+---
+
+[[media/index]] 
