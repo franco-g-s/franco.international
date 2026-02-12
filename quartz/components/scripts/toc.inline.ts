@@ -1,15 +1,32 @@
 const observer = new IntersectionObserver((entries) => {
-  for (const entry of entries) {
-    const slug = entry.target.id
-    const tocEntryElements = document.querySelectorAll(`a[data-for="${slug}"]`)
-    const windowHeight = entry.rootBounds?.height
-    if (windowHeight && tocEntryElements.length > 0) {
-      if (entry.boundingClientRect.y < windowHeight) {
-        tocEntryElements.forEach((tocEntryElement) => tocEntryElement.classList.add("in-view"))
-      } else {
-        tocEntryElements.forEach((tocEntryElement) => tocEntryElement.classList.remove("in-view"))
+  // Find all headers and determine which one is currently active
+  const headers = Array.from(document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"))
+
+  // Find the header closest to the top of the viewport that is currently visible
+  let activeHeader = null
+  let closestDistance = Infinity
+
+  for (const header of headers) {
+    const rect = header.getBoundingClientRect()
+    // Consider headers that are at or above the top third of the viewport
+    if (rect.top <= window.innerHeight / 3) {
+      const distance = Math.abs(rect.top)
+      if (distance < closestDistance) {
+        closestDistance = distance
+        activeHeader = header
       }
     }
+  }
+
+  // Remove "in-view" from all TOC entries
+  const allTocEntries = document.querySelectorAll(".toc a[data-for]")
+  allTocEntries.forEach((entry) => entry.classList.remove("in-view"))
+
+  // Add "in-view" only to the active header's TOC entry
+  if (activeHeader) {
+    const activeSlug = activeHeader.id
+    const activeTocEntries = document.querySelectorAll(`a[data-for="${activeSlug}"]`)
+    activeTocEntries.forEach((entry) => entry.classList.add("in-view"))
   }
 })
 

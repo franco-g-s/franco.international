@@ -33,21 +33,23 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         const created = fileData.dates.created
         const modified = fileData.dates.modified
 
+        // Always show created date with "Created" prefix
         if (created) {
-          segments.push(<Date date={created} locale={cfg.locale} />)
+          segments.push(
+            <span class="date-info">
+              Created <Date date={created} locale={cfg.locale} />
+            </span>,
+          )
         }
 
-        // Show last updated date if it differs from created date
-        if (modified && created) {
-          const createdStr = formatDate(created, cfg.locale)
+        // Always show edited date
+        if (modified) {
           const modifiedStr = formatDate(modified, cfg.locale)
-          if (createdStr !== modifiedStr) {
-            segments.push(
-              <span>
-                Updated {modifiedStr}
-              </span>,
-            )
-          }
+          segments.push(
+            <span class="date-info">
+              Edited {modifiedStr}
+            </span>,
+          )
         }
       }
 
@@ -57,7 +59,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
           minutes: Math.ceil(minutes),
         })
-        segments.push(<span>{displayedTime}</span>)
+        segments.push(<span class="date-info">{displayedTime}</span>)
       }
 
       return (
