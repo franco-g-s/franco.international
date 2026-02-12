@@ -232,6 +232,8 @@ During publishing, the script:
 - [ ] Adapt publishing script to handle `.base` files (currently stripped)
 
 ### Phase 7: Future Enhancements
+- [x] **Recently edited notes section** (implemented on homepage, shows 5 most recent)
+- [x] **Created/modified date display** (ContentMeta already shows both when different)
 - [ ] QuickAdd script for publishing from within Obsidian
 - [ ] Automated publishing via cron job or GitHub Action
 - [ ] Blog/essays section
@@ -239,6 +241,84 @@ During publishing, the script:
 - [ ] Interactive elements (executable code blocks)
 - [ ] Dynamic content (trip maps, book rating visualizations)
 - [ ] Include emoji in note title
+
+## Inspiration & References
+
+### Eilleen's Quartz Customizations
+**Website**: [quartz.eilleeenz.com](https://quartz.eilleeenz.com/)
+**GitHub**: [fanteastick/quartz-test](https://github.com/fanteastick/quartz-test)
+**Customization Log**: [Quartz-customization-log](https://quartz.eilleeenz.com/Quartz-customization-log)
+
+Eilleen has created an extensively customized Quartz v4 site with many genius modifications. Key features to potentially adopt:
+
+**Implemented by her (Inspiration for Future):**  
+- **RecentNotes Component**: Shows recently edited notes with configurable options
+  - Located in: `quartz/components/RecentNotes.tsx`
+  - Configuration: limit, showTags, showDate, linkToMore, excludeTags, custom filter/sort
+  - Position: afterBody section, uses `OnlyFor` wrapper to show on specific pages
+  - Custom styling with decorative prefixes ("✿") and separators ("₊⊹⊹₊")
+  - Example config: `showDate: true`, `title: "Recently edited notes:"`, `linkToMore: "All-files-chronologically-modified"`
+
+- **Created vs Modified Date Display**: Smart date handling in ContentMeta
+  - Shows created date always
+  - Only shows modified date when it differs from created date
+  - Uses `_getDateCustom()` helper with date comparison
+  - Avoids redundant date display when dates are identical
+
+**Other Notable Customizations** (for potential future implementation):
+- Image carousel with lightbox zoom functionality
+- Interactive image galleries (clickable)
+- Custom callout styling (Minimal theme aesthetics)
+- Spoiler/blurred text implementation
+- Floating buttons for graph access and random page navigation
+- Slug display on tag pages
+- Broken link differentiation (prevents navigation)
+- External link favicons
+- ABC.js music notation plugin
+- Text replacer transformer for markdown preprocessing
+- Password-protected page support
+
+**Why Reference Her Work:**
+Eilleen's implementation provides excellent examples of how to extend Quartz v4 with custom components and features while maintaining clean, maintainable code. Her customization log documents the technical approach for each feature.
+
+### Ewan's Obsidian Database (Bases)
+**Website**: [ewan.my](https://ewan.my)
+**GitHub**: [gassandrid/ewan.my](https://github.com/gassandrid/ewan.my)
+
+Ewan built a custom Quartz implementation that renders Obsidian Bases (`.base` files) as interactive database views with tables, cards, lists, and maps. His implementation includes:
+
+**Key Features:**  
+- **Database Views**: Tables, cards, lists, and maps with live filtering and sorting
+- **Query Engine**: Full filter evaluation, property resolution, formula computation
+- **Interactive Controls**: View selector tabs, search bars, grouping, summaries
+- **~4,800 lines of TypeScript/SCSS**: Transformer plugin, emitter plugin, query engine, type system, UI components
+
+**Contribution:**
+Ewan contributed his Bases implementation upstream to Quartz as [PR #2292](https://github.com/jackyzha0/quartz/pull/2292). This is the feature we're waiting for to properly display database views on the website.  
+
+**Why Reference:**
+Ewan's work demonstrates how to build complex, data-driven components in Quartz. His implementation shows how to parse YAML schemas, evaluate filters, compute formulas, and render interactive views - all critical for Bases support.
+
+### Kepano's Minimal Theme & Design Philosophy
+**Website**: [kepano.com](https://kepano.com)
+**GitHub**: [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
+
+Kepano is the creator of the Minimal theme for Obsidian and has extensive design philosophy around note-taking and personal knowledge management.
+
+**Design Principles:**
+- Clean, distraction-free interfaces
+- Typography-first design
+- Thoughtful use of whitespace
+- Consistent visual hierarchy
+- Performance-focused (minimal CSS)
+
+**Notable Work:**
+- **Minimal Theme**: Most popular Obsidian theme with extensive customization options
+- **Design Writing**: Essays on note-taking, design, and digital tools
+- **Style Settings Plugin**: Allows theme customization without editing CSS
+
+**Why Reference:**
+Kepano's design philosophy influences how we think about presenting knowledge on the web. His emphasis on readability, simplicity, and user control informs our approach to the website's visual design and information architecture.
 
 ## Bases Feature Research
 

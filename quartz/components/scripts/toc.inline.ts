@@ -1,34 +1,38 @@
-const observer = new IntersectionObserver((entries) => {
-  // Find all headers and determine which one is currently active
-  const headers = Array.from(document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"))
+const observer = new IntersectionObserver(
+  (entries) => {
+    // On any intersection change, recalculate which header should be active
+    const headers = Array.from(document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"))
 
-  // Find the header closest to the top of the viewport that is currently visible
-  let activeHeader = null
-  let closestDistance = Infinity
+    // Threshold at 30% from top of viewport
+    const threshold = window.innerHeight * 0.3
 
-  for (const header of headers) {
-    const rect = header.getBoundingClientRect()
-    // Consider headers that are at or above the top third of the viewport
-    if (rect.top <= window.innerHeight / 3) {
-      const distance = Math.abs(rect.top)
-      if (distance < closestDistance) {
-        closestDistance = distance
+    let activeHeader = null
+
+    // Find the most recent header that crossed the threshold (closest to threshold from above)
+    for (const header of headers) {
+      const rect = header.getBoundingClientRect()
+      if (rect.top <= threshold) {
         activeHeader = header
       }
     }
-  }
 
-  // Remove "in-view" from all TOC entries
-  const allTocEntries = document.querySelectorAll(".toc a[data-for]")
-  allTocEntries.forEach((entry) => entry.classList.remove("in-view"))
+    // Remove "in-view" from ALL TOC entries first
+    const allTocEntries = document.querySelectorAll(".toc a[data-for]")
+    allTocEntries.forEach((entry) => entry.classList.remove("in-view"))
 
-  // Add "in-view" only to the active header's TOC entry
-  if (activeHeader) {
-    const activeSlug = activeHeader.id
-    const activeTocEntries = document.querySelectorAll(`a[data-for="${activeSlug}"]`)
-    activeTocEntries.forEach((entry) => entry.classList.add("in-view"))
+    // Add "in-view" ONLY to the active header's TOC entry
+    if (activeHeader) {
+      const activeSlug = activeHeader.id
+      const activeTocEntries = document.querySelectorAll(`a[data-for="${activeSlug}"]`)
+      activeTocEntries.forEach((entry) => entry.classList.add("in-view"))
+    }
+  },
+  {
+    // Trigger when headers cross the 30% line from top
+    rootMargin: "-30% 0px -70% 0px",
+    threshold: 0,
   }
-})
+)
 
 function toggleToc(this: HTMLElement) {
   this.classList.toggle("collapsed")
