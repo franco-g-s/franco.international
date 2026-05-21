@@ -11,6 +11,21 @@ interface GitHubUser {
   bio: string
   repos: number
 }
+interface StravaActivity {
+  name: string
+  sport_type: string
+  distance: number    // metres
+  moving_time: number // seconds
+  start_date: string  // ISO 8601
+}
+interface ElsewhereItem {
+  label: string
+  handle: string
+  desc: string
+  href: string
+  avatar: string
+  stravaData?: string // JSON-encoded StravaActivity[] for lightbox
+}
 
 // ── Garden section cards (curated, not recent-notes) ─────────────────────────
 // Ordered: the display order in the floating section.
@@ -49,6 +64,34 @@ try {
   }
 } catch {}
 
+// ── Strava recent activities (build-time, needs secrets in CI) ────────────────
+let stravaActivities: StravaActivity[] = []
+const stravaClientId     = import.meta.env.STRAVA_CLIENT_ID     as string | undefined
+const stravaClientSecret = import.meta.env.STRAVA_CLIENT_SECRET as string | undefined
+const stravaRefreshToken = import.meta.env.STRAVA_REFRESH_TOKEN as string | undefined
+if (stravaClientId && stravaClientSecret && stravaRefreshToken) {
+  try {
+    const tokenRes = await fetch("https://www.strava.com/oauth/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        client_id:     stravaClientId,
+        client_secret: stravaClientSecret,
+        refresh_token: stravaRefreshToken,
+        grant_type:    "refresh_token",
+      }),
+    })
+    if (tokenRes.ok) {
+      const { access_token } = await tokenRes.json()
+      const actRes = await fetch(
+        "https://www.strava.com/api/v3/athlete/activities?per_page=3",
+        { headers: { Authorization: `Bearer ${access_token}` } },
+      )
+      if (actRes.ok) stravaActivities = await actRes.json()
+    }
+  } catch { /* Strava unavailable or credentials missing */ }
+}
+
 function fmtDate(iso: string | null) {
   if (!iso) return ""
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
@@ -56,6 +99,21 @@ function fmtDate(iso: string | null) {
 function truncate(str: string | null, n: number) {
   if (!str) return ""
   return str.length > n ? str.slice(0, n).trimEnd() + "…" : str
+}
+function fmtDistance(metres: number) {
+  return `${(metres / 1000).toFixed(1)} km`
+}
+function fmtDuration(seconds: number) {
+  const h = Math.floor(seconds / 3600)
+  const m = Math.floor((seconds % 3600) / 60)
+  return h > 0 ? `${h}h ${m}m` : `${m}m`
+}
+function fmtActivityDate(iso: string) {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
+}
+function fmtSport(raw: string) {
+  // "VirtualRide" → "Virtual Ride", "Run" → "Run"
+  return raw.replace(/([a-z])([A-Z])/g, "$1 $2")
 }
 
 // ── Photos: positioned to avoid zone label overlap ────────────────────────────
@@ -157,7 +215,11 @@ const cvHighlights = [
 ]
 
 // ── Social links ───────────────────────────────────────────────────────────────
-const elsewhere = [
+const stravaDesc = stravaActivities.length > 0
+  ? `${fmtSport(stravaActivities[0].sport_type)} · ${fmtDistance(stravaActivities[0].distance)} · ${fmtActivityDate(stravaActivities[0].start_date)}`
+  : "Cycling · running · rowing · swimming"
+
+const elsewhere: ElsewhereItem[] = [
   {
     label: "Instagram",
     handle: "@francogs.mp4",
@@ -175,9 +237,15 @@ const elsewhere = [
   {
     label: "Strava",
     handle: "Franco Gómez Schumacher",
-    desc: "Cycling · running · rowing · swimming",
+    desc: stravaDesc,
     href: "https://www.strava.com/athletes/112666220",
     avatar: "",
+    stravaData: stravaActivities.length > 0
+      ? JSON.stringify(stravaActivities.slice(0, 3).map(a => ({
+          name: a.name, sport_type: a.sport_type,
+          distance: a.distance, moving_time: a.moving_time, start_date: a.start_date,
+        })))
+      : undefined,
   },
   {
     label: "LinkedIn",
@@ -287,6 +355,7 @@ const elsewhere = [
       data-avatar={e.avatar}
       data-href={e.href}
       data-cta={`Open ${e.label}`}
+      data-strava={e.stravaData}
       style={socialPos[i]}
     >
       <div class="float-inner">
@@ -732,6 +801,39 @@ body { overflow-x: hidden; }
   line-height: 1.5;
 }
 
+/* Strava activity list in lightbox */
+.lb-activities {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: left;
+}
+
+.lb-activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.lb-activity:last-child { border-bottom: none; padding-bottom: 0; }
+
+.lb-activity-sport {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.lb-activity-stats {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 .lb-action {
   display: inline-block;
   font-size: 0.88rem;
@@ -791,11 +893,15 @@ body { overflow-x: hidden; }
     scrollTimer = setTimeout(() => { targetScrollSpeed = 1.0 }, 150)
   }, { passive: true })
 
-  // ── Speed slider ───────────────────────────────────────────────────
+  // ── Speed slider (snaps back to 100 on release) ────────────────────
   let speedMult = 1.0
   const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
   speedRange?.addEventListener("input", () => {
     speedMult = Number(speedRange.value) / 100
+  })
+  speedRange?.addEventListener("pointerup", () => {
+    speedRange.value = "100"
+    speedMult = 1.0
   })
 
   // ── Float states ───────────────────────────────────────────────────
@@ -884,12 +990,41 @@ body { overflow-x: hidden; }
     } else if (type === "social") {
       const card = document.createElement("div")
       card.className = "lb-card"
-      card.innerHTML = `
-        ${avatar ? `<img class="lb-social-avatar" src="${esc(avatar)}" alt="${esc(title)}" />` : ""}
-        <p class="lb-eye">${esc(title)}</p>
-        ${handle ? `<p class="lb-handle">${esc(handle)}</p>` : ""}
-        ${desc   ? `<p class="lb-desc">${esc(desc)}</p>`     : ""}
-      `
+
+      const stravaRaw = el.dataset.strava
+      if (stravaRaw) {
+        // Strava card with live activity list
+        try {
+          const acts: Array<{name:string;sport_type:string;distance:number;moving_time:number;start_date:string}> =
+            JSON.parse(stravaRaw)
+          const rows = acts.map(a => {
+            const sport = a.sport_type.replace(/([a-z])([A-Z])/g, "$1 $2")
+            const dist  = `${(a.distance / 1000).toFixed(1)} km`
+            const h = Math.floor(a.moving_time / 3600)
+            const m = Math.floor((a.moving_time % 3600) / 60)
+            const dur  = h > 0 ? `${h}h ${m}m` : `${m}m`
+            const date = new Date(a.start_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
+            return `<div class="lb-activity">
+              <span class="lb-activity-sport">${esc(sport)}</span>
+              <span class="lb-activity-stats">${esc(dist)} · ${esc(dur)} · ${esc(date)}</span>
+            </div>`
+          }).join("")
+          card.innerHTML = `
+            <p class="lb-eye">Strava</p>
+            <p class="lb-title">${esc(handle)}</p>
+            <div class="lb-activities">${rows}</div>
+          `
+        } catch {
+          card.innerHTML = `<p class="lb-eye">${esc(title)}</p><p class="lb-handle">${esc(handle)}</p>`
+        }
+      } else {
+        card.innerHTML = `
+          ${avatar ? `<img class="lb-social-avatar" src="${esc(avatar)}" alt="${esc(title)}" />` : ""}
+          <p class="lb-eye">${esc(title)}</p>
+          ${handle ? `<p class="lb-handle">${esc(handle)}</p>` : ""}
+          ${desc   ? `<p class="lb-desc">${esc(desc)}</p>`     : ""}
+        `
+      }
       lbContent.appendChild(card)
 
     } else if (type === "cv") {
