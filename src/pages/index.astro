@@ -656,9 +656,41 @@ body { overflow-x: hidden; }
 }
 
 .speed-ctrl input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
   width: 68px;
-  accent-color: var(--text);
+  height: 14px;
+  background: transparent;
   cursor: pointer;
+}
+
+.speed-ctrl input[type="range"]::-webkit-slider-runnable-track {
+  height: 1.5px;
+  background: var(--muted);
+  border-radius: 1px;
+}
+
+.speed-ctrl input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--text);
+  margin-top: -3.75px;
+}
+
+.speed-ctrl input[type="range"]::-moz-range-track {
+  height: 1.5px;
+  background: var(--muted);
+  border-radius: 1px;
+}
+
+.speed-ctrl input[type="range"]::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--text);
+  border: none;
 }
 
 /* Tick marks above and below track at 1× position (100/220 ≈ 46%) */
@@ -948,8 +980,8 @@ body { overflow-x: hidden; }
   let speedMult = 1.0
   const speedRange   = document.getElementById("speed-range") as HTMLInputElement | null
   const speedNotches = document.querySelectorAll<HTMLElement>(".speed-notch")
-  const DRAG_SNAP    = 9   // ±9 units — magnetic pull near the notch
-  const RELEASE_SNAP = 10  // ±10 — snap on release only if close to center
+  const DRAG_SNAP    = 15  // ±15 units — magnetic pull near the notch
+  const RELEASE_SNAP = 18  // ±18 — snap on release only if close to center
   let inSnapZone     = true // starts at center (value = 100)
 
   function triggerHaptic() {
