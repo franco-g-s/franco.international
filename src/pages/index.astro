@@ -100,9 +100,6 @@ function truncate(str: string | null, n: number) {
   if (!str) return ""
   return str.length > n ? str.slice(0, n).trimEnd() + "…" : str
 }
-function fmtDistance(metres: number) {
-  return `${(metres / 1000).toFixed(1)} km`
-}
 function fmtDuration(seconds: number) {
   const h = Math.floor(seconds / 3600)
   const m = Math.floor((seconds % 3600) / 60)
@@ -112,8 +109,14 @@ function fmtActivityDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
 }
 function fmtSport(raw: string) {
-  // "VirtualRide" → "Virtual Ride", "Run" → "Run"
   return raw.replace(/([a-z])([A-Z])/g, "$1 $2")
+}
+function fmtActivity(a: StravaActivity) {
+  const parts: string[] = [fmtSport(a.sport_type)]
+  if (a.distance > 0) parts.push(`${(a.distance / 1000).toFixed(1)} km`)
+  parts.push(fmtDuration(a.moving_time))
+  parts.push(fmtActivityDate(a.start_date))
+  return parts.join(" · ")
 }
 
 // ── Photos: positioned to avoid zone label overlap ────────────────────────────
@@ -216,7 +219,7 @@ const cvHighlights = [
 
 // ── Social links ───────────────────────────────────────────────────────────────
 const stravaDesc = stravaActivities.length > 0
-  ? `${fmtSport(stravaActivities[0].sport_type)} · ${fmtDistance(stravaActivities[0].distance)} · ${fmtActivityDate(stravaActivities[0].start_date)}`
+  ? fmtActivity(stravaActivities[0])
   : "Cycling · running · rowing · swimming"
 
 const elsewhere: ElsewhereItem[] = [
@@ -999,14 +1002,18 @@ body { overflow-x: hidden; }
             JSON.parse(stravaRaw)
           const rows = acts.map(a => {
             const sport = a.sport_type.replace(/([a-z])([A-Z])/g, "$1 $2")
-            const dist  = `${(a.distance / 1000).toFixed(1)} km`
             const h = Math.floor(a.moving_time / 3600)
             const m = Math.floor((a.moving_time % 3600) / 60)
             const dur  = h > 0 ? `${h}h ${m}m` : `${m}m`
             const date = new Date(a.start_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
+            const stats = [
+              ...(a.distance > 0 ? [`${(a.distance / 1000).toFixed(1)} km`] : []),
+              dur,
+              date,
+            ].join(" · ")
             return `<div class="lb-activity">
               <span class="lb-activity-sport">${esc(sport)}</span>
-              <span class="lb-activity-stats">${esc(dist)} · ${esc(dur)} · ${esc(date)}</span>
+              <span class="lb-activity-stats">${esc(stats)}</span>
             </div>`
           }).join("")
           card.innerHTML = `
