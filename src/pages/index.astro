@@ -734,16 +734,16 @@ body { overflow-x: hidden; }
   let mouseY = -9999
   document.addEventListener("mousemove", (e) => { mouseX = e.clientX; mouseY = e.clientY })
 
-  // ── Scroll damping ─────────────────────────────────────────────────
-  // Bob amplitude is reduced while the user is actively scrolling,
-  // then smoothly restored 250ms after they stop.
-  let scrollFactor = 1.0
-  let targetScrollFactor = 1.0
+  // ── Scroll: freeze animation in place while scrolling ─────────────
+  // We pause time advancement rather than scaling values — this keeps
+  // every element at its exact current position during scroll, then
+  // resumes the animation from that same point when scrolling stops.
+  let isScrolling = false
   let scrollTimer: ReturnType<typeof setTimeout> | null = null
   window.addEventListener("scroll", () => {
-    targetScrollFactor = 0.25
+    isScrolling = true
     if (scrollTimer) clearTimeout(scrollTimer)
-    scrollTimer = setTimeout(() => { targetScrollFactor = 1.0 }, 250)
+    scrollTimer = setTimeout(() => { isScrolling = false }, 300)
   }, { passive: true })
 
   // ── Speed slider ───────────────────────────────────────────────────
@@ -758,7 +758,6 @@ body { overflow-x: hidden; }
   document.querySelectorAll<HTMLElement>(".float").forEach((el) => {
     states.push({
       el,
-      // Slightly more amplitude than before for a livelier static feel
       ax1: rand(4, 9),    wx1: rand(0.20, 0.42), px1: rand(0, Math.PI * 2),
       ax2: rand(3, 6),    wx2: rand(0.45, 0.72), px2: rand(0, Math.PI * 2),
       ay1: rand(6, 13),   wy1: rand(0.22, 0.48), py1: rand(0, Math.PI * 2),
@@ -773,21 +772,24 @@ body { overflow-x: hidden; }
   const PULL_MAX    = 7
   const LERP        = 0.06
 
-  let t0: number | null = null
+  // Accumulated animation time — only advances when not scrolling.
+  // The speed slider scales how fast time accrues.
+  let animT    = 0
+  let lastTs: number | null = null
 
   function animate(ts: number) {
-    if (t0 === null) t0 = ts
-    const t = (ts - t0) / 1000
+    if (lastTs === null) lastTs = ts
+    const dtSec = (ts - lastTs) / 1000
+    lastTs = ts
 
-    // Lerp scroll factor toward its target for smooth transitions
-    scrollFactor += (targetScrollFactor - scrollFactor) * 0.08
-
-    const sf = scrollFactor * speedMult
+    if (!isScrolling) {
+      animT += dtSec * speedMult
+    }
 
     for (const s of states) {
-      const bobX = (s.ax1 * Math.sin(s.wx1 * t + s.px1) + s.ax2 * Math.sin(s.wx2 * t + s.px2)) * sf
-      const bobY = (s.ay1 * Math.sin(s.wy1 * t + s.py1) + s.ay2 * Math.sin(s.wy2 * t + s.py2)) * sf
-      const rot  = (s.ar  * Math.sin(s.wr  * t + s.pr)) * sf
+      const bobX = s.ax1 * Math.sin(s.wx1 * animT + s.px1) + s.ax2 * Math.sin(s.wx2 * animT + s.px2)
+      const bobY = s.ay1 * Math.sin(s.wy1 * animT + s.py1) + s.ay2 * Math.sin(s.wy2 * animT + s.py2)
+      const rot  = s.ar  * Math.sin(s.wr  * animT + s.pr)
 
       const rect = s.el.getBoundingClientRect()
       const elCX = rect.left + rect.width  / 2
