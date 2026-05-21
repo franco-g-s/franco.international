@@ -12,13 +12,28 @@ interface GitHubUser {
   repos: number
 }
 
-// ── Garden notes ──────────────────────────────────────────────────────────────
-let recentNotes: GardenNote[] = []
+// ── Garden section cards (curated, not recent-notes) ─────────────────────────
+// Ordered: the display order in the floating section.
+// exercise/ has no feed entry so it always uses the fallback description.
+const gardenSections = [
+  { slug: "projects/", label: "Projects",  fallback: "Coding, hardware, and research projects." },
+  { slug: "about/",    label: "About",     fallback: null },
+  { slug: "exercise/", label: "Exercise",  fallback: "Training logs — cycling, running, hiking, rowing." },
+  { slug: "media/",    label: "Media",     fallback: "Books, films, videos, and other media." },
+  { slug: "notes/",    label: "Notes",     fallback: "General notes and reflections." },
+]
+
+let gardenCards: GardenNote[] = gardenSections.map(s => ({
+  title: s.label, slug: s.slug, date: null, description: s.fallback,
+}))
 try {
   const res = await fetch("https://garden.franco.international/notes.json")
   if (res.ok) {
     const all: GardenNote[] = await res.json()
-    recentNotes = all.slice(0, 5)
+    const bySlug = new Map(all.map(n => [n.slug, n]))
+    gardenCards = gardenSections.map(s => bySlug.get(s.slug) ?? {
+      title: s.label, slug: s.slug, date: null, description: s.fallback,
+    })
   }
 } catch { /* garden unavailable at build time */ }
 
@@ -220,20 +235,20 @@ const elsewhere = [
     </div>
   ))}
 
-  <!-- ── Garden note cards ───────────────────────────────────────── -->
-  {recentNotes.map((note, i) => (
+  <!-- ── Garden section cards ──────────────────────────────────────── -->
+  {gardenCards.map((note, i) => (
     <div
       class="float card card--note"
       data-type="note"
       data-title={note.title}
-      data-sub={fmtDate(note.date)}
+      data-sub="Digital Garden"
       data-preview={truncate(note.description, 320)}
       data-href={`https://garden.franco.international/${note.slug}`}
-      data-cta="Read note"
+      data-cta={`Open ${note.title}`}
       style={notePos[i]}
     >
       <div class="float-inner">
-        <p class="card-eye">Note · {fmtDate(note.date)}</p>
+        <p class="card-eye">Garden</p>
         <p class="card-title">{note.title}</p>
         {note.description && (
           <p class="card-preview">{truncate(note.description, 80)}</p>
@@ -241,17 +256,6 @@ const elsewhere = [
       </div>
     </div>
   ))}
-
-  {recentNotes.length === 0 && (
-    <div class="float card card--note" data-type="link"
-         data-href="https://garden.franco.international"
-         data-cta="Visit" style={notePos[0]}>
-      <div class="float-inner">
-        <p class="card-eye">Digital Garden</p>
-        <p class="card-title">A growing collection of notes</p>
-      </div>
-    </div>
-  )}
 
   <!-- ── CV highlight cards ──────────────────────────────────────── -->
   {cvHighlights.map((h, i) => (
