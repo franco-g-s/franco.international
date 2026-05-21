@@ -665,32 +665,39 @@ body { overflow-x: hidden; }
 }
 
 .speed-ctrl input[type="range"]::-webkit-slider-runnable-track {
-  height: 1.5px;
-  background: var(--muted);
-  border-radius: 1px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 99px;
+  border: 1px solid var(--muted);
+  box-sizing: border-box;
 }
 
 .speed-ctrl input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background: var(--text);
-  margin-top: -3.75px;
+  background: var(--bg);
+  border: 1.5px solid var(--text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  margin-top: -4.5px;
 }
 
 .speed-ctrl input[type="range"]::-moz-range-track {
-  height: 1.5px;
-  background: var(--muted);
-  border-radius: 1px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 99px;
+  border: 1px solid var(--muted);
+  box-sizing: border-box;
 }
 
 .speed-ctrl input[type="range"]::-moz-range-thumb {
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background: var(--text);
-  border: none;
+  background: var(--bg);
+  border: 1.5px solid var(--text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
 /* Tick marks above and below track at 1× position (100/220 ≈ 46%) */
