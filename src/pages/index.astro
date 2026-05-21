@@ -212,6 +212,7 @@ const elsewhere = [
       <div class="float-inner">
         <img src={`/photos/${p.id}.jpg`} alt="" width={p.w} height={p.h}
              loading="eager" draggable="false" />
+        <span class="photo-num">{Number(p.id)}</span>
       </div>
     </div>
   ))}
@@ -386,11 +387,27 @@ body { overflow-x: hidden; }
 }
 
 .float-inner {
+  position: relative;
   width: 100%;
   height: 100%;
   transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.64, 1),
               box-shadow 0.28s ease;
   border-radius: 3px;
+}
+
+.photo-num {
+  position: absolute;
+  top: 0.35rem;
+  left: 0.4rem;
+  background: rgba(0, 0, 0, 0.42);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.18rem 0.42rem;
+  border-radius: 2px;
+  pointer-events: none;
+  letter-spacing: 0.02em;
 }
 
 .float:hover .float-inner { transform: scale(1.04); }
