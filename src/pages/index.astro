@@ -384,7 +384,10 @@ const elsewhere: ElsewhereItem[] = [
 <!-- ── Speed control ──────────────────────────────────────────────── -->
 <div class="speed-ctrl">
   <span>speed</span>
-  <input type="range" id="speed-range" min="0" max="220" value="100" step="5" />
+  <div class="speed-track-wrap">
+    <input type="range" id="speed-range" min="0" max="220" value="100" step="5" />
+    <div class="speed-notch" id="speed-notch"></div>
+  </div>
 </div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -645,10 +648,37 @@ body { overflow-x: hidden; }
 
 .speed-ctrl:hover { opacity: 1; }
 
+.speed-track-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .speed-ctrl input[type="range"] {
   width: 68px;
   accent-color: var(--text);
   cursor: pointer;
+}
+
+/* Tick mark at the 1× (100/220 ≈ 46%) position */
+.speed-notch {
+  position: absolute;
+  left: 46%;
+  top: calc(100% + 3px);
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: 4px;
+  background: var(--muted);
+  border-radius: 1px;
+  pointer-events: none;
+  opacity: 0.45;
+  transition: opacity 0.08s, background 0.08s, transform 0.08s;
+}
+
+.speed-notch.is-snapped {
+  opacity: 1;
+  background: var(--text);
+  transform: translateX(-50%) scaleY(1.5);
 }
 
 /* ── Lightbox ─────────────────────────────────────────────────────── */
@@ -905,15 +935,49 @@ body { overflow-x: hidden; }
     scrollTimer = setTimeout(() => { targetScrollSpeed = 1.0 }, 150)
   }, { passive: true })
 
-  // ── Speed slider (snaps back to 100 on release) ────────────────────
+  // ── Speed slider ────────────────────────────────────────────────────
+  // Magnetic snap: within SNAP_ZONE units of 100, the slider locks to 100.
+  // Visual notch pulses on snap. Haptic fires on first entry into snap zone
+  // and on release when the value has moved away.
   let speedMult = 1.0
   const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
+  const speedNotch = document.getElementById("speed-notch")
+  const SNAP_ZONE  = 14   // ±14 out of 220 range
+  let inSnapZone   = true // starts at 100
+
+  function triggerHaptic() {
+    try { navigator.vibrate?.(6) } catch {}
+  }
+
+  function flashNotch() {
+    if (!speedNotch) return
+    speedNotch.classList.add("is-snapped")
+    setTimeout(() => speedNotch.classList.remove("is-snapped"), 180)
+  }
+
   speedRange?.addEventListener("input", () => {
-    speedMult = Number(speedRange.value) / 100
+    const val = Number(speedRange.value)
+    if (Math.abs(val - 100) <= SNAP_ZONE) {
+      speedRange.value = "100"
+      speedMult = 1.0
+      if (!inSnapZone) {
+        inSnapZone = true
+        triggerHaptic()
+        flashNotch()
+      }
+    } else {
+      inSnapZone = false
+      speedMult = val / 100
+    }
   })
+
   speedRange?.addEventListener("pointerup", () => {
+    const needsSnap = Number(speedRange.value) !== 100
     speedRange.value = "100"
     speedMult = 1.0
+    inSnapZone = true
+    if (needsSnap) triggerHaptic()
+    flashNotch()
   })
 
   // ── Float states ───────────────────────────────────────────────────
