@@ -666,7 +666,11 @@ body { overflow-x: hidden; }
 
 .speed-ctrl input[type="range"]::-webkit-slider-runnable-track {
   height: 3px;
-  background: var(--border);
+  background: linear-gradient(
+    to right,
+    var(--text) var(--fill, 45.45%),
+    var(--border) var(--fill, 45.45%)
+  );
   border-radius: 99px;
   border: 1px solid var(--muted);
   box-sizing: border-box;
@@ -689,6 +693,12 @@ body { overflow-x: hidden; }
   border-radius: 99px;
   border: 1px solid var(--muted);
   box-sizing: border-box;
+}
+
+.speed-ctrl input[type="range"]::-moz-range-progress {
+  height: 3px;
+  background: var(--text);
+  border-radius: 99px;
 }
 
 .speed-ctrl input[type="range"]::-moz-range-thumb {
@@ -1000,7 +1010,14 @@ body { overflow-x: hidden; }
     speedNotches.forEach(n => n.classList.toggle("at-center", atCenter))
   }
 
-  updateNotch() // initialise at page load
+  function updateFill() {
+    if (!speedRange) return
+    const pct = (Number(speedRange.value) / 220 * 100).toFixed(2)
+    speedRange.style.setProperty("--fill", `${pct}%`)
+  }
+
+  updateNotch()  // initialise at page load
+  updateFill()
 
   speedRange?.addEventListener("input", () => {
     const val = Number(speedRange.value)
@@ -1013,6 +1030,7 @@ body { overflow-x: hidden; }
       speedMult = val / 100
     }
     updateNotch()
+    updateFill()
   })
 
   // Horizontal (or vertical) scroll on the slider track moves it
@@ -1033,6 +1051,7 @@ body { overflow-x: hidden; }
       inSnapZone = true
     }
     updateNotch()
+    updateFill()
     // outside release zone: slider stays where released
   })
 
