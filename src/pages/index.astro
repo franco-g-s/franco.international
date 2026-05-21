@@ -895,7 +895,6 @@ body { overflow-x: hidden; }
   .name { font-size: clamp(2rem, 9vw, 3rem); }
   .zone-label { font-size: clamp(1.2rem, 5vw, 1.6rem); }
   .card { max-width: 180px; }
-  .speed-ctrl { display: none; }
 }
 </style>
 
@@ -942,7 +941,7 @@ body { overflow-x: hidden; }
   let speedMult = 1.0
   const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
   const speedNotch = document.getElementById("speed-notch")
-  const DRAG_SNAP    = 6   // ±6 units — magnetic pull near the notch
+  const DRAG_SNAP    = 9   // ±9 units — magnetic pull near the notch
   const RELEASE_SNAP = 10  // ±10 units — if you release near center, snap cleanly; else stay
   let inSnapZone     = true
 
@@ -971,6 +970,15 @@ body { overflow-x: hidden; }
       speedMult = val / 100
     }
   })
+
+  // Horizontal (or vertical) scroll on the slider track moves it
+  speedRange?.addEventListener("wheel", (e) => {
+    e.preventDefault()
+    const delta = e.deltaX !== 0 ? e.deltaX : -e.deltaY
+    const newVal = Math.max(0, Math.min(220, Number(speedRange.value) + delta * 0.4))
+    speedRange.value = String(Math.round(newVal))
+    speedRange.dispatchEvent(new Event("input"))
+  }, { passive: false })
 
   speedRange?.addEventListener("pointerup", () => {
     const val = Number(speedRange.value)
