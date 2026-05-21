@@ -219,7 +219,7 @@ const cvHighlights = [
 
 // ── Social links ───────────────────────────────────────────────────────────────
 const stravaDesc = stravaActivities.length > 0
-  ? `Latest activity · ${fmtSport(stravaActivities[0].sport_type)}`
+  ? fmtSport(stravaActivities[0].sport_type)
   : "Cycling · running · rowing · swimming"
 
 const elsewhere: ElsewhereItem[] = [
@@ -239,7 +239,7 @@ const elsewhere: ElsewhereItem[] = [
   },
   {
     label: "Strava",
-    handle: "Franco Gómez Schumacher",
+    handle: stravaActivities.length > 0 ? "Latest activity" : "Franco Gómez Schumacher",
     desc: stravaDesc,
     href: "https://www.strava.com/athletes/112666220",
     avatar: "",
