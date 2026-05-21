@@ -942,7 +942,7 @@ body { overflow-x: hidden; }
   let speedMult = 1.0
   const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
   const speedNotch = document.getElementById("speed-notch")
-  const SNAP_ZONE  = 14   // ±14 out of 220 range
+  const SNAP_ZONE  = 5    // ±5 out of 220 range — tight gravity well right at the notch
   let inSnapZone   = true // starts at 100
 
   function triggerHaptic() {
