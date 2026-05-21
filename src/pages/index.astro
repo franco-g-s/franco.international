@@ -5,7 +5,14 @@ interface GardenNote {
   date: string | null
   description: string | null
 }
+interface GitHubUser {
+  avatar: string
+  name: string
+  bio: string
+  repos: number
+}
 
+// ── Garden notes ──────────────────────────────────────────────────────────────
 let recentNotes: GardenNote[] = []
 try {
   const res = await fetch("https://garden.franco.international/notes.json")
@@ -15,17 +22,30 @@ try {
   }
 } catch { /* garden unavailable at build time */ }
 
+// ── GitHub public data (no auth needed) ───────────────────────────────────────
+let github: GitHubUser = { avatar: "https://github.com/franco-g-s.png", name: "franco-g-s", bio: "", repos: 0 }
+try {
+  const ghRes = await fetch("https://api.github.com/users/franco-g-s", {
+    headers: { "User-Agent": "franco-international-hub" },
+  })
+  if (ghRes.ok) {
+    const gh = await ghRes.json()
+    github = { avatar: gh.avatar_url, name: gh.name || gh.login, bio: gh.bio || "", repos: gh.public_repos || 0 }
+  }
+} catch {}
+
 function fmtDate(iso: string | null) {
   if (!iso) return ""
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
 }
-
 function truncate(str: string | null, n: number) {
   if (!str) return ""
   return str.length > n ? str.slice(0, n).trimEnd() + "…" : str
 }
 
-// ── Photos: 18 spread across full 500vh canvas ───────────────────────────────
+// ── Photos: positioned to avoid zone label overlap ────────────────────────────
+// Zone labels sit at 162vh, 292vh, 422vh — all centered (left 50%).
+// No photo anchor should vertically overlap those rows near the center.
 const photos = [
   // Landing zone (0–100vh)
   { id: "01", top: "5vh",   left: "4%",  w: 210, h: 158 },
@@ -35,27 +55,26 @@ const photos = [
   // Transition 1→2 (80–140vh)
   { id: "05", top: "82vh",  left: "2%",  w: 172, h: 132 },
   { id: "06", top: "90vh",  left: "80%", w: 142, h: 192 },
-  { id: "07", top: "110vh", left: "42%", w: 165, h: 125 },
-  // Garden zone fill (140–220vh)
-  { id: "08", top: "148vh", left: "43%", w: 138, h: 188 },
-  { id: "09", top: "192vh", left: "50%", w: 158, h: 120 },
+  { id: "07", top: "110vh", left: "16%", w: 165, h: 125 }, // shifted off-center
+  // Garden zone fill — label at 162vh, keep photos clear of center
+  { id: "08", top: "144vh", left: "13%", w: 138, h: 140 }, // left edge only, shortened
+  { id: "09", top: "195vh", left: "78%", w: 158, h: 120 }, // right edge
   // Transition 2→3 (210–265vh)
   { id: "10", top: "218vh", left: "6%",  w: 158, h: 122 },
-  { id: "11", top: "235vh", left: "79%", w: 175, h: 135 },
-  // CV zone fill (265–335vh)
-  { id: "12", top: "272vh", left: "44%", w: 145, h: 110 },
-  { id: "13", top: "318vh", left: "48%", w: 162, h: 122 },
+  { id: "11", top: "238vh", left: "79%", w: 175, h: 135 },
+  // CV zone fill — label at 292vh, keep clear of center
+  { id: "12", top: "272vh", left: "11%", w: 145, h: 110 }, // left
+  { id: "13", top: "318vh", left: "76%", w: 162, h: 122 }, // right
   // Transition 3→4 (330–385vh)
-  { id: "14", top: "338vh", left: "3%",  w: 182, h: 142 },
-  { id: "15", top: "358vh", left: "77%", w: 158, h: 118 },
-  // Elsewhere zone fill (385–465vh)
-  { id: "16", top: "392vh", left: "44%", w: 148, h: 112 },
+  { id: "14", top: "340vh", left: "3%",  w: 182, h: 142 },
+  { id: "15", top: "360vh", left: "77%", w: 158, h: 118 },
+  // Elsewhere zone fill — label at 422vh, keep clear of center
+  { id: "16", top: "395vh", left: "14%", w: 148, h: 112 }, // left
   { id: "17", top: "462vh", left: "8%",  w: 142, h: 192 },
   { id: "18", top: "478vh", left: "74%", w: 168, h: 128 },
 ]
 
-// ── Card positions ────────────────────────────────────────────────────────────
-// Garden zone anchor at 165vh — 5 notes, spread wider
+// ── Card positions ─────────────────────────────────────────────────────────────
 const notePos = [
   "top:135vh;left:6%",
   "top:152vh;left:63%",
@@ -63,36 +82,90 @@ const notePos = [
   "top:162vh;left:76%",
   "top:188vh;left:40%",
 ]
-// CV zone anchor at 295vh
 const cvPos = [
   "top:272vh;left:5%",
   "top:285vh;left:65%",
   "top:306vh;left:16%",
   "top:297vh;left:74%",
 ]
-// Elsewhere zone anchor at 425vh
 const socialPos = [
   "top:402vh;left:7%",
   "top:415vh;left:26%",
   "top:428vh;left:57%",
   "top:420vh;left:75%",
-  "top:440vh;left:40%",
+  "top:442vh;left:38%",
 ]
 
+// ── CV highlights with expanded lightbox content ──────────────────────────────
 const cvHighlights = [
-  { label: "Based in",  value: "Zürich, Switzerland" },
-  { label: "Upcoming",  value: "ETH Zürich — Mechanical Engineering (2027)" },
-  { label: "Currently", value: "Autonomous Systems Lab, ETH Zürich — Zivildienst" },
-  { label: "Languages", value: "English, Spanish, German, French, Italian, Mandarin" },
+  {
+    label: "Based in",
+    value: "Zürich, Switzerland",
+    expanded: "Completing a two-year Zivildienst service year before starting university in autumn 2027.",
+    href: "https://cv.franco.international",
+    cta: "View CV",
+  },
+  {
+    label: "Upcoming",
+    value: "ETH Zürich — Mechanical Engineering",
+    expanded: "Bachelor of Science in Mechanical Engineering, starting autumn 2027.",
+    href: "https://cv.franco.international",
+    cta: "View CV",
+  },
+  {
+    label: "Currently",
+    value: "Autonomous Systems Lab — ETH Zürich",
+    expanded: "Zivildienst at ASL — one of ETH's leading robotics and autonomous systems research groups. Assisting in mechatronics and autonomous systems research.",
+    href: "https://asl.ethz.ch/",
+    cta: "Visit ASL",
+  },
+  {
+    label: "Languages",
+    value: "EN · ES · DE · FR · IT · ZH",
+    // pipe-separated "Level: values" pairs for the lightbox table
+    expanded: "Fluent: English, Spanish, German, Swiss German|Intermediate: French, Italian, Mandarin (HSK 3 certified Jan 2026, targeting HSK 4)",
+    href: "https://cv.franco.international",
+    cta: "View CV",
+  },
 ]
 
+// ── Social links ───────────────────────────────────────────────────────────────
 const elsewhere = [
-  { label: "Instagram", href: "https://www.instagram.com/francogs.mp4/" },
-  { label: "YouTube",   href: "https://www.youtube.com/@francogs.mp4/" },
-  // TODO: replace with your Strava athlete profile URL
-  { label: "Strava",    href: "https://www.strava.com/athletes/" },
-  { label: "LinkedIn",  href: "https://www.linkedin.com/in/franco-g%C3%B3mez-schumacher-17a985123/" },
-  { label: "GitHub",    href: "https://github.com/franco-g-s" },
+  {
+    label: "Instagram",
+    handle: "@francogs.mp4",
+    desc: "Photos & moments",
+    href: "https://www.instagram.com/francogs.mp4/",
+    avatar: "",
+  },
+  {
+    label: "YouTube",
+    handle: "@francogs.mp4",
+    desc: "Videos",
+    href: "https://www.youtube.com/@francogs.mp4/",
+    avatar: "",
+  },
+  {
+    label: "Strava",
+    handle: "Franco Gómez Schumacher",
+    desc: "Cycling · running · rowing · swimming",
+    href: "https://www.strava.com/athletes/112666220",
+    avatar: "",
+  },
+  {
+    label: "LinkedIn",
+    handle: "Franco Gómez Schumacher",
+    desc: "Professional profile",
+    href: "https://www.linkedin.com/in/franco-g%C3%B3mez-schumacher-17a985123/",
+    avatar: "",
+  },
+  {
+    label: "GitHub",
+    handle: github.name,
+    desc: github.bio || `${github.repos} public repos`,
+    href: "https://github.com/franco-g-s",
+    avatar: github.avatar,
+  },
 ]
 ---
 
@@ -115,7 +188,7 @@ const elsewhere = [
     <span>Franco Gómez</span>
     <span>Schumacher</span>
   </h1>
-  <p class="anchor zone-label" style="top:162vh;left:50%">Garden</p>
+  <p class="anchor zone-label" style="top:162vh;left:50%">Digital Garden</p>
   <p class="anchor zone-label" style="top:292vh;left:50%">CV</p>
   <p class="anchor zone-label" style="top:422vh;left:50%">Elsewhere</p>
 
@@ -141,7 +214,7 @@ const elsewhere = [
       data-type="note"
       data-title={note.title}
       data-sub={fmtDate(note.date)}
-      data-preview={truncate(note.description, 120)}
+      data-preview={truncate(note.description, 320)}
       data-href={`https://garden.franco.international/${note.slug}`}
       data-cta="Read note"
       style={notePos[i]}
@@ -150,18 +223,18 @@ const elsewhere = [
         <p class="card-eye">Note · {fmtDate(note.date)}</p>
         <p class="card-title">{note.title}</p>
         {note.description && (
-          <p class="card-preview">{truncate(note.description, 90)}</p>
+          <p class="card-preview">{truncate(note.description, 80)}</p>
         )}
       </div>
     </div>
   ))}
 
-  <!-- Fallback if garden feed unavailable -->
   {recentNotes.length === 0 && (
-    <div class="float card" data-type="link" data-href="https://garden.franco.international"
-         data-cta="Visit" data-depth="0.007" style={notePos[0]}>
+    <div class="float card card--note" data-type="link"
+         data-href="https://garden.franco.international"
+         data-cta="Visit" style={notePos[0]}>
       <div class="float-inner">
-        <p class="card-eye">Garden</p>
+        <p class="card-eye">Digital Garden</p>
         <p class="card-title">A growing collection of notes</p>
       </div>
     </div>
@@ -174,8 +247,9 @@ const elsewhere = [
       data-type="cv"
       data-title={h.label}
       data-sub={h.value}
-      data-href="https://cv.franco.international"
-      data-cta="View CV"
+      data-expanded={h.expanded}
+      data-href={h.href}
+      data-cta={h.cta}
       style={cvPos[i]}
     >
       <div class="float-inner">
@@ -191,16 +265,31 @@ const elsewhere = [
       class="float card card--social"
       data-type="social"
       data-title={e.label}
+      data-handle={e.handle}
+      data-desc={e.desc}
+      data-avatar={e.avatar}
       data-href={e.href}
       data-cta={`Open ${e.label}`}
       style={socialPos[i]}
     >
       <div class="float-inner">
-        <p class="card-social">{e.label} ↗</p>
+        {e.avatar
+          ? <img class="card-avatar" src={e.avatar} alt={e.label} width="36" height="36" />
+          : <p class="card-platform-icon" aria-hidden="true">{e.label.slice(0,2)}</p>
+        }
+        <p class="card-social-label">{e.label}</p>
+        <p class="card-social-handle">{e.handle}</p>
+        {e.desc && <p class="card-social-desc">{e.desc}</p>}
       </div>
     </div>
   ))}
 
+</div>
+
+<!-- ── Speed control ──────────────────────────────────────────────── -->
+<div class="speed-ctrl">
+  <span>speed</span>
+  <input type="range" id="speed-range" min="0" max="220" value="100" step="5" />
 </div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -335,7 +424,7 @@ body { overflow-x: hidden; }
   margin-bottom: 0.4rem;
 }
 
-/* Note cards — larger, with preview */
+/* Note cards */
 .card--note { max-width: 300px; min-width: 220px; }
 .card--note .float-inner { padding: 1.1rem 1.3rem; }
 
@@ -345,25 +434,19 @@ body { overflow-x: hidden; }
   color: var(--text);
   line-height: 1.45;
   max-width: 26ch;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .card-preview {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--muted);
   line-height: 1.55;
   max-width: 30ch;
 }
 
 /* CV cards */
-.card--cv { max-width: 270px; min-width: 190px; }
+.card--cv { max-width: 280px; min-width: 200px; }
 .card--cv .float-inner { padding: 0.9rem 1.1rem; }
-
-.card-sub {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-top: 0.2rem;
-}
 
 .card-value {
   font-size: 0.88rem;
@@ -373,14 +456,82 @@ body { overflow-x: hidden; }
   max-width: 26ch;
 }
 
-/* Social cards */
-.card--social { min-width: 130px; max-width: 190px; }
-.card--social .float-inner { padding: 0.8rem 1.1rem; }
+/* Social cards — richer */
+.card--social { min-width: 185px; max-width: 240px; }
+.card--social .float-inner { padding: 1.1rem 1.3rem; }
 
-.card-social {
-  font-size: 0.95rem;
+.card-avatar {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.55rem;
+  background: var(--border);
+}
+
+.card-platform-icon {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+  background: var(--border);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.55rem;
+}
+
+.card-social-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.card-social-handle {
+  font-size: 0.9rem;
   font-weight: 400;
   color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.card-social-desc {
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── Speed control ────────────────────────────────────────────────── */
+.speed-ctrl {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.speed-ctrl:hover { opacity: 1; }
+
+.speed-ctrl input[type="range"] {
+  width: 68px;
+  accent-color: var(--text);
+  cursor: pointer;
 }
 
 /* ── Lightbox ─────────────────────────────────────────────────────── */
@@ -401,12 +552,13 @@ body { overflow-x: hidden; }
   pointer-events: all;
 }
 
+/* Reduced: was 0.80 + blur(14px) — now 0.45 + blur(6px) so background stays visible */
 .lb-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.80);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .lb-body {
@@ -430,14 +582,14 @@ body { overflow-x: hidden; }
   box-shadow: 0 16px 60px rgba(0,0,0,0.18), 0 4px 12px rgba(0,0,0,0.10);
 }
 
-/* Lightbox: card expand */
+/* Lightbox: card */
 .lb-card {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 2rem 2.5rem;
   min-width: 260px;
-  max-width: 460px;
+  max-width: 480px;
   box-shadow: 0 16px 60px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
   text-align: center;
 }
@@ -462,6 +614,81 @@ body { overflow-x: hidden; }
 .lb-sub {
   font-size: 0.85rem;
   color: var(--muted);
+  line-height: 1.5;
+}
+
+.lb-preview {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.lb-expanded {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-top: 0.8rem;
+  max-width: 36ch;
+  text-align: left;
+}
+
+/* Language table inside lightbox */
+.lb-lang-table {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: left;
+}
+
+.lb-lang-row {
+  display: flex;
+  gap: 1.2rem;
+  align-items: baseline;
+}
+
+.lb-lang-level {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 5.5rem;
+  flex-shrink: 0;
+}
+
+.lb-lang-values {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Social lightbox */
+.lb-social-avatar {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.9rem;
+  background: var(--border);
+}
+
+.lb-handle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.lb-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  line-height: 1.5;
 }
 
 .lb-action {
@@ -480,18 +707,10 @@ body { overflow-x: hidden; }
 /* ── Mobile ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .canvas { min-height: 420vh; }
-
   .name { font-size: clamp(2rem, 9vw, 3rem); }
-
   .zone-label { font-size: clamp(1.2rem, 5vw, 1.6rem); }
-
-  /* Reduce photo count visually — hide mid-canvas photos */
-  .float[data-photo-id="05"],
-  .float[data-photo-id="06"],
-  .float[data-photo-id="07"],
-  .float[data-photo-id="08"] { display: none; }
-
   .card { max-width: 180px; }
+  .speed-ctrl { display: none; }
 }
 </style>
 
@@ -515,23 +734,41 @@ body { overflow-x: hidden; }
   let mouseY = -9999
   document.addEventListener("mousemove", (e) => { mouseX = e.clientX; mouseY = e.clientY })
 
+  // ── Scroll damping ─────────────────────────────────────────────────
+  // Bob amplitude is reduced while the user is actively scrolling,
+  // then smoothly restored 250ms after they stop.
+  let scrollFactor = 1.0
+  let targetScrollFactor = 1.0
+  let scrollTimer: ReturnType<typeof setTimeout> | null = null
+  window.addEventListener("scroll", () => {
+    targetScrollFactor = 0.25
+    if (scrollTimer) clearTimeout(scrollTimer)
+    scrollTimer = setTimeout(() => { targetScrollFactor = 1.0 }, 250)
+  }, { passive: true })
+
+  // ── Speed slider ───────────────────────────────────────────────────
+  let speedMult = 1.0
+  const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
+  speedRange?.addEventListener("input", () => {
+    speedMult = Number(speedRange.value) / 100
+  })
+
   // ── Float states ───────────────────────────────────────────────────
   const states: FloatState[] = []
   document.querySelectorAll<HTMLElement>(".float").forEach((el) => {
     states.push({
       el,
-      ax1: rand(3, 7),     wx1: rand(0.20, 0.42), px1: rand(0, Math.PI * 2),
-      ax2: rand(2, 5),     wx2: rand(0.45, 0.72), px2: rand(0, Math.PI * 2),
-      ay1: rand(5, 11),    wy1: rand(0.22, 0.48), py1: rand(0, Math.PI * 2),
-      ay2: rand(3, 7),     wy2: rand(0.50, 0.80), py2: rand(0, Math.PI * 2),
-      ar:  rand(1.2, 2.8), wr:  rand(0.18, 0.35), pr:  rand(0, Math.PI * 2),
+      // Slightly more amplitude than before for a livelier static feel
+      ax1: rand(4, 9),    wx1: rand(0.20, 0.42), px1: rand(0, Math.PI * 2),
+      ax2: rand(3, 6),    wx2: rand(0.45, 0.72), px2: rand(0, Math.PI * 2),
+      ay1: rand(6, 13),   wy1: rand(0.22, 0.48), py1: rand(0, Math.PI * 2),
+      ay2: rand(4, 8),    wy2: rand(0.50, 0.80), py2: rand(0, Math.PI * 2),
+      ar:  rand(1.5, 3.5), wr: rand(0.18, 0.35), pr:  rand(0, Math.PI * 2),
       pullX: 0, pullY: 0,
     })
   })
 
-  // ── Animation ──────────────────────────────────────────────────────
-  // Proximity pull: each element is gently attracted toward the cursor
-  // when within PULL_RADIUS px. Lerped for smooth motion.
+  // ── Proximity pull constants ───────────────────────────────────────
   const PULL_RADIUS = 180
   const PULL_MAX    = 7
   const LERP        = 0.06
@@ -542,10 +779,15 @@ body { overflow-x: hidden; }
     if (t0 === null) t0 = ts
     const t = (ts - t0) / 1000
 
+    // Lerp scroll factor toward its target for smooth transitions
+    scrollFactor += (targetScrollFactor - scrollFactor) * 0.08
+
+    const sf = scrollFactor * speedMult
+
     for (const s of states) {
-      const bobX = s.ax1 * Math.sin(s.wx1 * t + s.px1) + s.ax2 * Math.sin(s.wx2 * t + s.px2)
-      const bobY = s.ay1 * Math.sin(s.wy1 * t + s.py1) + s.ay2 * Math.sin(s.wy2 * t + s.py2)
-      const rot  = s.ar  * Math.sin(s.wr  * t + s.pr)
+      const bobX = (s.ax1 * Math.sin(s.wx1 * t + s.px1) + s.ax2 * Math.sin(s.wx2 * t + s.px2)) * sf
+      const bobY = (s.ay1 * Math.sin(s.wy1 * t + s.py1) + s.ay2 * Math.sin(s.wy2 * t + s.py2)) * sf
+      const rot  = (s.ar  * Math.sin(s.wr  * t + s.pr)) * sf
 
       const rect = s.el.getBoundingClientRect()
       const elCX = rect.left + rect.width  / 2
@@ -573,11 +815,18 @@ body { overflow-x: hidden; }
   const lbActions  = document.getElementById("lb-actions")!
   const lbBackdrop = lightbox.querySelector(".lb-backdrop")!
 
+  function esc(s: string) {
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")
+  }
+
   function openLightbox(el: HTMLElement) {
     lbContent.innerHTML = ""
     lbActions.innerHTML = ""
-    const { type = "", href = "", cta = "Visit",
-            title = "", sub = "", preview = "" } = el.dataset
+    const {
+      type = "", href = "", cta = "Visit",
+      title = "", sub = "", preview = "",
+      expanded = "", handle = "", desc = "", avatar = "",
+    } = el.dataset
 
     if (type === "photo") {
       const img = document.createElement("img")
@@ -585,24 +834,69 @@ body { overflow-x: hidden; }
       img.className = "lb-photo"
       img.draggable = false
       lbContent.appendChild(img)
-    } else {
+
+    } else if (type === "social") {
       const card = document.createElement("div")
       card.className = "lb-card"
       card.innerHTML = `
-        <p class="lb-eye">${type}</p>
-        <p class="lb-title">${title}</p>
-        ${sub     ? `<p class="lb-sub">${sub}</p>`         : ""}
-        ${preview ? `<p class="lb-preview">${preview}</p>` : ""}
+        ${avatar ? `<img class="lb-social-avatar" src="${esc(avatar)}" alt="${esc(title)}" />` : ""}
+        <p class="lb-eye">${esc(title)}</p>
+        ${handle ? `<p class="lb-handle">${esc(handle)}</p>` : ""}
+        ${desc   ? `<p class="lb-desc">${esc(desc)}</p>`     : ""}
       `
       lbContent.appendChild(card)
-      if (href) {
-        const a = document.createElement("a")
-        a.href = href; a.textContent = `${cta} ↗`
-        a.target = "_blank"; a.rel = "noopener noreferrer"
-        a.className = "lb-action"
-        lbActions.appendChild(a)
+
+    } else if (type === "cv") {
+      const card = document.createElement("div")
+      card.className = "lb-card"
+
+      if (title === "Languages" && expanded) {
+        const rows = expanded.split("|").map((line) => {
+          const colonIdx = line.indexOf(": ")
+          const level  = colonIdx >= 0 ? line.slice(0, colonIdx) : line
+          const values = colonIdx >= 0 ? line.slice(colonIdx + 2) : ""
+          return `<div class="lb-lang-row">
+            <span class="lb-lang-level">${esc(level)}</span>
+            <span class="lb-lang-values">${esc(values)}</span>
+          </div>`
+        }).join("")
+        card.innerHTML = `
+          <p class="lb-eye">Languages</p>
+          <div class="lb-lang-table">${rows}</div>
+        `
+      } else {
+        card.innerHTML = `
+          <p class="lb-eye">CV</p>
+          <p class="lb-title">${esc(title)}</p>
+          <p class="lb-sub">${esc(sub)}</p>
+          ${expanded ? `<p class="lb-expanded">${esc(expanded)}</p>` : ""}
+        `
       }
+      lbContent.appendChild(card)
+
+    } else {
+      // Note / generic
+      const card = document.createElement("div")
+      card.className = "lb-card"
+      card.innerHTML = `
+        <p class="lb-eye">${esc(type)}</p>
+        <p class="lb-title">${esc(title)}</p>
+        ${sub     ? `<p class="lb-sub">${esc(sub)}</p>`         : ""}
+        ${preview ? `<p class="lb-preview">${esc(preview)}</p>` : ""}
+      `
+      lbContent.appendChild(card)
     }
+
+    if (href && type !== "photo") {
+      const a = document.createElement("a")
+      a.href = href
+      a.textContent = `${cta} ↗`
+      a.target = "_blank"
+      a.rel = "noopener noreferrer"
+      a.className = "lb-action"
+      lbActions.appendChild(a)
+    }
+
     lightbox.classList.add("is-open")
     lightbox.setAttribute("aria-hidden", "false")
   }
