@@ -12,11 +12,13 @@ interface GitHubUser {
   repos: number
 }
 interface StravaActivity {
+  id: number
   name: string
   sport_type: string
   distance: number    // metres
   moving_time: number // seconds
   start_date: string  // ISO 8601
+  calories: number
 }
 interface ElsewhereItem {
   label: string
@@ -115,6 +117,7 @@ function fmtActivity(a: StravaActivity) {
   const parts: string[] = [fmtSport(a.sport_type)]
   if (a.distance > 0) parts.push(`${(a.distance / 1000).toFixed(1)} km`)
   parts.push(fmtDuration(a.moving_time))
+  if (a.calories > 0) parts.push(`${Math.round(a.calories)} kcal`)
   parts.push(fmtActivityDate(a.start_date))
   return parts.join(" · ")
 }
@@ -219,7 +222,7 @@ const cvHighlights = [
 
 // ── Social links ───────────────────────────────────────────────────────────────
 const stravaDesc = stravaActivities.length > 0
-  ? fmtSport(stravaActivities[0].sport_type)
+  ? fmtActivity(stravaActivities[0])
   : "Cycling · running · rowing · swimming"
 
 const elsewhere: ElsewhereItem[] = [
@@ -245,8 +248,9 @@ const elsewhere: ElsewhereItem[] = [
     avatar: "",
     stravaData: stravaActivities.length > 0
       ? JSON.stringify(stravaActivities.slice(0, 3).map(a => ({
-          name: a.name, sport_type: a.sport_type,
-          distance: a.distance, moving_time: a.moving_time, start_date: a.start_date,
+          id: a.id, name: a.name, sport_type: a.sport_type,
+          distance: a.distance, moving_time: a.moving_time,
+          start_date: a.start_date, calories: a.calories,
         })))
       : undefined,
   },
@@ -820,7 +824,12 @@ body { overflow-x: hidden; }
   gap: 1rem;
   padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s;
 }
+
+.lb-activity:hover { opacity: 0.6; }
 
 .lb-activity:last-child { border-bottom: none; padding-bottom: 0; }
 
@@ -998,7 +1007,7 @@ body { overflow-x: hidden; }
       if (stravaRaw) {
         // Strava card with live activity list
         try {
-          const acts: Array<{name:string;sport_type:string;distance:number;moving_time:number;start_date:string}> =
+          const acts: Array<{id:number;name:string;sport_type:string;distance:number;moving_time:number;start_date:string;calories:number}> =
             JSON.parse(stravaRaw)
           const rows = acts.map(a => {
             const sport = a.sport_type.replace(/([a-z])([A-Z])/g, "$1 $2")
@@ -1009,12 +1018,13 @@ body { overflow-x: hidden; }
             const stats = [
               ...(a.distance > 0 ? [`${(a.distance / 1000).toFixed(1)} km`] : []),
               dur,
+              ...(a.calories > 0 ? [`${Math.round(a.calories)} kcal`] : []),
               date,
             ].join(" · ")
-            return `<div class="lb-activity">
+            return `<a class="lb-activity" href="https://www.strava.com/activities/${a.id}" target="_blank" rel="noopener noreferrer">
               <span class="lb-activity-sport">${esc(sport)}</span>
               <span class="lb-activity-stats">${esc(stats)}</span>
-            </div>`
+            </a>`
           }).join("")
           card.innerHTML = `
             <p class="lb-eye">Strava</p>
