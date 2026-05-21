@@ -655,7 +655,7 @@ body { overflow-x: hidden; }
 }
 
 .speed-ctrl input[type="range"] {
-  width: 96px;
+  width: 68px;
   accent-color: var(--text);
   cursor: pointer;
 }
@@ -942,7 +942,7 @@ body { overflow-x: hidden; }
   let speedMult = 1.0
   const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
   const speedNotch = document.getElementById("speed-notch")
-  const DRAG_SNAP    = 2   // ±2 units — magnetic pull only right on the notch
+  const DRAG_SNAP    = 6   // ±6 units — magnetic pull near the notch
   const RELEASE_SNAP = 10  // ±10 units — if you release near center, snap cleanly; else stay
   let inSnapZone     = true
 
