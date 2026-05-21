@@ -219,7 +219,7 @@ const cvHighlights = [
 
 // ── Social links ───────────────────────────────────────────────────────────────
 const stravaDesc = stravaActivities.length > 0
-  ? fmtActivity(stravaActivities[0])
+  ? `Latest activity · ${fmtSport(stravaActivities[0].sport_type)}`
   : "Cycling · running · rowing · swimming"
 
 const elsewhere: ElsewhereItem[] = [
@@ -1018,7 +1018,7 @@ body { overflow-x: hidden; }
           }).join("")
           card.innerHTML = `
             <p class="lb-eye">Strava</p>
-            <p class="lb-title">${esc(handle)}</p>
+            <p class="lb-eye" style="margin-top:1.2rem">Most recent activities</p>
             <div class="lb-activities">${rows}</div>
           `
         } catch {
