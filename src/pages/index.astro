@@ -11,7 +11,7 @@ try {
   const res = await fetch("https://garden.franco.international/notes.json")
   if (res.ok) {
     const all: GardenNote[] = await res.json()
-    recentNotes = all.slice(0, 3)
+    recentNotes = all.slice(0, 5)
   }
 } catch { /* garden unavailable at build time */ }
 
@@ -20,40 +20,78 @@ function fmtDate(iso: string | null) {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
 }
 
-// ── Photos: spread across full 500vh canvas ─────────────────────────────────
+function truncate(str: string | null, n: number) {
+  if (!str) return ""
+  return str.length > n ? str.slice(0, n).trimEnd() + "…" : str
+}
+
+// ── Photos: 18 spread across full 500vh canvas ───────────────────────────────
 const photos = [
-  { id: "01", top: "5vh",   left: "4%",  w: 210, h: 158, depth: "0.012" },
-  { id: "02", top: "12vh",  left: "24%", w: 152, h: 212, depth: "0.009" },
-  { id: "03", top: "3vh",   left: "57%", w: 182, h: 138, depth: "0.015" },
-  { id: "04", top: "8vh",   left: "79%", w: 148, h: 202, depth: "0.010" },
-  { id: "05", top: "80vh",  left: "2%",  w: 172, h: 132, depth: "0.008" },
-  { id: "06", top: "90vh",  left: "80%", w: 142, h: 192, depth: "0.013" },
-  { id: "07", top: "210vh", left: "6%",  w: 158, h: 122, depth: "0.011" },
-  { id: "08", top: "232vh", left: "79%", w: 175, h: 135, depth: "0.007" },
-  { id: "09", top: "330vh", left: "3%",  w: 182, h: 142, depth: "0.014" },
-  { id: "10", top: "352vh", left: "77%", w: 158, h: 118, depth: "0.009" },
-  { id: "11", top: "462vh", left: "8%",  w: 142, h: 192, depth: "0.012" },
-  { id: "12", top: "478vh", left: "74%", w: 168, h: 128, depth: "0.010" },
+  // Landing zone (0–100vh)
+  { id: "01", top: "5vh",   left: "4%",  w: 210, h: 158 },
+  { id: "02", top: "12vh",  left: "24%", w: 152, h: 212 },
+  { id: "03", top: "3vh",   left: "57%", w: 182, h: 138 },
+  { id: "04", top: "8vh",   left: "79%", w: 148, h: 202 },
+  // Transition 1→2 (80–140vh)
+  { id: "05", top: "82vh",  left: "2%",  w: 172, h: 132 },
+  { id: "06", top: "90vh",  left: "80%", w: 142, h: 192 },
+  { id: "07", top: "110vh", left: "42%", w: 165, h: 125 },
+  // Garden zone fill (140–220vh)
+  { id: "08", top: "148vh", left: "43%", w: 138, h: 188 },
+  { id: "09", top: "192vh", left: "50%", w: 158, h: 120 },
+  // Transition 2→3 (210–265vh)
+  { id: "10", top: "218vh", left: "6%",  w: 158, h: 122 },
+  { id: "11", top: "235vh", left: "79%", w: 175, h: 135 },
+  // CV zone fill (265–335vh)
+  { id: "12", top: "272vh", left: "44%", w: 145, h: 110 },
+  { id: "13", top: "318vh", left: "48%", w: 162, h: 122 },
+  // Transition 3→4 (330–385vh)
+  { id: "14", top: "338vh", left: "3%",  w: 182, h: 142 },
+  { id: "15", top: "358vh", left: "77%", w: 158, h: 118 },
+  // Elsewhere zone fill (385–465vh)
+  { id: "16", top: "392vh", left: "44%", w: 148, h: 112 },
+  { id: "17", top: "462vh", left: "8%",  w: 142, h: 192 },
+  { id: "18", top: "478vh", left: "74%", w: 168, h: 128 },
 ]
 
-// ── Card positions (relative to their zone centers) ──────────────────────────
-// Garden zone at 165vh, CV zone at 290vh, Elsewhere zone at 415vh
-const notePos  = ["top:138vh;left:7%",  "top:160vh;left:62%", "top:182vh;left:22%"]
-const cvPos    = ["top:268vh;left:6%",  "top:280vh;left:64%", "top:300vh;left:18%", "top:292vh;left:73%"]
-const socialPos = ["top:394vh;left:8%", "top:407vh;left:27%", "top:420vh;left:56%", "top:412vh;left:74%", "top:432vh;left:41%"]
+// ── Card positions ────────────────────────────────────────────────────────────
+// Garden zone anchor at 165vh — 5 notes, spread wider
+const notePos = [
+  "top:135vh;left:6%",
+  "top:152vh;left:63%",
+  "top:172vh;left:22%",
+  "top:162vh;left:76%",
+  "top:188vh;left:40%",
+]
+// CV zone anchor at 295vh
+const cvPos = [
+  "top:272vh;left:5%",
+  "top:285vh;left:65%",
+  "top:306vh;left:16%",
+  "top:297vh;left:74%",
+]
+// Elsewhere zone anchor at 425vh
+const socialPos = [
+  "top:402vh;left:7%",
+  "top:415vh;left:26%",
+  "top:428vh;left:57%",
+  "top:420vh;left:75%",
+  "top:440vh;left:40%",
+]
 
 const cvHighlights = [
-  { label: "Based in",   value: "Zürich, Switzerland" },
-  { label: "Upcoming",   value: "ETH Zürich — Mechanical Engineering (2027)" },
-  { label: "Currently",  value: "Autonomous Systems Lab, ETH Zürich — Zivildienst" },
-  { label: "Languages",  value: "English, Spanish, German, French, Italian, Mandarin" },
+  { label: "Based in",  value: "Zürich, Switzerland" },
+  { label: "Upcoming",  value: "ETH Zürich — Mechanical Engineering (2027)" },
+  { label: "Currently", value: "Autonomous Systems Lab, ETH Zürich — Zivildienst" },
+  { label: "Languages", value: "English, Spanish, German, French, Italian, Mandarin" },
 ]
 
 const elsewhere = [
-  { label: "Instagram", href: "https://www.instagram.com/franco_gomez_s/" },
-  { label: "Strava",    href: "https://www.strava.com/athletes/franco" },
-  { label: "YouTube",   href: "https://www.youtube.com/@franco" },
-  { label: "LinkedIn",  href: "https://www.linkedin.com/in/franco-gómez-schumacher-17a985123/" },
+  { label: "Instagram", href: "https://www.instagram.com/francogs.mp4/" },
+  { label: "YouTube",   href: "https://www.youtube.com/@francogs.mp4/" },
+  // TODO: replace with your Strava athlete profile URL
+  { label: "Strava",    href: "https://www.strava.com/athletes/" },
+  { label: "LinkedIn",  href: "https://www.linkedin.com/in/franco-g%C3%B3mez-schumacher-17a985123/" },
   { label: "GitHub",    href: "https://github.com/franco-g-s" },
 ]
 ---
@@ -77,9 +115,9 @@ const elsewhere = [
     <span>Franco Gómez</span>
     <span>Schumacher</span>
   </h1>
-  <p class="anchor zone-label" style="top:165vh;left:50%">Garden</p>
-  <p class="anchor zone-label" style="top:290vh;left:50%">CV</p>
-  <p class="anchor zone-label" style="top:415vh;left:50%">Elsewhere</p>
+  <p class="anchor zone-label" style="top:162vh;left:50%">Garden</p>
+  <p class="anchor zone-label" style="top:292vh;left:50%">CV</p>
+  <p class="anchor zone-label" style="top:422vh;left:50%">Elsewhere</p>
 
   <!-- ── Photos ──────────────────────────────────────────────────── -->
   {photos.map((p) => (
@@ -87,7 +125,6 @@ const elsewhere = [
       class="float"
       data-type="photo"
       data-src={`/photos/${p.id}.jpg`}
-      data-depth={p.depth}
       style={`top:${p.top};left:${p.left};width:${p.w}px;height:${p.h}px`}
     >
       <div class="float-inner">
@@ -100,19 +137,21 @@ const elsewhere = [
   <!-- ── Garden note cards ───────────────────────────────────────── -->
   {recentNotes.map((note, i) => (
     <div
-      class="float card"
+      class="float card card--note"
       data-type="note"
       data-title={note.title}
       data-sub={fmtDate(note.date)}
+      data-preview={truncate(note.description, 120)}
       data-href={`https://garden.franco.international/${note.slug}`}
       data-cta="Read note"
-      data-depth="0.007"
       style={notePos[i]}
     >
       <div class="float-inner">
-        <p class="card-eye">Note</p>
+        <p class="card-eye">Note · {fmtDate(note.date)}</p>
         <p class="card-title">{note.title}</p>
-        {note.date && <p class="card-sub">{fmtDate(note.date)}</p>}
+        {note.description && (
+          <p class="card-preview">{truncate(note.description, 90)}</p>
+        )}
       </div>
     </div>
   ))}
@@ -131,13 +170,12 @@ const elsewhere = [
   <!-- ── CV highlight cards ──────────────────────────────────────── -->
   {cvHighlights.map((h, i) => (
     <div
-      class="float card"
+      class="float card card--cv"
       data-type="cv"
       data-title={h.label}
       data-sub={h.value}
       data-href="https://cv.franco.international"
       data-cta="View CV"
-      data-depth="0.006"
       style={cvPos[i]}
     >
       <div class="float-inner">
@@ -155,7 +193,6 @@ const elsewhere = [
       data-title={e.label}
       data-href={e.href}
       data-cta={`Open ${e.label}`}
-      data-depth="0.008"
       style={socialPos[i]}
     >
       <div class="float-inner">
@@ -276,8 +313,6 @@ body { overflow-x: hidden; }
 
 /* Cards */
 .card {
-  min-width: 160px;
-  max-width: 260px;
   width: max-content;
   height: auto !important;
 }
@@ -286,28 +321,43 @@ body { overflow-x: hidden; }
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 4px;
-  padding: 0.85rem 1.1rem;
   box-shadow: var(--shadow);
 }
 
 .card:hover .float-inner { box-shadow: var(--shadow-hover); }
 
 .card-eye {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
+/* Note cards — larger, with preview */
+.card--note { max-width: 300px; min-width: 220px; }
+.card--note .float-inner { padding: 1.1rem 1.3rem; }
+
 .card-title {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--text);
-  line-height: 1.4;
-  max-width: 22ch;
+  line-height: 1.45;
+  max-width: 26ch;
+  margin-bottom: 0.4rem;
 }
+
+.card-preview {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 30ch;
+}
+
+/* CV cards */
+.card--cv { max-width: 270px; min-width: 190px; }
+.card--cv .float-inner { padding: 0.9rem 1.1rem; }
 
 .card-sub {
   font-size: 0.75rem;
@@ -316,20 +366,22 @@ body { overflow-x: hidden; }
 }
 
 .card-value {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 400;
   color: var(--text);
   line-height: 1.45;
-  max-width: 24ch;
+  max-width: 26ch;
 }
 
+/* Social cards */
+.card--social { min-width: 130px; max-width: 190px; }
+.card--social .float-inner { padding: 0.8rem 1.1rem; }
+
 .card-social {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--text);
 }
-
-.card--social { min-width: 120px; max-width: 180px; }
 
 /* ── Lightbox ─────────────────────────────────────────────────────── */
 .lightbox {
@@ -444,67 +496,73 @@ body { overflow-x: hidden; }
 </style>
 
 <script>
-  // ── Types ──────────────────────────────────────────────────────────
   interface FloatState {
     el: HTMLElement
-    depth: number
     ax1: number; wx1: number; px1: number
     ax2: number; wx2: number; px2: number
     ay1: number; wy1: number; py1: number
     ay2: number; wy2: number; py2: number
-    ar: number;  wr: number;  pr: number
+    ar:  number; wr:  number; pr:  number
+    pullX: number; pullY: number
   }
 
   function rand(min: number, max: number) {
     return Math.random() * (max - min) + min
   }
 
-  // ── Mouse tracking ─────────────────────────────────────────────────
-  let mouseX = window.innerWidth  / 2
-  let mouseY = window.innerHeight / 2
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX
-    mouseY = e.clientY
-  })
+  // ── Mouse ──────────────────────────────────────────────────────────
+  let mouseX = -9999
+  let mouseY = -9999
+  document.addEventListener("mousemove", (e) => { mouseX = e.clientX; mouseY = e.clientY })
 
-  // ── Build float states ─────────────────────────────────────────────
+  // ── Float states ───────────────────────────────────────────────────
   const states: FloatState[] = []
   document.querySelectorAll<HTMLElement>(".float").forEach((el) => {
     states.push({
       el,
-      depth: parseFloat(el.dataset.depth ?? "0.01"),
-      ax1: rand(3, 7),    wx1: rand(0.20, 0.42), px1: rand(0, Math.PI * 2),
-      ax2: rand(2, 5),    wx2: rand(0.45, 0.72), px2: rand(0, Math.PI * 2),
-      ay1: rand(5, 11),   wy1: rand(0.22, 0.48), py1: rand(0, Math.PI * 2),
-      ay2: rand(3, 7),    wy2: rand(0.50, 0.80), py2: rand(0, Math.PI * 2),
-      ar:  rand(1.2, 2.8), wr: rand(0.18, 0.35), pr: rand(0, Math.PI * 2),
+      ax1: rand(3, 7),     wx1: rand(0.20, 0.42), px1: rand(0, Math.PI * 2),
+      ax2: rand(2, 5),     wx2: rand(0.45, 0.72), px2: rand(0, Math.PI * 2),
+      ay1: rand(5, 11),    wy1: rand(0.22, 0.48), py1: rand(0, Math.PI * 2),
+      ay2: rand(3, 7),     wy2: rand(0.50, 0.80), py2: rand(0, Math.PI * 2),
+      ar:  rand(1.2, 2.8), wr:  rand(0.18, 0.35), pr:  rand(0, Math.PI * 2),
+      pullX: 0, pullY: 0,
     })
   })
 
-  // ── Animation loop ─────────────────────────────────────────────────
-  let startTime: number | null = null
-  const cx = () => window.innerWidth  / 2
-  const cy = () => window.innerHeight / 2
+  // ── Animation ──────────────────────────────────────────────────────
+  // Proximity pull: each element is gently attracted toward the cursor
+  // when within PULL_RADIUS px. Lerped for smooth motion.
+  const PULL_RADIUS = 180
+  const PULL_MAX    = 7
+  const LERP        = 0.06
+
+  let t0: number | null = null
 
   function animate(ts: number) {
-    if (startTime === null) startTime = ts
-    const t = (ts - startTime) / 1000
+    if (t0 === null) t0 = ts
+    const t = (ts - t0) / 1000
 
     for (const s of states) {
-      const bobX = s.ax1 * Math.sin(s.wx1 * t + s.px1)
-                 + s.ax2 * Math.sin(s.wx2 * t + s.px2)
-      const bobY = s.ay1 * Math.sin(s.wy1 * t + s.py1)
-                 + s.ay2 * Math.sin(s.wy2 * t + s.py2)
+      const bobX = s.ax1 * Math.sin(s.wx1 * t + s.px1) + s.ax2 * Math.sin(s.wx2 * t + s.px2)
+      const bobY = s.ay1 * Math.sin(s.wy1 * t + s.py1) + s.ay2 * Math.sin(s.wy2 * t + s.py2)
       const rot  = s.ar  * Math.sin(s.wr  * t + s.pr)
 
-      // Very subtle cursor parallax (depth: 0.006–0.015)
-      const curX = (mouseX - cx()) * s.depth
-      const curY = (mouseY - cy()) * s.depth
+      const rect = s.el.getBoundingClientRect()
+      const elCX = rect.left + rect.width  / 2
+      const elCY = rect.top  + rect.height / 2
+      const dx   = mouseX - elCX
+      const dy   = mouseY - elCY
+      const dist = Math.sqrt(dx * dx + dy * dy) || 1
+      const inf  = Math.max(0, 1 - dist / PULL_RADIUS)
+      const tx   = (dx / dist) * inf * PULL_MAX
+      const ty   = (dy / dist) * inf * PULL_MAX
+
+      s.pullX += (tx - s.pullX) * LERP
+      s.pullY += (ty - s.pullY) * LERP
 
       s.el.style.transform =
-        `translate(${bobX + curX}px, ${bobY + curY}px) rotate(${rot}deg)`
+        `translate(${bobX + s.pullX}px, ${bobY + s.pullY}px) rotate(${rot}deg)`
     }
-
     requestAnimationFrame(animate)
   }
   requestAnimationFrame(animate)
@@ -518,10 +576,8 @@ body { overflow-x: hidden; }
   function openLightbox(el: HTMLElement) {
     lbContent.innerHTML = ""
     lbActions.innerHTML = ""
-
-    const type = el.dataset.type ?? ""
-    const href = el.dataset.href ?? ""
-    const cta  = el.dataset.cta  ?? "Visit"
+    const { type = "", href = "", cta = "Visit",
+            title = "", sub = "", preview = "" } = el.dataset
 
     if (type === "photo") {
       const img = document.createElement("img")
@@ -530,30 +586,23 @@ body { overflow-x: hidden; }
       img.draggable = false
       lbContent.appendChild(img)
     } else {
-      // Expanded card
-      const title = el.dataset.title ?? ""
-      const sub   = el.dataset.sub   ?? ""
-
       const card = document.createElement("div")
       card.className = "lb-card"
       card.innerHTML = `
         <p class="lb-eye">${type}</p>
         <p class="lb-title">${title}</p>
-        ${sub ? `<p class="lb-sub">${sub}</p>` : ""}
+        ${sub     ? `<p class="lb-sub">${sub}</p>`         : ""}
+        ${preview ? `<p class="lb-preview">${preview}</p>` : ""}
       `
       lbContent.appendChild(card)
-
       if (href) {
-        const link = document.createElement("a")
-        link.href = href
-        link.textContent = `${cta} ↗`
-        link.target = "_blank"
-        link.rel = "noopener noreferrer"
-        link.className = "lb-action"
-        lbActions.appendChild(link)
+        const a = document.createElement("a")
+        a.href = href; a.textContent = `${cta} ↗`
+        a.target = "_blank"; a.rel = "noopener noreferrer"
+        a.className = "lb-action"
+        lbActions.appendChild(a)
       }
     }
-
     lightbox.classList.add("is-open")
     lightbox.setAttribute("aria-hidden", "false")
   }
@@ -564,11 +613,7 @@ body { overflow-x: hidden; }
   }
 
   lbBackdrop.addEventListener("click", closeLightbox)
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox()
-  })
-
-  // Attach click to every float
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox() })
   document.querySelectorAll<HTMLElement>(".float").forEach((el) => {
     el.addEventListener("click", () => openLightbox(el))
   })
