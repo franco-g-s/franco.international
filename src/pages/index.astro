@@ -655,7 +655,7 @@ body { overflow-x: hidden; }
 }
 
 .speed-ctrl input[type="range"] {
-  width: 68px;
+  width: 96px;
   accent-color: var(--text);
   cursor: pointer;
 }
@@ -942,8 +942,9 @@ body { overflow-x: hidden; }
   let speedMult = 1.0
   const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
   const speedNotch = document.getElementById("speed-notch")
-  const SNAP_ZONE  = 5    // ±5 out of 220 range — tight gravity well right at the notch
-  let inSnapZone   = true // starts at 100
+  const DRAG_SNAP    = 2   // ±2 units — magnetic pull only right on the notch
+  const RELEASE_SNAP = 10  // ±10 units — if you release near center, snap cleanly; else stay
+  let inSnapZone     = true
 
   function triggerHaptic() {
     try { navigator.vibrate?.(6) } catch {}
@@ -957,7 +958,7 @@ body { overflow-x: hidden; }
 
   speedRange?.addEventListener("input", () => {
     const val = Number(speedRange.value)
-    if (Math.abs(val - 100) <= SNAP_ZONE) {
+    if (Math.abs(val - 100) <= DRAG_SNAP) {
       speedRange.value = "100"
       speedMult = 1.0
       if (!inSnapZone) {
@@ -972,12 +973,15 @@ body { overflow-x: hidden; }
   })
 
   speedRange?.addEventListener("pointerup", () => {
-    const needsSnap = Number(speedRange.value) !== 100
-    speedRange.value = "100"
-    speedMult = 1.0
-    inSnapZone = true
-    if (needsSnap) triggerHaptic()
-    flashNotch()
+    const val = Number(speedRange.value)
+    if (Math.abs(val - 100) <= RELEASE_SNAP) {
+      speedRange.value = "100"
+      speedMult = 1.0
+      if (!inSnapZone) triggerHaptic()
+      flashNotch()
+      inSnapZone = true
+    }
+    // outside release zone: leave slider exactly where the user put it
   })
 
   // ── Float states ───────────────────────────────────────────────────
