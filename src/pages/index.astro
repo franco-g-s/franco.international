@@ -385,8 +385,9 @@ const elsewhere: ElsewhereItem[] = [
 <div class="speed-ctrl">
   <span>speed</span>
   <div class="speed-track-wrap">
+    <div class="speed-notch" id="speed-notch-top"></div>
     <input type="range" id="speed-range" min="0" max="220" value="100" step="5" />
-    <div class="speed-notch" id="speed-notch"></div>
+    <div class="speed-notch" id="speed-notch-bot"></div>
   </div>
 </div>
 
@@ -660,26 +661,32 @@ body { overflow-x: hidden; }
   cursor: pointer;
 }
 
-/* Tick mark at the 1× (100/220 ≈ 46%) position */
+/* Tick marks above and below track at 1× position (100/220 ≈ 46%) */
 .speed-notch {
   position: absolute;
   left: 46%;
-  top: calc(100% + 3px);
   transform: translateX(-50%);
   width: 1.5px;
-  height: 4px;
+  height: 3px;
   background: var(--muted);
   border-radius: 1px;
   pointer-events: none;
-  opacity: 0.45;
-  transition: opacity 0.08s, background 0.08s, transform 0.08s;
+  transition: height 0.15s ease, background 0.15s ease;
 }
 
-.speed-notch.is-snapped {
-  opacity: 1;
+#speed-notch-top { bottom: calc(50% + 5px); }
+#speed-notch-bot { top:    calc(50% + 5px); }
+
+/* Grow slightly on hover (matching ctrl opacity reveal) */
+.speed-ctrl:hover .speed-notch { height: 4px; }
+
+/* At center / in snap zone — highlighted regardless of hover */
+.speed-notch.at-center {
+  height: 6px;
   background: var(--text);
-  transform: translateX(-50%) scaleY(1.5);
 }
+
+.speed-ctrl:hover .speed-notch.at-center { height: 7px; }
 
 /* ── Lightbox ─────────────────────────────────────────────────────── */
 .lightbox {
@@ -939,36 +946,34 @@ body { overflow-x: hidden; }
   // Visual notch pulses on snap. Haptic fires on first entry into snap zone
   // and on release when the value has moved away.
   let speedMult = 1.0
-  const speedRange = document.getElementById("speed-range") as HTMLInputElement | null
-  const speedNotch = document.getElementById("speed-notch")
+  const speedRange   = document.getElementById("speed-range") as HTMLInputElement | null
+  const speedNotches = document.querySelectorAll<HTMLElement>(".speed-notch")
   const DRAG_SNAP    = 9   // ±9 units — magnetic pull near the notch
-  const RELEASE_SNAP = 10  // ±10 units — if you release near center, snap cleanly; else stay
-  let inSnapZone     = true
+  const RELEASE_SNAP = 10  // ±10 — snap on release only if close to center
+  let inSnapZone     = true // starts at center (value = 100)
 
   function triggerHaptic() {
     try { navigator.vibrate?.(6) } catch {}
   }
 
-  function flashNotch() {
-    if (!speedNotch) return
-    speedNotch.classList.add("is-snapped")
-    setTimeout(() => speedNotch.classList.remove("is-snapped"), 180)
+  function updateNotch() {
+    const atCenter = Math.abs(Number(speedRange?.value ?? 100) - 100) <= DRAG_SNAP
+    speedNotches.forEach(n => n.classList.toggle("at-center", atCenter))
   }
+
+  updateNotch() // initialise at page load
 
   speedRange?.addEventListener("input", () => {
     const val = Number(speedRange.value)
     if (Math.abs(val - 100) <= DRAG_SNAP) {
       speedRange.value = "100"
       speedMult = 1.0
-      if (!inSnapZone) {
-        inSnapZone = true
-        triggerHaptic()
-        flashNotch()
-      }
+      if (!inSnapZone) { inSnapZone = true; triggerHaptic() }
     } else {
       inSnapZone = false
       speedMult = val / 100
     }
+    updateNotch()
   })
 
   // Horizontal (or vertical) scroll on the slider track moves it
@@ -986,10 +991,10 @@ body { overflow-x: hidden; }
       speedRange.value = "100"
       speedMult = 1.0
       if (!inSnapZone) triggerHaptic()
-      flashNotch()
       inSnapZone = true
     }
-    // outside release zone: leave slider exactly where the user put it
+    updateNotch()
+    // outside release zone: slider stays where released
   })
 
   // ── Float states ───────────────────────────────────────────────────
