@@ -126,11 +126,11 @@ function fmtActivity(a: StravaActivity) {
 // Zone labels sit at 162vh, 292vh, 422vh — all centered (left 50%).
 // No photo anchor should vertically overlap those rows near the center.
 const photos = [
-  // Landing zone (0–100vh)
-  { id: "01", top: "5vh",   left: "4%",  w: 210, h: 158 },
-  { id: "02", top: "12vh",  left: "24%", w: 152, h: 212 },
-  { id: "03", top: "3vh",   left: "57%", w: 182, h: 138 },
-  { id: "04", top: "8vh",   left: "79%", w: 148, h: 202 },
+  // Landing zone (0–100vh) — ld:true → slightly smaller clamp on desktop
+  { id: "01", top: "5vh",   left: "4%",  w: 210, h: 158, ld: true },
+  { id: "03", top: "12vh",  left: "24%", w: 152, h: 212, ld: true },
+  { id: "21", top: "3vh",   left: "57%", w: 182, h: 138, ld: true },
+  { id: "04", top: "8vh",   left: "79%", w: 148, h: 202, ld: true },
   // Transition 1→2 (80–140vh)
   { id: "05", top: "82vh",  left: "2%",  w: 172, h: 132 },
   { id: "06", top: "90vh",  left: "80%", w: 142, h: 192 },
@@ -147,7 +147,7 @@ const photos = [
   { id: "12", top: "272vh", left: "11%", w: 145, h: 110 },
   { id: "13", top: "318vh", left: "76%", w: 162, h: 122 },
   // Transition 3→4 (330–385vh)
-  { id: "21", top: "340vh", left: "3%",  w: 182, h: 142 },
+  { id: "02", top: "340vh", left: "3%",  w: 182, h: 142 },
   { id: "15", top: "360vh", left: "77%", w: 118, h: 158 },
   { id: "14", top: "376vh", left: "41%", w: 160, h: 120 }, // center fill
   // Elsewhere zone fill — label at 422vh, keep clear of center
@@ -309,12 +309,12 @@ const elsewhere: ElsewhereItem[] = [
       class="float"
       data-type="photo"
       data-src={`/photos/${p.id}.jpg`}
-      style={`top:${p.top};left:${p.left};width:clamp(${p.w}px,${(p.w/700*100).toFixed(1)}vw,${p.w*2}px);height:clamp(${p.h}px,${(p.h/700*100).toFixed(1)}vw,${p.h*2}px)`}
+      style={`top:${p.top};left:${p.left};width:clamp(${p.w}px,${(p.w/(p.ld?760:590)*100).toFixed(1)}vw,${p.w*(p.ld?2:2.4)}px);height:clamp(${p.h}px,${(p.h/(p.ld?760:590)*100).toFixed(1)}vw,${p.h*(p.ld?2:2.4)}px)`}
     >
       <div class="float-inner">
         <img src={`/photos/${p.id}.jpg`} alt="" width={p.w} height={p.h}
-             loading={["01","02","03","04","05","06"].includes(p.id) ? "eager" : "lazy"}
-             fetchpriority={["01","02","03","04"].includes(p.id) ? "high" : "auto"}
+             loading={p.ld || ["05","06"].includes(p.id) ? "eager" : "lazy"}
+             fetchpriority={p.ld ? "high" : "auto"}
              draggable="false" />
         <span class="photo-num">{Number(p.id)}</span>
       </div>
