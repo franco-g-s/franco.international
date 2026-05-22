@@ -128,32 +128,37 @@ function fmtActivity(a: StravaActivity) {
 const photos = [
   // Landing zone (0–100vh) — ld:true → slightly smaller clamp on desktop
   { id: "01", top: "5vh",   left: "4%",  w: 210, h: 158, ld: true },
-  { id: "03", top: "12vh",  left: "24%", w: 152, h: 212, ld: true },
-  { id: "21", top: "3vh",   left: "57%", w: 182, h: 138, ld: true },
+  { id: "21", top: "12vh",  left: "24%", w: 152, h: 212, ld: true },
+  { id: "03", top: "3vh",   left: "57%", w: 182, h: 138, ld: true },
   { id: "04", top: "8vh",   left: "79%", w: 148, h: 202, ld: true },
   // Transition 1→2 (80–140vh)
   { id: "05", top: "82vh",  left: "2%",  w: 172, h: 132 },
   { id: "06", top: "90vh",  left: "80%", w: 142, h: 192 },
   { id: "07", top: "110vh", left: "16%", w: 165, h: 125 },
   { id: "19", top: "95vh",  left: "43%", w: 158, h: 118 }, // center peek — scroll hint
-  // Garden zone fill — label at 162vh, keep photos clear of center
+  // Garden zone — label at 162vh
   { id: "08", top: "144vh", left: "13%", w: 138, h: 140 },
-  { id: "09", top: "195vh", left: "78%", w: 120, h: 158 },
+  { id: "22", top: "170vh", left: "67%", w: 150, h: 118 },
+  { id: "09", top: "195vh", left: "71%", w: 130, h: 172 },
   // Transition 2→3 (210–265vh)
   { id: "10", top: "218vh", left: "6%",  w: 158, h: 122 },
   { id: "11", top: "238vh", left: "79%", w: 175, h: 135 },
   { id: "20", top: "253vh", left: "42%", w: 114, h: 152 }, // center fill
-  // CV zone fill — label at 292vh, keep clear of center
+  // CV zone — label at 292vh
   { id: "12", top: "272vh", left: "11%", w: 145, h: 110 },
+  { id: "23", top: "300vh", left: "54%", w: 140, h: 188 },
   { id: "13", top: "318vh", left: "76%", w: 162, h: 122 },
-  // Transition 3→4 (330–385vh)
+  // Transition 3→4 (330–395vh) — centred between CV (292) and Elsewhere (422)
   { id: "02", top: "340vh", left: "3%",  w: 182, h: 142 },
   { id: "15", top: "360vh", left: "77%", w: 118, h: 158 },
-  { id: "14", top: "376vh", left: "41%", w: 160, h: 120 }, // center fill
-  // Elsewhere zone fill — label at 422vh, keep clear of center
-  { id: "16", top: "395vh", left: "14%", w: 148, h: 112 }, // left
+  { id: "14", top: "358vh", left: "41%", w: 160, h: 120 }, // center fill — moved up
+  // Elsewhere zone — label at 422vh
+  { id: "16", top: "395vh", left: "14%", w: 148, h: 112 },
+  { id: "24", top: "414vh", left: "71%", w: 155, h: 120 },
+  { id: "25", top: "448vh", left: "32%", w: 148, h: 115 },
   { id: "17", top: "462vh", left: "8%",  w: 142, h: 192 },
   { id: "18", top: "478vh", left: "74%", w: 128, h: 168 },
+  { id: "26", top: "494vh", left: "50%", w: 158, h: 122 },
 ]
 
 // ── Card positions ─────────────────────────────────────────────────────────────
@@ -439,7 +444,7 @@ body { overflow-x: hidden; }
 /* ── Canvas ───────────────────────────────────────────────────────── */
 .canvas {
   position: relative;
-  min-height: 500vh;
+  min-height: 530vh;
   background: var(--bg);
   overflow: hidden;
 }
