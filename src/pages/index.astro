@@ -291,7 +291,10 @@ const elsewhere: ElsewhereItem[] = [
 
 <!-- ── Loading screen ─────────────────────────────────────────────── -->
 <div id="loading-screen">
-  <p class="ls-name">Franco Gómez Schumacher</p>
+  <p class="ls-name">
+    <span>Franco Gómez</span>
+    <span>Schumacher</span>
+  </p>
   <div class="ls-buoys">
     <span></span><span></span><span></span><span></span><span></span>
   </div>
@@ -321,7 +324,6 @@ const elsewhere: ElsewhereItem[] = [
              loading={p.ld || ["05","06"].includes(p.id) ? "eager" : "lazy"}
              fetchpriority={p.ld ? "high" : "auto"}
              draggable="false" />
-        <span class="photo-num">{Number(p.id)}</span>
       </div>
     </div>
   ))}
@@ -520,20 +522,7 @@ body { overflow-x: hidden; }
   border-radius: 3px;
 }
 
-.photo-num {
-  position: absolute;
-  top: 0.35rem;
-  left: 0.4rem;
-  background: rgba(0, 0, 0, 0.42);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 500;
-  line-height: 1;
-  padding: 0.18rem 0.42rem;
-  border-radius: 2px;
-  pointer-events: none;
-  letter-spacing: 0.02em;
-}
+
 
 .float:hover .float-inner { transform: scale(1.04); }
 
@@ -792,10 +781,14 @@ body { overflow-x: hidden; }
 }
 
 .ls-name {
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-size: clamp(2.4rem, 5.5vw, 5rem);
   font-weight: 200;
   letter-spacing: -0.03em;
+  line-height: 1.05;
   color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ls-buoys {
@@ -1136,7 +1129,9 @@ body { overflow-x: hidden; }
 
   // ── Loading screen ───────────────────────────────────────────────────
   const loadingScreen = document.getElementById("loading-screen")
-  window.addEventListener("load", () => {
+  const minWait = new Promise<void>(r => setTimeout(r, 1600))
+  const pageLoad = new Promise<void>(r => window.addEventListener("load", () => r()))
+  Promise.all([minWait, pageLoad]).then(() => {
     loadingScreen?.classList.add("done")
     setTimeout(() => loadingScreen?.remove(), 800)
   })
