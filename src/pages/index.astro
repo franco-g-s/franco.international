@@ -138,22 +138,22 @@ const photos = [
   { id: "19", top: "95vh",  left: "43%", w: 158, h: 118 }, // center peek — scroll hint
   // Garden zone fill — label at 162vh, keep photos clear of center
   { id: "08", top: "144vh", left: "13%", w: 138, h: 140 },
-  { id: "09", top: "195vh", left: "78%", w: 158, h: 120 },
+  { id: "09", top: "195vh", left: "78%", w: 120, h: 158 },
   // Transition 2→3 (210–265vh)
   { id: "10", top: "218vh", left: "6%",  w: 158, h: 122 },
   { id: "11", top: "238vh", left: "79%", w: 175, h: 135 },
-  { id: "20", top: "253vh", left: "42%", w: 152, h: 114 }, // center fill
+  { id: "20", top: "253vh", left: "42%", w: 114, h: 152 }, // center fill
   // CV zone fill — label at 292vh, keep clear of center
   { id: "12", top: "272vh", left: "11%", w: 145, h: 110 },
   { id: "13", top: "318vh", left: "76%", w: 162, h: 122 },
   // Transition 3→4 (330–385vh)
-  { id: "14", top: "340vh", left: "3%",  w: 182, h: 142 },
-  { id: "15", top: "360vh", left: "77%", w: 158, h: 118 },
-  { id: "21", top: "376vh", left: "41%", w: 160, h: 120 }, // center fill
+  { id: "21", top: "340vh", left: "3%",  w: 182, h: 142 },
+  { id: "15", top: "360vh", left: "77%", w: 118, h: 158 },
+  { id: "14", top: "376vh", left: "41%", w: 160, h: 120 }, // center fill
   // Elsewhere zone fill — label at 422vh, keep clear of center
   { id: "16", top: "395vh", left: "14%", w: 148, h: 112 }, // left
   { id: "17", top: "462vh", left: "8%",  w: 142, h: 192 },
-  { id: "18", top: "478vh", left: "74%", w: 168, h: 128 },
+  { id: "18", top: "478vh", left: "74%", w: 128, h: 168 },
 ]
 
 // ── Card positions ─────────────────────────────────────────────────────────────
@@ -313,7 +313,9 @@ const elsewhere: ElsewhereItem[] = [
     >
       <div class="float-inner">
         <img src={`/photos/${p.id}.jpg`} alt="" width={p.w} height={p.h}
-             loading="eager" draggable="false" />
+             loading={["01","02","03","04","05","06"].includes(p.id) ? "eager" : "lazy"}
+             fetchpriority={["01","02","03","04"].includes(p.id) ? "high" : "auto"}
+             draggable="false" />
         <span class="photo-num">{Number(p.id)}</span>
       </div>
     </div>
@@ -1064,7 +1066,7 @@ body { overflow-x: hidden; }
   const SCROLL_LERP      = 0.09   // ~400 ms to reach ~95% of target at 60 fps
   let scrollTimer: ReturnType<typeof setTimeout> | null = null
   window.addEventListener("scroll", () => {
-    targetScrollSpeed = 0.0
+    targetScrollSpeed = 0.18
     if (scrollTimer) clearTimeout(scrollTimer)
     scrollTimer = setTimeout(() => { targetScrollSpeed = 1.0 }, 150)
   }, { passive: true })
