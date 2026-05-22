@@ -384,11 +384,7 @@ const elsewhere: ElsewhereItem[] = [
 <!-- ── Speed control ──────────────────────────────────────────────── -->
 <div class="speed-ctrl">
   <span>speed</span>
-  <div class="speed-track-wrap">
-    <div class="speed-notch" id="speed-notch-top"></div>
-    <input type="range" id="speed-range" min="0" max="220" value="100" step="5" />
-    <div class="speed-notch" id="speed-notch-bot"></div>
-  </div>
+  <canvas id="speed-wave" width="136" height="48"></canvas>
 </div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -471,9 +467,9 @@ body { overflow-x: hidden; }
 .zone-label::after {
   content: '';
   display: block;
-  width: calc(100% + 2.5rem);
+  width: 100%;
   height: 8px;
-  margin-top: 0.55rem;
+  margin-top: 0.3rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8'%3E%3Cpath d='M0,4 Q10,1 20,4 Q30,7 40,4' fill='none' stroke='%239a9a9a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: 40px 8px;
@@ -669,93 +665,13 @@ body { overflow-x: hidden; }
 
 .speed-ctrl:hover { opacity: 1; }
 
-.speed-track-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.speed-ctrl input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
+#speed-wave {
   width: 68px;
-  height: 14px;
-  background: transparent;
-  cursor: pointer;
+  height: 24px;
+  cursor: ew-resize;
+  touch-action: none;
+  display: block;
 }
-
-.speed-ctrl input[type="range"]::-webkit-slider-runnable-track {
-  height: 3px;
-  background: linear-gradient(
-    to right,
-    var(--text) var(--fill, 45.45%),
-    var(--border) var(--fill, 45.45%)
-  );
-  border-radius: 99px;
-  border: 1px solid var(--muted);
-  box-sizing: border-box;
-}
-
-.speed-ctrl input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 1.5px solid var(--text);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-  margin-top: -4.5px;
-}
-
-.speed-ctrl input[type="range"]::-moz-range-track {
-  height: 3px;
-  background: var(--border);
-  border-radius: 99px;
-  border: 1px solid var(--muted);
-  box-sizing: border-box;
-}
-
-.speed-ctrl input[type="range"]::-moz-range-progress {
-  height: 3px;
-  background: var(--text);
-  border-radius: 99px;
-}
-
-.speed-ctrl input[type="range"]::-moz-range-thumb {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 1.5px solid var(--text);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-}
-
-/* Tick marks above and below track at 1× position (100/220 ≈ 46%) */
-.speed-notch {
-  position: absolute;
-  left: 46%;
-  transform: translateX(-50%);
-  width: 1.5px;
-  height: 3px;
-  background: var(--muted);
-  border-radius: 1px;
-  pointer-events: none;
-  transition: height 0.15s ease, background 0.15s ease;
-}
-
-#speed-notch-top { bottom: calc(50% + 5px); }
-#speed-notch-bot { top:    calc(50% + 5px); }
-
-/* Grow slightly on hover (matching ctrl opacity reveal) */
-.speed-ctrl:hover .speed-notch { height: 4px; }
-
-/* At center / in snap zone — highlighted regardless of hover */
-.speed-notch.at-center {
-  height: 6px;
-  background: var(--text);
-}
-
-.speed-ctrl:hover .speed-notch.at-center { height: 7px; }
 
 /* ── Lightbox ─────────────────────────────────────────────────────── */
 .lightbox {
@@ -1010,70 +926,96 @@ body { overflow-x: hidden; }
     scrollTimer = setTimeout(() => { targetScrollSpeed = 1.0 }, 150)
   }, { passive: true })
 
-  // ── Speed slider ────────────────────────────────────────────────────
-  // Magnetic snap: within SNAP_ZONE units of 100, the slider locks to 100.
-  // Visual notch pulses on snap. Haptic fires on first entry into snap zone
-  // and on release when the value has moved away.
-  let speedMult = 1.0
-  const speedRange   = document.getElementById("speed-range") as HTMLInputElement | null
-  const speedNotches = document.querySelectorAll<HTMLElement>(".speed-notch")
-  const DRAG_SNAP    = 15  // ±15 units — magnetic pull near the notch
-  const RELEASE_SNAP = 18  // ±18 — snap on release only if close to center
-  let inSnapZone     = true // starts at center (value = 100)
+  // ── Speed wave canvas ───────────────────────────────────────────────
+  let speedMult  = 1.0
+  const waveCanvas = document.getElementById("speed-wave") as HTMLCanvasElement | null
+  const waveCtx    = waveCanvas?.getContext("2d") ?? null
+  const DRAG_SNAP    = 0.09   // ±0.09 speedMult — magnetic pull near 1×
+  const RELEASE_SNAP = 0.11   // ±0.11 — snap on release if close to center
+  let inSnapZone = true
 
-  function triggerHaptic() {
-    try { navigator.vibrate?.(6) } catch {}
+  function triggerHaptic() { try { navigator.vibrate?.(6) } catch {} }
+
+  function drawWave(t: number) {
+    if (!waveCanvas || !waveCtx) return
+    const W = waveCanvas.width    // 136 actual pixels (2× retina)
+    const H = waveCanvas.height   // 48 actual pixels
+    waveCtx.clearRect(0, 0, W, H)
+
+    const atCenter = Math.abs(speedMult - 1.0) <= DRAG_SNAP
+    const baseColor = atCenter ? "#1a1a1a" : "#9a9a9a"
+    const amp = (speedMult / 2.2) * (H / 2 - 4)
+    const phase = -t * 4.5   // scrolls with animT; faster at higher speedMult
+
+    waveCtx.beginPath()
+    waveCtx.strokeStyle = baseColor
+    waveCtx.lineWidth = 1.5
+    waveCtx.lineCap = "round"
+    waveCtx.lineJoin = "round"
+    const cycles = 2
+    for (let x = 0; x <= W; x++) {
+      const y = H / 2 + amp * Math.sin((2 * Math.PI * cycles / W) * x + phase)
+      if (x === 0) waveCtx.moveTo(x, y)
+      else waveCtx.lineTo(x, y)
+    }
+    waveCtx.stroke()
+
+    // Center tick — subtle vertical mark at midpoint when in snap zone
+    if (atCenter) {
+      waveCtx.beginPath()
+      waveCtx.strokeStyle = "#1a1a1a"
+      waveCtx.globalAlpha = 0.25
+      waveCtx.lineWidth = 1
+      waveCtx.moveTo(W / 2, 6)
+      waveCtx.lineTo(W / 2, H - 6)
+      waveCtx.stroke()
+      waveCtx.globalAlpha = 1
+    }
   }
 
-  function updateNotch() {
-    const atCenter = Math.abs(Number(speedRange?.value ?? 100) - 100) <= DRAG_SNAP
-    speedNotches.forEach(n => n.classList.toggle("at-center", atCenter))
-  }
+  // Drag: horizontal delta → change speedMult
+  let dragStart: { x: number; mult: number } | null = null
 
-  function updateFill() {
-    if (!speedRange) return
-    const pct = (Number(speedRange.value) / 220 * 100).toFixed(2)
-    speedRange.style.setProperty("--fill", `${pct}%`)
-  }
+  waveCanvas?.addEventListener("pointerdown", (e) => {
+    dragStart = { x: e.clientX, mult: speedMult }
+    waveCanvas.setPointerCapture(e.pointerId)
+  })
 
-  updateNotch()  // initialise at page load
-  updateFill()
-
-  speedRange?.addEventListener("input", () => {
-    const val = Number(speedRange.value)
-    if (Math.abs(val - 100) <= DRAG_SNAP) {
-      speedRange.value = "100"
-      speedMult = 1.0
+  waveCanvas?.addEventListener("pointermove", (e) => {
+    if (!dragStart) return
+    const delta = e.clientX - dragStart.x
+    const raw = Math.max(0, Math.min(2.2, dragStart.mult + delta * 0.015))
+    if (Math.abs(raw - 1.0) <= DRAG_SNAP) {
       if (!inSnapZone) { inSnapZone = true; triggerHaptic() }
+      speedMult = 1.0
     } else {
       inSnapZone = false
-      speedMult = val / 100
+      speedMult = raw
     }
-    updateNotch()
-    updateFill()
   })
 
-  // Horizontal (or vertical) scroll on the slider track moves it
-  speedRange?.addEventListener("wheel", (e) => {
-    e.preventDefault()
-    const delta = e.deltaX !== 0 ? e.deltaX : -e.deltaY
-    const newVal = Math.max(0, Math.min(220, Number(speedRange.value) + delta * 0.4))
-    speedRange.value = String(Math.round(newVal))
-    speedRange.dispatchEvent(new Event("input"))
-  }, { passive: false })
-
-  speedRange?.addEventListener("pointerup", () => {
-    const val = Number(speedRange.value)
-    if (Math.abs(val - 100) <= RELEASE_SNAP) {
-      speedRange.value = "100"
-      speedMult = 1.0
+  waveCanvas?.addEventListener("pointerup", () => {
+    if (!dragStart) return
+    dragStart = null
+    if (Math.abs(speedMult - 1.0) <= RELEASE_SNAP) {
       if (!inSnapZone) triggerHaptic()
+      speedMult = 1.0
       inSnapZone = true
     }
-    updateNotch()
-    updateFill()
-    // outside release zone: slider stays where released
   })
+
+  waveCanvas?.addEventListener("wheel", (e) => {
+    e.preventDefault()
+    const delta = e.deltaX !== 0 ? e.deltaX : -e.deltaY
+    const raw = Math.max(0, Math.min(2.2, speedMult + delta * 0.006))
+    if (Math.abs(raw - 1.0) <= DRAG_SNAP) {
+      if (!inSnapZone) { inSnapZone = true; triggerHaptic() }
+      speedMult = 1.0
+    } else {
+      inSnapZone = false
+      speedMult = raw
+    }
+  }, { passive: false })
 
   // ── Float states ───────────────────────────────────────────────────
   const states: FloatState[] = []
@@ -1128,6 +1070,8 @@ body { overflow-x: hidden; }
       s.el.style.transform =
         `translate(${bobX + s.pullX}px, ${bobY + s.pullY}px) rotate(${rot}deg)`
     }
+
+    drawWave(animT)
     requestAnimationFrame(animate)
   }
   requestAnimationFrame(animate)
