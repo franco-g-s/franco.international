@@ -283,6 +283,15 @@ const elsewhere: ElsewhereItem[] = [
 </head>
 
 <body>
+
+<!-- ── Loading screen ─────────────────────────────────────────────── -->
+<div id="loading-screen">
+  <p class="ls-name">Franco Gómez Schumacher</p>
+  <div class="ls-buoys">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
 <div class="canvas">
 
   <!-- ── Anchored headings (no animation) ────────────────────────── -->
@@ -300,7 +309,7 @@ const elsewhere: ElsewhereItem[] = [
       class="float"
       data-type="photo"
       data-src={`/photos/${p.id}.jpg`}
-      style={`top:${p.top};left:${p.left};width:${p.w}px;height:${p.h}px`}
+      style={`top:${p.top};left:${p.left};width:clamp(${p.w}px,${(p.w/700*100).toFixed(1)}vw,${p.w*2}px);height:clamp(${p.h}px,${(p.h/700*100).toFixed(1)}vw,${p.h*2}px)`}
     >
       <div class="float-inner">
         <img src={`/photos/${p.id}.jpg`} alt="" width={p.w} height={p.h}
@@ -384,7 +393,11 @@ const elsewhere: ElsewhereItem[] = [
 <!-- ── Speed control ──────────────────────────────────────────────── -->
 <div class="speed-ctrl">
   <span>speed</span>
-  <canvas id="speed-wave" width="136" height="48"></canvas>
+  <div class="speed-track-wrap">
+    <div class="speed-notch" id="speed-notch-top"></div>
+    <input type="range" id="speed-range" min="0" max="220" value="100" step="5" />
+    <div class="speed-notch" id="speed-notch-bot"></div>
+  </div>
 </div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -473,7 +486,14 @@ body { overflow-x: hidden; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8'%3E%3Cpath d='M0,4 Q10,1 20,4 Q30,7 40,4' fill='none' stroke='%239a9a9a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: 40px 8px;
-  background-position-x: var(--wave-pos, 0px);
+  animation: wave-slide 40s linear infinite;
+  animation-play-state: paused;
+  animation-delay: var(--wave-delay, 0s);
+}
+
+@keyframes wave-slide {
+  from { background-position-x: 0px; }
+  to   { background-position-x: 40px; }
 }
 
 /* ── Floats ───────────────────────────────────────────────────────── */
@@ -660,12 +680,140 @@ body { overflow-x: hidden; }
 
 .speed-ctrl:hover { opacity: 1; }
 
-#speed-wave {
+.speed-track-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.speed-ctrl input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
   width: 68px;
-  height: 24px;
+  height: 14px;
+  background: transparent;
   cursor: ew-resize;
-  touch-action: none;
-  display: block;
+}
+
+.speed-ctrl input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--text) var(--fill, 45.45%),
+    var(--border) var(--fill, 45.45%)
+  );
+  border-radius: 99px;
+  border: 1px solid var(--muted);
+  box-sizing: border-box;
+}
+
+.speed-ctrl input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  margin-top: -4.5px;
+}
+
+.speed-ctrl input[type="range"]::-moz-range-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 99px;
+  border: 1px solid var(--muted);
+  box-sizing: border-box;
+}
+
+.speed-ctrl input[type="range"]::-moz-range-progress {
+  height: 3px;
+  background: var(--text);
+  border-radius: 99px;
+}
+
+.speed-ctrl input[type="range"]::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.speed-notch {
+  position: absolute;
+  left: 46%;
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: 3px;
+  background: var(--muted);
+  border-radius: 1px;
+  pointer-events: none;
+  transition: height 0.15s ease, background 0.15s ease;
+}
+
+#speed-notch-top { bottom: calc(50% + 5px); }
+#speed-notch-bot { top:    calc(50% + 5px); }
+
+.speed-ctrl:hover .speed-notch { height: 4px; }
+
+.speed-notch.at-center {
+  height: 6px;
+  background: var(--text);
+}
+
+.speed-ctrl:hover .speed-notch.at-center { height: 7px; }
+
+/* ── Loading screen ───────────────────────────────────────────────── */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  transition: opacity 0.7s ease;
+}
+
+#loading-screen.done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ls-name {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  color: #1a1a1a;
+}
+
+.ls-buoys {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 24px;
+}
+
+.ls-buoys span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #9a9a9a;
+  animation: ls-bob 1.6s ease-in-out infinite;
+}
+
+.ls-buoys span:nth-child(2) { animation-delay: 0.2s; }
+.ls-buoys span:nth-child(3) { animation-delay: 0.4s; }
+.ls-buoys span:nth-child(4) { animation-delay: 0.6s; }
+.ls-buoys span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes ls-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
 }
 
 /* ── Lightbox ─────────────────────────────────────────────────────── */
@@ -921,107 +1069,70 @@ body { overflow-x: hidden; }
     scrollTimer = setTimeout(() => { targetScrollSpeed = 1.0 }, 150)
   }, { passive: true })
 
-  // ── Speed wave canvas ───────────────────────────────────────────────
-  let speedMult  = 1.0
-  const waveCanvas = document.getElementById("speed-wave") as HTMLCanvasElement | null
-  const waveCtx    = waveCanvas?.getContext("2d") ?? null
-  const DRAG_SNAP    = 0.09   // ±0.09 speedMult — magnetic pull near 1×
-  const RELEASE_SNAP = 0.11   // ±0.11 — snap on release if close to center
-  let inSnapZone = true
+  // ── Speed slider ────────────────────────────────────────────────────
+  let speedMult = 1.0
+  const speedRange   = document.getElementById("speed-range") as HTMLInputElement | null
+  const speedNotches = document.querySelectorAll<HTMLElement>(".speed-notch")
+  const DRAG_SNAP    = 15
+  const RELEASE_SNAP = 18
+  let inSnapZone     = true
 
   function triggerHaptic() { try { navigator.vibrate?.(6) } catch {} }
 
-  function drawWave(t: number) {
-    if (!waveCanvas || !waveCtx) return
-    const W = waveCanvas.width    // 136 actual pixels (2× retina)
-    const H = waveCanvas.height   // 48 actual pixels
-    waveCtx.clearRect(0, 0, W, H)
-
-    const atCenter = Math.abs(speedMult - 1.0) <= DRAG_SNAP
-    const baseColor = atCenter ? "#1a1a1a" : "#9a9a9a"
-    const amp = (speedMult / 2.2) * (H / 2 - 4)
-    const phase = -t * 4.5   // scrolls with animT; faster at higher speedMult
-
-    waveCtx.beginPath()
-    waveCtx.strokeStyle = baseColor
-    waveCtx.lineWidth = 1.5
-    waveCtx.lineCap = "round"
-    waveCtx.lineJoin = "round"
-    const cycles = 2
-    for (let x = 0; x <= W; x++) {
-      const y = H / 2 + amp * Math.sin((2 * Math.PI * cycles / W) * x + phase)
-      if (x === 0) waveCtx.moveTo(x, y)
-      else waveCtx.lineTo(x, y)
-    }
-    waveCtx.stroke()
-
-    // Thumb: circle at current speed position, riding the wave
-    const thumbX = Math.max(8, Math.min(W - 8, (speedMult / 2.2) * W))
-    const thumbY = H / 2 + amp * Math.sin((2 * Math.PI * cycles / W) * thumbX + phase)
-    waveCtx.beginPath()
-    waveCtx.arc(thumbX, thumbY, 8, 0, Math.PI * 2)
-    waveCtx.fillStyle = "#ffffff"
-    waveCtx.fill()
-    waveCtx.strokeStyle = baseColor
-    waveCtx.lineWidth = 1.5
-    waveCtx.stroke()
-
-    // Center notch: visible tick behind thumb when in snap zone
-    if (atCenter) {
-      waveCtx.beginPath()
-      waveCtx.strokeStyle = "#1a1a1a"
-      waveCtx.globalAlpha = 0.5
-      waveCtx.lineWidth = 1.5
-      waveCtx.moveTo(W / 2, H / 2 - 10)
-      waveCtx.lineTo(W / 2, H / 2 + 10)
-      waveCtx.stroke()
-      waveCtx.globalAlpha = 1
-    }
+  function updateNotch() {
+    const atCenter = Math.abs(Number(speedRange?.value ?? 100) - 100) <= DRAG_SNAP
+    speedNotches.forEach(n => n.classList.toggle("at-center", atCenter))
   }
 
-  // Drag: horizontal delta → change speedMult
-  let dragStart: { x: number; mult: number } | null = null
+  function updateFill() {
+    if (!speedRange) return
+    const pct = (Number(speedRange.value) / 220 * 100).toFixed(2)
+    speedRange.style.setProperty("--fill", `${pct}%`)
+  }
 
-  waveCanvas?.addEventListener("pointerdown", (e) => {
-    dragStart = { x: e.clientX, mult: speedMult }
-    waveCanvas.setPointerCapture(e.pointerId)
-  })
+  updateNotch()
+  updateFill()
 
-  waveCanvas?.addEventListener("pointermove", (e) => {
-    if (!dragStart) return
-    const delta = e.clientX - dragStart.x
-    const raw = Math.max(0, Math.min(2.2, dragStart.mult + delta * 0.015))
-    if (Math.abs(raw - 1.0) <= DRAG_SNAP) {
-      if (!inSnapZone) { inSnapZone = true; triggerHaptic() }
+  speedRange?.addEventListener("input", () => {
+    const val = Number(speedRange.value)
+    if (Math.abs(val - 100) <= DRAG_SNAP) {
+      speedRange.value = "100"
       speedMult = 1.0
+      if (!inSnapZone) { inSnapZone = true; triggerHaptic() }
     } else {
       inSnapZone = false
-      speedMult = raw
+      speedMult = val / 100
     }
+    updateNotch()
+    updateFill()
   })
 
-  waveCanvas?.addEventListener("pointerup", () => {
-    if (!dragStart) return
-    dragStart = null
-    if (Math.abs(speedMult - 1.0) <= RELEASE_SNAP) {
-      if (!inSnapZone) triggerHaptic()
-      speedMult = 1.0
-      inSnapZone = true
-    }
-  })
-
-  waveCanvas?.addEventListener("wheel", (e) => {
+  speedRange?.addEventListener("wheel", (e) => {
     e.preventDefault()
     const delta = e.deltaX !== 0 ? e.deltaX : -e.deltaY
-    const raw = Math.max(0, Math.min(2.2, speedMult + delta * 0.006))
-    if (Math.abs(raw - 1.0) <= DRAG_SNAP) {
-      if (!inSnapZone) { inSnapZone = true; triggerHaptic() }
-      speedMult = 1.0
-    } else {
-      inSnapZone = false
-      speedMult = raw
-    }
+    const newVal = Math.max(0, Math.min(220, Number(speedRange.value) + delta * 0.4))
+    speedRange.value = String(Math.round(newVal))
+    speedRange.dispatchEvent(new Event("input"))
   }, { passive: false })
+
+  speedRange?.addEventListener("pointerup", () => {
+    const val = Number(speedRange.value)
+    if (Math.abs(val - 100) <= RELEASE_SNAP) {
+      speedRange.value = "100"
+      speedMult = 1.0
+      if (!inSnapZone) triggerHaptic()
+      inSnapZone = true
+    }
+    updateNotch()
+    updateFill()
+  })
+
+  // ── Loading screen ───────────────────────────────────────────────────
+  const loadingScreen = document.getElementById("loading-screen")
+  window.addEventListener("load", () => {
+    loadingScreen?.classList.add("done")
+    setTimeout(() => loadingScreen?.remove(), 800)
+  })
 
   // ── Float states ───────────────────────────────────────────────────
   const states: FloatState[] = []
@@ -1077,11 +1188,8 @@ body { overflow-x: hidden; }
         `translate(${bobX + s.pullX}px, ${bobY + s.pullY}px) rotate(${rot}deg)`
     }
 
-    drawWave(animT)
-
-    // Drive section heading waves at same speed as harbor bobs
-    const wavePos = (animT * 14) % 40
-    document.documentElement.style.setProperty("--wave-pos", `${wavePos.toFixed(2)}px`)
+    // Drive section heading waves: paused CSS animation scrubbed by animT
+    document.documentElement.style.setProperty("--wave-delay", `-${(animT * 14).toFixed(3)}s`)
 
     requestAnimationFrame(animate)
   }
